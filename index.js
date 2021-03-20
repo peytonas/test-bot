@@ -23,6 +23,10 @@ let _plotTwistApi = axios.create({
   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=plot twist&rating=r`
 })
 
+let _noodsApi = axios.create({
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`
+})
+
 
 let _state = {
   currentGif: {}
@@ -61,6 +65,15 @@ function getPlotTwistGif() {
 
 function getHotGif() {
     _hotGifApi.get()
+      .then(res => {
+        let giphy = res.data
+        _setState("currentGif", giphy)
+      })
+      .catch(err => console.error(err))
+}
+  
+function getNoodsGif() {
+    _noodsApi.get()
       .then(res => {
         let giphy = res.data
         _setState("currentGif", giphy)
@@ -228,6 +241,17 @@ bot.on("message", async (message) => {
   //     }, 1000);
   //   }
   // }
+
+  if (lowerCase.includes(prefix + "noods")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      getNoodsGif()
+      setTimeout(function () {
+      message.channel.send(_state.currentGif.data.bitly_url)
+      }, 1000);
+  }
+  }
 
   if (lowerCase === prefix + "hot")
   {
