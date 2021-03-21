@@ -253,7 +253,7 @@ bot.on("message", async (message) => {
   }
   }
 
-  if (lowerCase.includes("bee")) {
+  if (lowerCase.includes("bees")) {
     if (message.author.bot) {
       return;
     } else {
