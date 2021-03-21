@@ -253,6 +253,14 @@ bot.on("message", async (message) => {
   }
   }
 
+  if (lowerCase.includes("bee")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("Ya like jazz?")
+    }
+  }
+
   if (lowerCase === prefix + "hot")
   {
     let x = getRandomInt(3)
@@ -367,7 +375,7 @@ bot.on("message", async (message) => {
         message.channel.send("I'm sorry, Thomas... I'm afraid you've learned too much...")
       }
       if (message.author == 692173149659332641) {
-        message.channel.send("I'm sorry, David... I'm afraid you've learned too much...")
+        message.channel.send("I'm sorry, Brody... I'm afraid you've learned too much...")
       }
       if (message.author == 500457284573593601) {
         message.channel.send("I'm sorry, Peyton... I'm afraid you've learned too much...")
