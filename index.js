@@ -27,6 +27,10 @@ let _noodsApi = axios.create({
   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`
 })
 
+let _hootApi = axios.create({
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hoot&rating=r`
+})
+
 
 let _state = {
   currentGif: {}
@@ -45,14 +49,14 @@ function getRandomGif() {
       .catch(err => console.error(err))
 }
 
-// function getTestGif() {
-//     _testGifApi.get()
-//       .then(res => {
-//         let giphy = res.data
-//         _setState("currentGif", giphy)
-//       })
-//       .catch(err => console.error(err))
-// }
+function getHootGif() {
+    _hootApi.get()
+      .then(res => {
+        let giphy = res.data
+        _setState("currentGif", giphy)
+      })
+      .catch(err => console.error(err))
+}
 
 function getPlotTwistGif() {
     _plotTwistApi.get()
@@ -247,6 +251,17 @@ bot.on("message", async (message) => {
       return;
     } else {
       getNoodsGif()
+      setTimeout(function () {
+      message.channel.send(_state.currentGif.data.bitly_url)
+      }, 1000);
+  }
+  }
+
+  if (lowerCase.includes(prefix + "hoot")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      getHootGif()
       setTimeout(function () {
       message.channel.send(_state.currentGif.data.bitly_url)
       }, 1000);
