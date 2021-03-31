@@ -28,7 +28,7 @@ let _noodsApi = axios.create({
 })
 
 let _hootApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hoot&rating=r`
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=i dont give a hoot&rating=r`
 })
 
 
