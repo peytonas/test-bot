@@ -280,6 +280,22 @@ bot.on("message", async (message) => {
     }
   }
 
+  if (lowerCase.includes("german")|| lowerCase.includes("tinfoil") || lowerCase.includes("conspiracy")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("https://www.youtube.com/watch?v=zdjY_UnNtQ4")
+    }
+  }
+
+  if (lowerCase.includes(prefix + "zemo") || lowerCase.includes(prefix + "smile")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/zemo.gif"]})
+    }
+  }
+
   if (lowerCase.includes(prefix + "wrong")) {
     if (message.author.bot) {
       return;
