@@ -268,7 +268,7 @@ bot.on("message", async (message) => {
   }
   }
 
-  if (lowerCase.includes("well") && lowerCase.includes("hi")) {
+  if (lowerCase.includes("well") && lowerCase.includes("hi") || lowerCase.includes("whale") && lowerCase.includes("hai")) {
     message.channel.send("https://www.youtube.com/watch?v=Z-yJTjbswhw")
   }
 
