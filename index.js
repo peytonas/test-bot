@@ -28,7 +28,7 @@ let _noodsApi = axios.create({
 })
 
 let _hootApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=i dont give a hoot&rating=r`
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=owl&rating=r`
 })
 
 
@@ -276,6 +276,14 @@ bot.on("message", async (message) => {
     }
   }
 
+  if (lowerCase.includes(prefix + "wrong")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("https://www.youtube.com/watch?v=bKgWm5TNeBA")
+    }
+  }
+
   if (lowerCase === prefix + "hot")
   {
     let x = getRandomInt(3)
@@ -427,13 +435,13 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (lowerCase.includes(` tea `))
-  // {
-  //   if (message.author.bot) {
-  //     return;
-  //   }
-  //   message.channel.send("What kind of tea do you want? We have...Blueberry, Raspberry, Ginseng, Sleepy Time, Green Tea, Green Tea with Lemon, Green Tea with Lemon and Honey, Liver Disaster, Ginger with Honey, Vanilla Almond, White Truffle Coconut, Chamomile, Blueberry Chamomile, Decaf Vanilla Walnut, Constant Comment, and...Earl Grey.")
-  // }
+  if (lowerCase.includes(prefix + "tea"))
+  {
+    if (message.author.bot) {
+      return;
+    }
+    message.channel.send("What kind of tea do you want? We have...Blueberry, Raspberry, Ginseng, Sleepy Time, Green Tea, Green Tea with Lemon, Green Tea with Lemon and Honey, Liver Disaster, Ginger with Honey, Vanilla Almond, White Truffle Coconut, Chamomile, Blueberry Chamomile, Decaf Vanilla Walnut, Constant Comment, and...Earl Grey.")
+  }
 
   if (lowerCase.includes(prefix + "irony") || lowerCase.includes(prefix + "ironic"))
   {
