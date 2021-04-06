@@ -1,3 +1,5 @@
+import api_requests from './requests.js'
+
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const request = require("request");
@@ -6,84 +8,79 @@ const axios = require('axios');
 const prefix = process.env.PREFIX;
 const token = process.env.BOT_TOKEN;
 
-// let key = ""
-// let baseURL = "https://api.giphy.com/v1/gifs/"
-// let tag = `random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=${key}&rating=r`;
-// let sample = baseURL + tag
+// let _randomGifApi = axios.create({
+//   baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=&rating=r"
+// })
 
-let _randomGifApi = axios.create({
-  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=&rating=r"
-})
+// let _hotGifApi = axios.create({
+//   baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=pg-13"
+// })
 
-let _hotGifApi = axios.create({
-  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=pg-13"
-})
+// let _plotTwistApi = axios.create({
+//   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=plot twist&rating=r`
+// })
 
-let _plotTwistApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=plot twist&rating=r`
-})
+// let _noodsApi = axios.create({
+//   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`
+// })
 
-let _noodsApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`
-})
-
-let _hootApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=owl&rating=r`
-})
+// let _hootApi = axios.create({
+//   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=owl&rating=r`
+// })
 
 
-let _state = {
-  currentGif: {}
-}
+// let _state = {
+//   currentGif: {}
+// }
 
-function _setState(propName, data) {
-  _state[propName] = data
-}
+// function _setState(propName, data) {
+//   _state[propName] = data
+// }
 
-function getRandomGif() {
-    _randomGifApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
-}
+// function getRandomGif() {
+//     _randomGifApi.get()
+//       .then(res => {
+//         let giphy = res.data
+//         _setState("currentGif", giphy)
+//       })
+//       .catch(err => console.error(err))
+// }
 
-function getHootGif() {
-    _hootApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
-}
+// function getHootGif() {
+//     _hootApi.get()
+//       .then(res => {
+//         let giphy = res.data
+//         _setState("currentGif", giphy)
+//       })
+//       .catch(err => console.error(err))
+// }
 
-function getPlotTwistGif() {
-    _plotTwistApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
-}
+// function getPlotTwistGif() {
+//     _plotTwistApi.get()
+//       .then(res => {
+//         let giphy = res.data
+//         _setState("currentGif", giphy)
+//       })
+//       .catch(err => console.error(err))
+// }
 
-function getHotGif() {
-    _hotGifApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
-}
+// function getHotGif() {
+//     _hotGifApi.get()
+//       .then(res => {
+//         let giphy = res.data
+//         _setState("currentGif", giphy)
+//       })
+//       .catch(err => console.error(err))
+// }
   
-function getNoodsGif() {
-    _noodsApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
-  }
+// function getNoodsGif() {
+//     _noodsApi.get()
+//       .then(res => {
+//         let giphy = res.data
+//         _setState("currentGif", giphy)
+//       })
+//       .catch(err => console.error(err))
+//   }
 
 
 let gifs = [
@@ -230,29 +227,13 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (
-  //   lowerCase.includes(prefix + "test")
-  // ) {
-  //   key = "sexy"
-  //   console.log("Key:", key);
-  //   console.log("Sample:", sample);
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     getTestGif()
-  //     setTimeout(function () {
-  //     message.channel.send(_state.currentGif.data.bitly_url)
-  //     }, 1000);
-  //   }
-  // }
-
   if (lowerCase.includes(prefix + "noods")) {
     if (message.author.bot) {
       return;
     } else {
-      getNoodsGif()
+      api_requests.getNoodsGif()
       setTimeout(function () {
-      message.channel.send(_state.currentGif.data.bitly_url)
+      message.channel.send(api_requests._state.currentGif.data.bitly_url)
       }, 1000);
   }
   }
