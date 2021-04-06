@@ -268,6 +268,10 @@ bot.on("message", async (message) => {
   }
   }
 
+  if (lowerCase.includes("well") && lowerCase.includes("hi")) {
+    message.channel.send("https://www.youtube.com/watch?v=Z-yJTjbswhw")
+  }
+
   if (lowerCase.includes("bees")) {
     if (message.author.bot) {
       return;
