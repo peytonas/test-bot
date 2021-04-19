@@ -622,6 +622,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
 
   if (lowerCase.includes("future")) {
     let x = getRandomInt(2)
+    if (message.author.bot) {
+      return;
+    }
     if (x == 0) {
       message.reply("like with jetpacks?")
     } else {
@@ -629,8 +632,12 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (lowerCase.includes('get it') || lowerCase.includes('understand')) {
+  if (lowerCase.includes(`don't get it`) || lowerCase.includes('understand')) {
+    if (message.author.bot) {
+      return;
+    } else {
       message.channel.send({ files: ["./Assets/kronk.gif"] })
+    }
   }
 
   if (lowerCase.includes(prefix + "angry") || lowerCase.includes(prefix + "mad") || lowerCase.includes("triggered")) {
