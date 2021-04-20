@@ -431,11 +431,12 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     message.channel.send(lowerCase)
     lc = lowerCase.split(" ")
     for (var i in lc) {
+
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
       }
     }
-    message.channel.send("Don't you  mean " + lowerCase + "?")
+    message.channel.send("Don't you  mean " + lc + "?")
   }
 
   if (lowerCase === prefix + "hot")
