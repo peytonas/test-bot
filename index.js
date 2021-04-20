@@ -424,6 +424,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   }
 
   if (lowerCase.includes("shit")) {
+    if (message.author.bot) {
+      return;
+    }
     message.channel.send(lowerCase)
     message.channel.send(lowerCase.split(" ").includes())
   }
@@ -433,8 +436,8 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     let x = getRandomInt(3)
     if (message.author.bot) {
       return;
-      //413-429 Prank on Tom
     }
+    //413-429 Prank on Tom
     if (message.author == 271520490248601612) {
       let y = getRandomInt(11)
       if (y < 3) {
