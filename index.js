@@ -407,9 +407,10 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   if (lowerCase === prefix + "hot")
   {
     let x = getRandomInt(3)
-
     if (message.author.bot) {
       return;
+    } else if (message.author == 271520490248601612){
+      message.channel.send({files: ["./Assets/hornyJail.gif"]})
     } else if (x == 0) {
       let i = getRandomInt(hotGifs.length);
       message.channel.send({ files: [hotGifs[i]] });
