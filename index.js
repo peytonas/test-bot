@@ -427,6 +427,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       let y = getRandomInt(11)
       if (y < 7) {
         message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
       } else {
         if (x == 0) {
           let i = getRandomInt(hotGifs.length);
