@@ -425,7 +425,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
     if (message.author == 271520490248601612) {
       let y = getRandomInt(11)
-      if (y < 7) {
+      if (y < 3) {
         message.channel.send({ files: ["./Assets/hornyJail.gif"] })
         message.channel.send({ files: ["./Assets/hornyJail.gif"] })
       } else {
