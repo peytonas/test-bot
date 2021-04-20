@@ -429,14 +429,13 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       return;
     }
     message.channel.send(lowerCase)
-    lowerCase.split(" ")
-    for (var i in lowerCase) {
-      if (lowerCase[i] == "shit") {
-        lowerCase[i] = "*poop*"
+    lc = lowerCase.split(" ")
+    for (var i in lc) {
+      if (lc[i] == "shit") {
+        lc[i] = "*poop*"
       }
     }
-    lc = lowerCase
-    message.channel.send("Don't you  mean" + lc + "?")
+    message.channel.send("Don't you  mean " + lowerCase + "?")
   }
 
   if (lowerCase === prefix + "hot")
