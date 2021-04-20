@@ -228,23 +228,35 @@ bot.on("message", async (message) => {
   if (lowerCase.includes(prefix + "noods")) {
     if (message.author.bot) {
       return;
-    } else {
+    }
+    if (message.author == 271520490248601612) {
+      let y = getRandomInt(11)
+      if (y < 2) {
+        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+      } else {
+        getNoodsGif()
+        setTimeout(function () {
+          message.channel.send(_state.currentGif.data.bitly_url)
+        }, 1000);
+      }
+    }
+    else {
       getNoodsGif()
       setTimeout(function () {
-      message.channel.send(_state.currentGif.data.bitly_url)
+        message.channel.send(_state.currentGif.data.bitly_url)
       }, 1000);
-  }
-  }
+    }
 
-  if (lowerCase.includes(prefix + "hoot")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      getHootGif()
-      setTimeout(function () {
-      message.channel.send(_state.currentGif.data.bitly_url)
-      }, 1000);
-  }
+    if (lowerCase.includes(prefix + "hoot")) {
+      if (message.author.bot) {
+        return;
+      } else {
+        getHootGif()
+        setTimeout(function () {
+          message.channel.send(_state.currentGif.data.bitly_url)
+        }, 1000);
+      }
+    }
   }
 
   if (lowerCase.includes("well hi") || lowerCase.includes("whale") && lowerCase.includes("hai")) {
@@ -409,18 +421,38 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     let x = getRandomInt(3)
     if (message.author.bot) {
       return;
-    } else if (message.author == 271520490248601612){
-      message.channel.send({files: ["./Assets/hornyJail.gif"]})
-    } else if (x == 0) {
-      let i = getRandomInt(hotGifs.length);
-      message.channel.send({ files: [hotGifs[i]] });
-    } else if (x == 1) {
-      getHotGif()
-      setTimeout(function () {
-      message.channel.send(_state.currentGif.data.bitly_url)
-      }, 1000);
-    } else if (x == 2) {
-      message.reply("bad with the Skechers on.")
+      //413-429 Prank on Tom
+    }
+    if (message.author == 271520490248601612) {
+      let y = getRandomInt(11)
+      if (y < 7) {
+        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+      } else {
+        if (x == 0) {
+          let i = getRandomInt(hotGifs.length);
+          message.channel.send({ files: [hotGifs[i]] });
+        } else if (x == 1) {
+          getHotGif()
+          setTimeout(function () {
+            message.channel.send(_state.currentGif.data.bitly_url)
+          }, 1000);
+        } else if (x == 2) {
+          message.reply("bad with the Skechers on.")
+        }
+      }
+    }
+    else {
+      if (x == 0) {
+        let i = getRandomInt(hotGifs.length);
+        message.channel.send({ files: [hotGifs[i]] });
+      } else if (x == 1) {
+        getHotGif()
+        setTimeout(function () {
+          message.channel.send(_state.currentGif.data.bitly_url)
+        }, 1000);
+      } else if (x == 2) {
+        message.reply("bad with the Skechers on.")
+      }
     }
   }
 
