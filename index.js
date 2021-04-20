@@ -416,6 +416,18 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
+  if (message.author == 271520490248601612) {
+    let x = getRandomInt(101)
+    if (x < 4) {
+        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+    }
+  }
+
+  if (lowerCase.includes("shit")) {
+    message.channel.send(lowerCase)
+    message.channel.send(lowerCase.split(" ").includes())
+  }
+
   if (lowerCase === prefix + "hot")
   {
     let x = getRandomInt(3)
