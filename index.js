@@ -436,7 +436,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       }
     }
     lc = lowerCase
-    message.channel.send(lowerCase)
+    message.channel.send(lc)
   }
 
   if (lowerCase === prefix + "hot")
