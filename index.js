@@ -435,9 +435,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
         lc[i] = "*poop*"
       }
     }
-    lc.toString()
-    message.channel.send(lc)
-    lc.join(" ")
+    lc.join("")
     message.channel.send(lc)
     message.channel.send("Don't you mean " + lc + "?")
   }
