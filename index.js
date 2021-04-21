@@ -434,9 +434,10 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
 
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
+        lc.join(" ")
       }
     }
-    message.channel.send("Don't you  mean " + lc + "?")
+    message.channel.send("Don't you mean " + lc + "?")
   }
 
   if (lowerCase === prefix + "hot")
