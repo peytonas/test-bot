@@ -435,9 +435,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
         lc[i] = "*poop*"
       }
     }
-    lc.join("")
-    message.channel.send(lc)
-    message.channel.send("Don't you mean " + lc + "?")
+    let newStr = lc.join(" ")
+    message.channel.send(newStr)
+    message.channel.send("Don't you mean " + newStr + "?")
   }
 
   if (lowerCase === prefix + "hot")
