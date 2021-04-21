@@ -441,6 +441,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
       }
+      if (lc[i] == "shitty") {
+        lc[i] = "*poopy*"
+      }
       if (lc[i] == "damn") {
         lc[i] = "*a beaver's home*"
       }
@@ -450,11 +453,17 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i] == "fuck") {
         lc[i] = "*fudgesicle*"
       }
+      if (lc[i] == "fucking") {
+        lc[i] = "*fudgesicle-ing*"
+      }
       if (lc[i] == "god") {
         lc[i] = "*golly*"
       }
       if (lc[i] == "bitch") {
         lc[i] = "*female dog*"
+      }
+      if (lc[i] == "bitching") {
+        lc[i] = "*female dogging*"
       }
       if (lc[i] == "dick") {
         lc[i] = "*penis*"
