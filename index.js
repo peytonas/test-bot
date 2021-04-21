@@ -436,7 +436,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       }
     }
     let newStr = lc.join(" ")
-    message.channel.send("Don't you mean " + newStr + "?")
+    message.channel.send(`Don't you mean "` + newStr + `"?`)
   }
 
   if (lowerCase === prefix + "hot")
