@@ -423,7 +423,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("fuck")) {
+  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("fuck") || lowerCase.includes("god")) {
     let lc;
     if (message.author.bot) {
       return;
@@ -438,6 +438,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       }
       if (lc[i] == "fuck") {
         lc[i] = "*fudgesicle*"
+      }
+      if (lc[i] == "god") {
+        lc[i] = "*golly*"
       }
     }
     let newStr = lc.join(" ")
