@@ -423,16 +423,21 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (lowerCase.includes("shit")) {
+  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("fuck")) {
     let lc;
     if (message.author.bot) {
       return;
     }
-    message.channel.send(lowerCase)
     lc = lowerCase.split(" ")
     for (var i in lc) {
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
+      }
+      if (lc[i] == "damn") {
+        lc[i] = "*dangnabbit*"
+      }
+      if (lc[i] == "fuck") {
+        lc[i] = "*fudgesicle*"
       }
     }
     let newStr = lc.join(" ")
