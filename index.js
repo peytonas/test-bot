@@ -200,7 +200,7 @@ bot.on("ready", async () => {
 bot.on("message", async (message) => {
   var lowerCase = message.content.toLowerCase()
   if (lowerCase === '!quote') {
-    request('http://inspirobot.me/api?generate=true', function (error, response, body) {
+      request('http://inspirobot.me/api?generate=true', function (error, response, body) {
       if (!error && response.statusCode == 200) {
         message.channel.send({
           embed: {
@@ -214,9 +214,7 @@ bot.on("message", async (message) => {
       }
     });
   }
-});
 
-bot.on("message", async (message) => {
   if (
     lowerCase.includes("chalooby")
   ) {
