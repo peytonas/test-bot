@@ -229,17 +229,17 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     }
-    if (message.author == 271520490248601612) {
-      let y = getRandomInt(11)
-      if (y < 2) {
-        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-      } else {
-        getNoodsGif()
-        setTimeout(function () {
-          message.channel.send(_state.currentGif.data.bitly_url)
-        }, 1000);
-      }
-    }
+    // if (message.author == 271520490248601612) {
+    //   let y = getRandomInt(11)
+    //   if (y < 2) {
+    //     message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+    //   } else {
+    //     getNoodsGif()
+    //     setTimeout(function () {
+    //       message.channel.send(_state.currentGif.data.bitly_url)
+    //     }, 1000);
+    //   }
+    // }
     else {
       getNoodsGif()
       setTimeout(function () {
@@ -292,6 +292,14 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send("https://www.youtube.com/watch?v=bKgWm5TNeBA")
+    }
+  }
+
+  if (lowerCase.includes(prefix + "burn")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/burn.jpg"]})
     }
   }
 
@@ -416,12 +424,12 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (message.author == 271520490248601612) {
-    let x = getRandomInt(101)
-    if (x < 4) {
-        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-    }
-  }
+  // if (message.author == 271520490248601612) {
+  //   let x = getRandomInt(101)
+  //   if (x < 4) {
+  //       message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+  //   }
+  // }
 
   if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("dammit") || lowerCase.includes("fuck") || lowerCase.includes("god") || lowerCase.includes("bitch") || lowerCase.includes("dick")) {
     let lc;
@@ -463,27 +471,26 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       return;
     }
     //413-429 Prank on Tom
-    if (message.author == 271520490248601612) {
-      let y = getRandomInt(11)
-      if (y < 3) {
-        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-      } else {
-        if (x == 0) {
-          let i = getRandomInt(hotGifs.length);
-          message.channel.send({ files: [hotGifs[i]] });
-        } else if (x == 1) {
-          getHotGif()
-          setTimeout(function () {
-            message.channel.send(_state.currentGif.data.bitly_url)
-          }, 1000);
-        } else if (x == 2) {
-          message.reply("bad with the Skechers on.")
-        }
-      }
-    }
-    else {
-      if (x == 0) {
+    // if (message.author == 271520490248601612) {
+    //   let y = getRandomInt(11)
+    //   if (y < 3) {
+    //     message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+    //     message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+    //   } else {
+    //     if (x == 0) {
+    //       let i = getRandomInt(hotGifs.length);
+    //       message.channel.send({ files: [hotGifs[i]] });
+    //     } else if (x == 1) {
+    //       getHotGif()
+    //       setTimeout(function () {
+    //         message.channel.send(_state.currentGif.data.bitly_url)
+    //       }, 1000);
+    //     } else if (x == 2) {
+    //       message.reply("bad with the Skechers on.")
+    //     }
+    //   }
+    // }
+    else { if (x == 0) {
         let i = getRandomInt(hotGifs.length);
         message.channel.send({ files: [hotGifs[i]] });
       } else if (x == 1) {
