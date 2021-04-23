@@ -438,10 +438,10 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
     lc = lowerCase.split(" ")
     for (var i in lc) {
-      if (lc[i].includes("shit")) {
+      if (lc[i] == "shit") {
         lc[i] = "*poop*"
       }
-      if (lc[i] == "shitty") {
+      if (lc[i].includes("shitty")) {
         lc[i] = "*poopy*"
       }
       if (lc[i].includes("damn")) {
@@ -450,7 +450,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i].includes("dammit")) {
         lc[i] = "*dangnabbit*"
       }
-      if (lc[i].includes("fuck")) {
+      if (lc[i] == "fuck") {
         lc[i] = "*fudgesicle*"
       }
       if (lc[i].includes("fucking")) {
@@ -465,7 +465,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i] == "bitches") {
         lc[i] = "*female dogs*"
       }
-      if (lc[i] == "bitching") {
+      if (lc[i].includes("bitchin")) {
         lc[i] = "*female dogging*"
       }
       if (lc[i].includes("dick")) {
