@@ -447,7 +447,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i] == "damn") {
         lc[i] = "*a beaver's home*"
       }
-      if (lc[i] == "dammit") {
+      if (lc[i].includes("dammit")) {
         lc[i] = "*dangnabbit*"
       }
       if (lc[i] == "fuck") {
