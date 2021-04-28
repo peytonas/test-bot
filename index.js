@@ -445,7 +445,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   //   }
   // }
 
-  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("dammit") || lowerCase.includes("fuck") || lowerCase.includes("god") || lowerCase.includes("bitch") || lowerCase.includes("dick") || lowerCase.includes("pussy") || lowerCase.includes("pussies")) {
+  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("dammit") || lowerCase.includes("fuck") || lowerCase.includes("god") || lowerCase.includes("bitch") || lowerCase.includes("dick") || lowerCase.includes("pussy") || lowerCase.includes("pussies") || lowerCase.includes("ass")) {
     let lc;
     if (message.author.bot) {
       return;
@@ -493,6 +493,15 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       }
       if (lc[i] == "pussies") {
         lc[i] = "*kitty cats*"
+      }
+      if (lc[i] == "ass") {
+        lc[i] = "*booty*"
+      }
+      if (lc[i] == "asshole") {
+        lc[i] = "*bootyhole*"
+      }
+      if (lc[i] == "assholes") {
+        lc[i] = "*bootyholes*"
       }
     }
     let newStr = lc.join(" ")
