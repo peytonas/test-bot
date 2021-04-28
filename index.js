@@ -784,9 +784,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     message.channel.send("The Dude abides.")
   }
 
-  if (lowerCase.includes("read") && lowerCase.includes("book")) {
-    message.channel.send({files: ["./Assets/heReadABook.gif"]})
-  }
+  // if (lowerCase.includes("read") && lowerCase.includes("book")) {
+  //   message.channel.send({files: ["./Assets/heReadABook.gif"]})
+  // }
 
   if (lowerCase.includes("immature") || lowerCase.includes("naive")) {
     message.channel.send({files: ["./Assets/aou1.gif"]})
