@@ -431,7 +431,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   //   }
   // }
 
-  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("dammit") || lowerCase.includes("fuck") || lowerCase.includes("god") || lowerCase.includes("bitch") || lowerCase.includes("dick")) {
+  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("dammit") || lowerCase.includes("fuck") || lowerCase.includes("god") || lowerCase.includes("bitch") || lowerCase.includes("dick") || lowerCase.includes("pussy") || lowerCase.includes("pussies")) {
     let lc;
     if (message.author.bot) {
       return;
