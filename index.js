@@ -444,31 +444,34 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
       }
-      if (lc[i] == "shitty") {
+      if (lc[i].includes("shitty")) {
         lc[i] = "*poopy*"
       }
-      if (lc[i] == "damn") {
+      if (lc[i].includes("damn")) {
         lc[i] = "*a beaver's home*"
       }
-      if (lc[i] == "dammit") {
+      if (lc[i].includes("dammit")) {
         lc[i] = "*dangnabbit*"
       }
       if (lc[i] == "fuck") {
         lc[i] = "*fudgesicle*"
       }
-      if (lc[i] == "fucking") {
+      if (lc[i].includes("fucking")) {
         lc[i] = "*fudgesicle-ing*"
       }
-      if (lc[i] == "god") {
+      if (lc[i].includes("god")) {
         lc[i] = "*golly*"
       }
       if (lc[i] == "bitch") {
         lc[i] = "*female dog*"
       }
-      if (lc[i] == "bitching") {
+      if (lc[i] == "bitches") {
+        lc[i] = "*female dogs*"
+      }
+      if (lc[i].includes("bitchin")) {
         lc[i] = "*female dogging*"
       }
-      if (lc[i] == "dick") {
+      if (lc[i].includes("dick")) {
         lc[i] = "*penis*"
       }
       if (lc[i] == "pussy") {
