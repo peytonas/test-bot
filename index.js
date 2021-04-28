@@ -82,61 +82,75 @@ function getNoodsGif() {
 
 
 let gifs = [
-  "./Assets/bca.gif",
   "./Assets/abed_flirt.gif",
   "./Assets/absolutelynot.gif",
-  "./Assets/baggle.gif",
-  "./Assets/bat_signal.gif",
-  "./Assets/exaggeration.gif",
-  "./Assets/F.gif",
-  "./Assets/f3d.gif",
-  "./Assets/hoover.jpg",
-  "./Assets/hot.gif",
-  "./Assets/thatsWhatSheSaid.gif",
-  "./Assets/theFly.jpg",
-  "./Assets/yasQueen.gif",
-  "./Assets/zaddy.gif",
-  "./Assets/bears.gif",
-  "./Assets/more.gif",
-  "./Assets/tyrion.gif",
-  "./Assets/sausage.gif",
-  "./Assets/sadporg.gif",
-  "./Assets/nk_smile.gif",
-  "./Assets/nk_arya_high5.gif",
-  "./Assets/lukemilk.gif",
-  "./Assets/lukekylo.gif",
-  "./Assets/littlefinger.gif",
-  "./Assets/flybarf.gif",
-  "./Assets/highfivedivorce.gif",
-  "./Assets/lesmisstefon.gif",
-  "./Assets/midgetwaist.gif",
-  "./Assets/stefonyes.gif",
-  "./Assets/humanway.gif",
-  "./Assets/bidenshock.gif",
-  "./Assets/hillary_wow.gif",
-  "./Assets/hype.gif",
-  "./Assets/ironic.gif",
-  "./Assets/skynet.gif",
-  "./Assets/strange.gif",
-  "./Assets/starlord.gif",
-  "./Assets/grumpy_aku.gif",
-  "./Assets/lonely_jack.gif",
-  "./Assets/suspicious.gif",
-  "./Assets/dk_shake.gif",
-  "./Assets/notAmused.gif",
-  "./Assets/thatsPrettyNeat.gif",
-  "./Assets/neverKissedAGuy.gif",
-  "./Assets/howCanYouStopMe.gif",
-  "./Assets/kronk.gif",
-  "./Assets/timeTravel.gif",
   "./Assets/aou1.gif",
   "./Assets/aou2.gif",
   "./Assets/aou3.gif",
   "./Assets/aou4.gif",
+  "./Assets/aou5.gif",
+  "./Assets/baggle.gif",
+  "./Assets/bat_signal.gif",
+  "./Assets/bca.gif",
+  "./Assets/bears.gif",
+  "./Assets/bidenshock.gif",
+  "./Assets/burn.jpg",
+  "./Assets/dk_shake.gif",
+  "./Assets/DKRT.gif",
+  "./Assets/exaggeration.gif",
+  "./Assets/F.gif",
+  "./Assets/f3d.gif",
+  "./Assets/flipflop.gif",
+  "./Assets/flybarf.gif",
+  "./Assets/grind.gif",
+  "./Assets/grumpy_aku.gif",
   "./Assets/heReadABook.gif",
-  "./Assets/wakeUpVision.gif",
+  "./Assets/highfivedivorce.gif",
+  "./Assets/hillary_wow.gif",
+  "./Assets/hkgun.png",
+  "./Assets/hoover.jpg",
   "./Assets/hornyJail.gif",
-  "./Assets/kittenMittons.gif"
+  "./Assets/hot.gif",
+  "./Assets/howCanYouStopMe.gif",
+  "./Assets/hype.gif",
+  "./Assets/ironic.gif",
+  "./Assets/kink.gif",
+  "./Assets/kittenMittons.gif",
+  "./Assets/KO.gif",
+  "./Assets/kronk.gif",
+  "./Assets/lesmisstefon.gif",
+  "./Assets/littlefinger.gif",
+  "./Assets/lonely_jack.gif",
+  "./Assets/lukekylo.gif",
+  "./Assets/lukemilk.gif",
+  "./Assets/midgetwaist.gif",
+  "./Assets/more.gif",
+  "./Assets/nameOfYourSexTape.gif",
+  "./Assets/NANI.gif",
+  "./Assets/neverKissedAGuy.gif",
+  "./Assets/nk_smile.gif",
+  "./Assets/notAmused.gif",
+  "./Assets/NSTB1.gif",
+  "./Assets/NSTB2.gif",
+  "./Assets/NSTB3.gif",
+  "./Assets/NSTB4.gif",
+  "./Assets/sadporg.gif",
+  "./Assets/sausage.gif",
+  "./Assets/skynet.gif",
+  "./Assets/starlord.gif",
+  "./Assets/stefonyes.gif",
+  "./Assets/strange.gif",
+  "./Assets/suspicious.gif",
+  "./Assets/thatsPrettyNeat.gif",
+  "./Assets/thatsWhatSheSaid.gif",
+  "./Assets/theFly.jpg",
+  "./Assets/timeTravel.gif",
+  "./Assets/tyrion.gif",
+  "./Assets/wakeUpVision.gif",
+  "./Assets/yasQueen.gif",
+  "./Assets/yikes.gif",
+  "./Assets/zaddy.gif",
+  "./Assets/zemo.gif"
 ];
 
 let hotGifs = [
@@ -229,17 +243,17 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     }
-    if (message.author == 271520490248601612) {
-      let y = getRandomInt(30)
-      if (y < 2) {
-        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-      } else {
-        getNoodsGif()
-        setTimeout(function () {
-          message.channel.send(_state.currentGif.data.bitly_url)
-        }, 1000);
-      }
-    }
+    // if (message.author == 271520490248601612) {
+    //   let y = getRandomInt(30)
+    //   if (y < 2) {
+    //     message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+    //   } else {
+    //     getNoodsGif()
+    //     setTimeout(function () {
+    //       message.channel.send(_state.currentGif.data.bitly_url)
+    //     }, 1000);
+    //   }
+    // }
     else {
       getNoodsGif()
       setTimeout(function () {
@@ -491,26 +505,25 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     if (message.author.bot) {
       return;
     }
-    //413-429 Prank on Tom
-    // if (message.author == 271520490248601612) {
-    //   let y = getRandomInt(11)
-    //   if (y < 3) {
-    //     message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-    //     message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-    //   } else {
-    //     if (x == 0) {
-    //       let i = getRandomInt(hotGifs.length);
-    //       message.channel.send({ files: [hotGifs[i]] });
-    //     } else if (x == 1) {
-    //       getHotGif()
-    //       setTimeout(function () {
-    //         message.channel.send(_state.currentGif.data.bitly_url)
-    //       }, 1000);
-    //     } else if (x == 2) {
-    //       message.reply("bad with the Skechers on.")
-    //     }
-    //   }
-    // }
+    // 413-429 Prank on Tom
+    if (message.author == 271520490248601612) {
+      let y = getRandomInt(30)
+      if (y < 3) {
+        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+      } else {
+        if (x == 0) {
+          let i = getRandomInt(hotGifs.length);
+          message.channel.send({ files: [hotGifs[i]] });
+        } else if (x == 1) {
+          getHotGif()
+          setTimeout(function () {
+            message.channel.send(_state.currentGif.data.bitly_url)
+          }, 1000);
+        } else if (x == 2) {
+          message.reply("bad with the Skechers on.")
+        }
+      }
+    }
     else { if (x == 0) {
         let i = getRandomInt(hotGifs.length);
         message.channel.send({ files: [hotGifs[i]] });
@@ -670,9 +683,15 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     message.channel.send({ files: ["./Assets/ironic.gif"] });
   }
 
-  if (lowerCase.includes("yikes")) 
-  {
-    message.channel.send({ files: ["./Assets/yikes.gif"] });
+  if (lowerCase.includes("yikes")) {
+    if (message.author == 692445692144123924) {
+      let y = getRandomInt(30)
+      if (y < 2) {
+        message.channel.send("https://www.youtube.com/watch?v=nD0gYVJGahg")
+      }
+    } else {
+      message.channel.send({ files: ["./Assets/yikes.gif"] });
+    }
   }
 
   if (lowerCase.includes("suspicious") || lowerCase.includes("sketchy"))
