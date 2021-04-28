@@ -229,17 +229,17 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     }
-    // if (message.author == 271520490248601612) {
-    //   let y = getRandomInt(11)
-    //   if (y < 2) {
-    //     message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-    //   } else {
-    //     getNoodsGif()
-    //     setTimeout(function () {
-    //       message.channel.send(_state.currentGif.data.bitly_url)
-    //     }, 1000);
-    //   }
-    // }
+    if (message.author == 271520490248601612) {
+      let y = getRandomInt(30)
+      if (y < 2) {
+        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+      } else {
+        getNoodsGif()
+        setTimeout(function () {
+          message.channel.send(_state.currentGif.data.bitly_url)
+        }, 1000);
+      }
+    }
     else {
       getNoodsGif()
       setTimeout(function () {
@@ -438,6 +438,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
     lc = lowerCase.split(" ")
     for (var i in lc) {
+      if (lc[i].includes("https")) {
+        return;
+      }
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
       }
@@ -467,6 +470,12 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       }
       if (lc[i] == "dick") {
         lc[i] = "*penis*"
+      }
+      if (lc[i] == "pussy") {
+        lc[i] = "*kitty cat*"
+      }
+      if (lc[i] == "pussies") {
+        lc[i] = "*kitty cats*"
       }
     }
     let newStr = lc.join(" ")
