@@ -494,10 +494,10 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i] == "pussies") {
         lc[i] = "*kitty cats*"
       }
-      if (lc[i] == "ass") {
+      if (lc[i] === "ass") {
         lc[i] = "*booty*"
       }
-      if (lc[i] == "asshole") {
+      if (lc[i] === "asshole") {
         lc[i] = "*bootyhole*"
       }
       if (lc[i] == "assholes") {
