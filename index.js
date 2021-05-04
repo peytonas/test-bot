@@ -302,7 +302,8 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send(
-     `!angry/!mad
+     `Commands:
+      !angry/!mad
       !banana
       !beans
       !burn
