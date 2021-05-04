@@ -248,7 +248,13 @@ bot.on("message", async (message) => {
 
   if (lowerCase.includes(prefix + "markov")) {
     let i = getRandomInt(101)
-    message.channel.send(quotes.start().end(i).process())
+    var useUpperCase = function(wordList) {
+  var tmpList = Object.keys(wordList).filter(function(word) {
+    return word[0] >= 'A' && word[0] <= 'Z'
+  })
+  return tmpList[~~(Math.random()*tmpList.length)]
+}
+    message.channel.send(quotes.start(useUpperCase).end(i).process())
   }
 
   if (lowerCase.includes(prefix + "noods")) {
