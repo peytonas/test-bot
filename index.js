@@ -1,10 +1,17 @@
 const Discord = require("discord.js");
+var MarkovChain = require('markovchain')
+fs = require('fs')
+
 const bot = new Discord.Client();
 const request = require("request");
 const axios = require('axios');
 
 const prefix = process.env.PREFIX;
 const token = process.env.BOT_TOKEN;
+
+quotes = new MarkovChain(fs.readFileSync('./quotes.txt', 'utf8'))
+
+
 
 let _randomGifApi = axios.create({
   baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=&rating=r"
@@ -237,6 +244,11 @@ bot.on("message", async (message) => {
     } else {
       message.reply("you rang, sir?");
     }
+  }
+
+  if (lowerCase.includes(prefix + "markov")) {
+    let i = getRandomInt(101)
+    quotes.start().end(i).process()
   }
 
   if (lowerCase.includes(prefix + "noods")) {
