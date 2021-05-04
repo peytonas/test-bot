@@ -157,7 +157,9 @@ let gifs = [
   "./Assets/yasQueen.gif",
   "./Assets/yikes.gif",
   "./Assets/zaddy.gif",
-  "./Assets/zemo.gif"
+  "./Assets/zemo.gif",
+  "./Assets/zemo.gif",
+  "./Assets/ryuk.png"
 ];
 
 let hotGifs = [
@@ -295,11 +297,62 @@ bot.on("message", async (message) => {
     message.channel.send("https://www.youtube.com/watch?v=Z-yJTjbswhw")
   }
 
+  if (lowerCase.includes(prefix + "commands")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send(
+     `!angry/!mad
+      !banana
+      !beans
+      !burn
+      !dos
+      !flipflop
+      !gat
+      !goodnight
+      !grind
+      !hot
+      !inspo
+      !irony/!ironic
+      !kinky
+      !markov
+      !nani/!what
+      !noods
+      !paradise
+      !plot twist
+      !random
+      !rt
+      !ryuk
+      !sleep
+      !tea
+      !tinfoil
+      !wrong
+      !zemo/!smile
+      `)
+    }
+  }
+
   if (lowerCase.includes("bees")) {
     if (message.author.bot) {
       return;
     } else {
       message.channel.send("Ya like jazz?")
+    }
+  }
+
+  if (lowerCase.includes(prefix + "ryuk")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/ryuk.png"]})
+    }
+  }
+
+  if (lowerCase.includes(prefix + "dos")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/losDos.gif"]})
     }
   }
 
