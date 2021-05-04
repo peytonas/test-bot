@@ -248,7 +248,7 @@ bot.on("message", async (message) => {
 
   if (lowerCase.includes(prefix + "markov")) {
     let i = getRandomInt(101)
-    quotes.start().end(i).process()
+    message.channel.send(quotes.start().end(i).process())
   }
 
   if (lowerCase.includes(prefix + "noods")) {
