@@ -11,7 +11,7 @@ const token = process.env.BOT_TOKEN;
 
 quotes = new MarkovChain(fs.readFileSync('./quotes.txt', 'utf8'))
 
-var logger = fs.createWriteStream('quotes.txt', {
+var logger = fs.createWriteStream('./quotes.txt', {
   flags: 'a'
 })
 
