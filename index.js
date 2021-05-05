@@ -329,6 +329,7 @@ bot.on("message", async (message) => {
       !gat
       !goodnight
       !grind
+      !grrm
       !hot
       !inspo
       !irony/!ironic
