@@ -212,6 +212,8 @@ let jokes = [
 
 let loveResponses = ["I don't know how to love yet...", "I've never even kissed a guy before.", "I'm in lesbians with you too...", "./Assets/aou2.gif"]
 
+let grrmGifs = ["./Assets/grrm1.gif", "./Assets/grrm2.gif", "./Assets/grrm3.gif", "./Assets/grrmWave.gif"]
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -245,6 +247,17 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.reply("you rang, sir?");
+    }
+  }
+
+  if (
+    lowerCase.includes(prefix + "grrm")
+  ) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = getRandomInt(grrmGifs.length)
+      message.channel.send({ files: [grrmGifs[i]] });
     }
   }
 
