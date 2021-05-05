@@ -11,9 +11,9 @@ const token = process.env.BOT_TOKEN;
 
 quotes = new MarkovChain(fs.readFileSync('./quotes.txt', 'utf8'))
 
-var logger = fs.createWriteStream('./quotes.txt', {
-  flags: 'a'
-})
+// var logger = fs.createWriteStream('./quotes.txt', {
+//   flags: 'a'
+// })
 
 
 let _randomGifApi = axios.create({
@@ -227,7 +227,7 @@ bot.on("ready", async () => {
 
 bot.on("message", async (message) => {
   var lowerCase = message.content.toLowerCase()
-  logger.write(message.content)
+  // logger.write(message.content)
   if (lowerCase === '!quote') {
       request('http://inspirobot.me/api?generate=true', function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -612,7 +612,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
     // 413-429 Prank on Tom
     if (message.author == 271520490248601612) {
-      let y = getRandomInt(30)
+      let y = getRandomInt(25)
       if (y < 3) {
         message.channel.send({ files: ["./Assets/hornyJail.gif"] })
       } else {
