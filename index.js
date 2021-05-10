@@ -369,7 +369,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("./Assets/coolCat.jpg")
+      message.channel.send({files: ["./Assets/coolCat.jpg"]})
     }
   }
 
