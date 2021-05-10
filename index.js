@@ -325,7 +325,7 @@ bot.on("message", async (message) => {
       message.channel.send(
      `Commands:
       !angry/!mad
-      !awkward
+      !awkward/!awk
       !banana
       !beans
       !burn
@@ -373,7 +373,7 @@ bot.on("message", async (message) => {
     }
   }
 
-  if (lowerCase.includes(prefix + "awkward")) {
+  if (lowerCase.includes(prefix + "awkward") || lowerCase.includes(prefix + "awk")) {
     if (message.author.bot) {
       return;
     } else {
@@ -630,7 +630,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     message.channel.send(`Don't you mean "` + newStr + `"?`)
   }
 
-  if (lowerCase === prefix + "hot")
+  if (lowerCase.includes(prefix + "hot"))
   {
     let x = getRandomInt(3)
     if (message.author.bot) {
