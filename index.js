@@ -325,10 +325,12 @@ bot.on("message", async (message) => {
       message.channel.send(
      `Commands:
       !angry/!mad
+      !awkward
       !banana
       !beans
       !burn
       !dos
+      !fail
       !flipflop
       !gat
       !goodnight
@@ -360,6 +362,30 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send("Ya like jazz?")
+    }
+  }
+
+  if (lowerCase.includes(prefix + "toocool")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("./Assets/coolCat.jpg")
+    }
+  }
+
+  if (lowerCase.includes(prefix + "awkward")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("https://www.youtube.com/watch?v=_V2sBURgUBI")
+    }
+  }
+
+  if (lowerCase.includes(prefix + "fail")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM")
     }
   }
 
