@@ -324,6 +324,7 @@ bot.on("message", async (message) => {
     } else {
       message.channel.send(
      `Commands:
+      !abrupt/!sudden
       !angry/!mad
       !awkward/!awk
       !banana
@@ -386,6 +387,14 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM")
+    }
+  }
+
+if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("https://youtu.be/idoYCVLh2qI")
     }
   }
 
