@@ -21,7 +21,7 @@ let _randomGifApi = axios.create({
 })
 
 let _hotGifApi = axios.create({
-  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=r"
+  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=pg-13"
 })
 
 let _plotTwistApi = axios.create({
