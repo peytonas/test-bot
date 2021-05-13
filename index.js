@@ -403,6 +403,14 @@ bot.on("message", async (message) => {
     }
   }
 
+  if (lowerCase.includes(prefix + "jt")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/jt.gif"]})
+    }
+  }
+
   if (lowerCase.includes(prefix + "smarf")) {
     if (message.author.bot) {
       return;
