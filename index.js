@@ -636,9 +636,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i].includes("https")) {
         return;
       }
-      if (lc[i].includes("ass") && lc[i] != "ass") {
-        return;
-      }
       if (lc[i] != lc){
         return;
       }
@@ -689,6 +686,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       }
       if (lc[i] == "assholes") {
         lc[i] = "*bootyholes*"
+      }
+      if (lc[i].includes("ass") && lc[i] != "ass") {
+        return;
       }
     }
     let newStr = lc.join(" ")
