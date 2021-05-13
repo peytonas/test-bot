@@ -144,9 +144,11 @@ let gifs = [
   "./Assets/NSTB2.gif",
   "./Assets/NSTB3.gif",
   "./Assets/NSTB4.gif",
+  "./Assets/porkmaster.gif",
   "./Assets/sadporg.gif",
   "./Assets/sausage.gif",
   "./Assets/skynet.gif",
+  "./Assets/smarf.gif",
   "./Assets/starlord.gif",
   "./Assets/stefonyes.gif",
   "./Assets/strange.gif",
@@ -361,10 +363,12 @@ bot.on("message", async (message) => {
       !noods
       !paradise
       !plot twist
+      !pork
       !random
       !rt
       !ryuk
       !sleep
+      !smarf
       !tea
       !tinfoil
       !wrong
@@ -386,6 +390,30 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send({files: ["./Assets/coolCat.jpg"]})
+    }
+  }
+
+  if (lowerCase.includes(prefix + "pork")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/porkmaster.gif"]})
+    }
+  }
+
+  if (lowerCase.includes(prefix + "smarf")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/smarf.gif"]})
+    }
+  }
+
+  if (lowerCase.includes(prefix + "terror") || (lowerCase.includes("hug")) || lowerCase.includes("hyped")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/terror.gif"]})
     }
   }
 
