@@ -21,7 +21,7 @@ let _randomGifApi = axios.create({
 })
 
 let _hotGifApi = axios.create({
-  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=r"
+  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=pg-13"
 })
 
 let _plotTwistApi = axios.create({
@@ -337,6 +337,7 @@ bot.on("message", async (message) => {
     } else {
       message.channel.send(
      `Commands:
+      !abrupt/!sudden
       !angry/!mad
       !awkward/!awk
       !banana
@@ -401,6 +402,14 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM")
+    }
+  }
+
+if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send("https://youtu.be/idoYCVLh2qI")
     }
   }
 
@@ -848,11 +857,10 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       let y = getRandomInt(30)
       if (y < 2) {
         message.channel.send("https://www.youtube.com/watch?v=QrGrOK8oZG8")
-      }
-      else {
+      } 
+    }else {
         message.channel.send({ files: ["./Assets/yikes.gif"] });
       }
-    }
   }
 
   if (lowerCase.includes("suspicious") || lowerCase.includes("sketchy"))
