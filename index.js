@@ -620,12 +620,12 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  // if (message.author == 271520490248601612) {
-  //   let x = getRandomInt(101)
-  //   if (x < 4) {
-  //       message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-  //   }
-  // }
+  if (message.author == 271520490248601612) {
+    let x = getRandomInt(300)
+    if (x < 4) {
+        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+    }
+  }
 
   if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("dammit") || lowerCase.includes("fuck") || lowerCase.includes("god") || lowerCase.includes("bitch") || lowerCase.includes("dick") || lowerCase.includes("pussy") || lowerCase.includes("pussies") || lowerCase.includes("ass")) {
     if (message.author.bot) {
@@ -634,6 +634,9 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     let lc = lowerCase.split(" ")
     for (var i in lc) {
       if (lc[i].includes("https")) {
+        return;
+      }
+      if (lc[i].includes("ass") && lc[i] != "ass") {
         return;
       }
       if (lc[i] != lc){
