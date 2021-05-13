@@ -358,6 +358,7 @@ bot.on("message", async (message) => {
       !idky
       !inspo
       !irony/!ironic
+      !jt
       !kinky
       !markov
       !nani/!what
