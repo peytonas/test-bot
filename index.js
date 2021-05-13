@@ -188,6 +188,8 @@ let grossGifs = [
 
 let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆"]
 
+let pokePics = ["./Assets/sirBulba.png", "./Assets/sirChar.png", "./Assets/sirSquirt.png", "./Assets/sirPika.png"]
+
 let jokes = [
   "I saw yo mama fall down the other day. It wasn't that funny to me...||But the sidewalk cracked up!||",
   "I'm not very funny so I have no idea. ||Who am I kidding, I'm hilarious.||",
@@ -265,6 +267,17 @@ bot.on("message", async (message) => {
     }
   }
 
+  if (
+    lowerCase.includes(prefix + "classy")
+  ) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = getRandomInt(pokePics.length)
+      message.channel.send({ files: [pokePics[i]] });
+    }
+  }
+
   if (lowerCase.includes(prefix + "markov")) {
     if (message.author.bot) {
       return;
@@ -329,6 +342,7 @@ bot.on("message", async (message) => {
       !banana
       !beans
       !burn
+      !classy
       !dos
       !fail
       !flipflop
@@ -337,6 +351,7 @@ bot.on("message", async (message) => {
       !grind
       !grrm
       !hot
+      !idky
       !inspo
       !irony/!ironic
       !kinky
@@ -394,6 +409,14 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send({files: ["./Assets/ryuk.png"]})
+    }
+  }
+
+  if (lowerCase.includes(prefix + "idky")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/padme.gif"]})
     }
   }
 
