@@ -153,6 +153,7 @@ let gifs = [
   "./Assets/stefonyes.gif",
   "./Assets/strange.gif",
   "./Assets/suspicious.gif",
+  "./Assets/terror.gif",
   "./Assets/thatsPrettyNeat.gif",
   "./Assets/thatsWhatSheSaid.gif",
   "./Assets/theFly.jpg",
