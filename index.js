@@ -645,9 +645,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       if (lc[i].includes("https")) {
         return;
       }
-      if (lc[i] != lc){
-        return;
-      }
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
       }
