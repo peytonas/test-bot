@@ -370,6 +370,7 @@ bot.on("message", async (message) => {
       !sleep
       !smarf
       !tea
+      !terror
       !tinfoil
       !wrong
       !zemo/!smile
