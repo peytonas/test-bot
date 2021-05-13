@@ -646,7 +646,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
         return;
       }
       if (lc[i].endsWith('?') || lc[i].endsWith('!') || lc[i].endsWith('.') || lc[i].endsWith(',') || lc[i].endsWith(';')) {
-        lc[i] = lc[i].slice((lc.length - 1), 1)
+        lc[i] = lc[i].slice(lc.length, 1)
       }
       if (lc[i] == "shit") {
         lc[i] = "*poop*"
