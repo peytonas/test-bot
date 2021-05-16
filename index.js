@@ -899,7 +899,8 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       let y = getRandomInt(30)
       if (y < 2) {
         message.channel.send("https://www.youtube.com/watch?v=QrGrOK8oZG8")
-      } 
+      } else {
+        message.channel.send({files: ["./Assets/yikes.gif"]});
     }else {
         message.channel.send({ files: ["./Assets/yikes.gif"] });
       }
