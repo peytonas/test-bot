@@ -712,7 +712,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
     // 413-429 Prank on Tom
     if (message.author == 271520490248601612) {
-      let y = getRandomInt(25)
+      let y = getRandomInt(50)
       if (y < 3) {
         message.channel.send({ files: ["./Assets/hornyJail.gif"] })
       } else {
@@ -890,17 +890,18 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
 
   if (lowerCase.includes("yikes")) {
     if (message.author == 692445692144123924) {
-      let y = getRandomInt(30)
+      let y = getRandomInt(60)
       if (y < 2) {
         message.channel.send("https://www.youtube.com/watch?v=nD0gYVJGahg")
       }
     }
     if (message.author == 271520490248601612) {
-      let y = getRandomInt(30)
+      let y = getRandomInt(60)
       if (y < 2) {
         message.channel.send("https://www.youtube.com/watch?v=QrGrOK8oZG8")
       } else {
-        message.channel.send({files: ["./Assets/yikes.gif"]});
+          message.channel.send({ files: ["./Assets/yikes.gif"] });
+       }
     }else {
         message.channel.send({ files: ["./Assets/yikes.gif"] });
       }
