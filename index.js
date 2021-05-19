@@ -711,25 +711,24 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       return;
     }
     // 413-429 Prank on Tom
-    if (message.author == 271520490248601612) {
-      let y = getRandomInt(50)
-      if (y < 3) {
-        message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-      } else {
-        if (x == 0) {
-          let i = getRandomInt(hotGifs.length);
-          message.channel.send({ files: [hotGifs[i]] });
-        } else if (x == 1) {
-          getHotGif()
-          setTimeout(function () {
-            message.channel.send(_state.currentGif.data.bitly_url)
-          }, 1000);
-        } else if (x == 2) {
-          message.reply("bad with the Skechers on.")
-        }
-      }
-    }
-    else { if (x == 0) {
+    // if (message.author == 271520490248601612) {
+      // let y = getRandomInt(50)
+      // if (y < 3) {
+      //   message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+      // } else {
+      //   if (x == 0) {
+      //     let i = getRandomInt(hotGifs.length);
+      //     message.channel.send({ files: [hotGifs[i]] });
+      //   } else if (x == 1) {
+      //     getHotGif()
+      //     setTimeout(function () {
+      //       message.channel.send(_state.currentGif.data.bitly_url)
+      //     }, 1000);
+      //   } else if (x == 2) {
+      //     message.reply("bad with the Skechers on.")
+      //   }
+      // }
+    if (x == 0) {
         let i = getRandomInt(hotGifs.length);
         message.channel.send({ files: [hotGifs[i]] });
       } else if (x == 1) {
@@ -741,7 +740,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
         message.reply("bad with the Skechers on.")
       }
     }
-  }
 
   if (lowerCase.includes(prefix + "rt")) {
     if (message.author.bot) {
