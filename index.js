@@ -150,7 +150,7 @@ let hotGifs = [
   "./Assets/tyrion.gif",
   "./Assets/notAmused.gif",
   "./Assets/hornyJail.gif",
-  "./Pics/hotSnorlax.jpg"
+  "./Pics/hotSnorlax.png"
 
 ];
 
@@ -162,16 +162,16 @@ let grossGifs = [
   "./Assets/lukemilk.gif",
   "./Assets/sausage.gif",
   "./Assets/aou4.gif",
-  "./Pics/bat.jpg"
+  "./Pics/bat.png"
 ];
 
 let uncomfortableReactions = [
   //"ಠಠ", 
   // "◉_◉",
   // "⚆ _ ⚆",
-  "./Pics/lickitung.jpg",
-  "./Pics/mime.jpg",
-  "./Pics/duck.jpg"
+  "./Pics/lickitung.png",
+  "./Pics/mime.png",
+  "./Pics/duck.png"
 ];
 
 let pokePics = ["./Pics/sirBulba.png", "./Pics/sirChar.png", "./Pics/sirSquirt.png", "./Pics/sirPika.png"]
