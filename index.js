@@ -392,7 +392,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/dW7.gif"]})
+      message.channel.send("https://i.gifer.com/dW7.gif")
     }
   }
 
