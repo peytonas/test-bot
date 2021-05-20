@@ -389,11 +389,11 @@ bot.on("message", async (message) => {
   }
 
   if (lowerCase.includes(prefix + "bored")) {
-    if (message.author.bot) {
-      return;
-    } else {
+    // if (message.author.bot) {
+    //   return;
+    // } else {
       message.channel.send({files: ["./Assets/waiting.gif"]})
-    }
+    // }
   }
 
   if (lowerCase.includes(prefix + "smarf")) {
