@@ -24,10 +24,6 @@ let _hotGifApi = axios.create({
   baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=pg-13"
 })
 
-let _plotTwistApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=plot twist&rating=r`
-})
-
 let _noodsApi = axios.create({
   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`
 })
@@ -56,15 +52,6 @@ function getRandomGif() {
 
 function getHootGif() {
     _hootApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
-}
-
-function getPlotTwistGif() {
-    _plotTwistApi.get()
       .then(res => {
         let giphy = res.data
         _setState("currentGif", giphy)
@@ -342,13 +329,11 @@ bot.on("message", async (message) => {
       !dos
       !fail
       !flipflop
-      !gat
       !goodnight
       !grind
       !grrm
       !hot
       !idky
-      !inspo
       !irony/!ironic
       !jammin
       !jt
@@ -357,7 +342,6 @@ bot.on("message", async (message) => {
       !nani/!what
       !noods
       !paradise
-      !plot twist
       !pork
       !random
       !rt
@@ -366,7 +350,6 @@ bot.on("message", async (message) => {
       !smarf
       !tea
       !terror
-      !tinfoil
       !wrong
       !zemo/!smile
       `)
@@ -482,14 +465,6 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
       return;
     } else {
       message.channel.send({files: ["./Assets/losDos.gif"]})
-    }
-  }
-
-  if (lowerCase.includes("german")|| lowerCase.includes(prefix + "tinfoil") || lowerCase.includes("conspiracy")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send("https://www.youtube.com/watch?v=zdjY_UnNtQ4")
     }
   }
 
@@ -785,13 +760,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   }
   }
 
-  if (lowerCase.includes(prefix + "plot twist")) {
-    getPlotTwistGif();
-    setTimeout(function () {
-      message.channel.send(_state.currentGif.data.bitly_url)
-      }, 1000);
-  }
-
   if (lowerCase.includes("uncomfortable"))
   {
     let i = getRandomInt(uncomfortableReactions.length);
@@ -978,7 +946,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (lowerCase.includes(`don't get it`)) {
+  if (lowerCase.includes(`i don't get it`)) {
     if (message.author.bot) {
       return;
     } else {
@@ -1010,7 +978,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     message.channel.send({files: ["./Assets/aou1.gif"]})
   }
 
-  if (lowerCase.includes(prefix + "inspo") || lowerCase.includes("assimilate") || lowerCase.includes("assimilation")) {
+  if (lowerCase.includes("assimilate") || lowerCase.includes("assimilation")) {
     message.channel.send({files: ["./Assets/aou3.gif"]})
   }
 
