@@ -101,7 +101,7 @@ let gifs = [
   "./Assets/highfivedivorce.gif",
   "./Assets/hillary_wow.gif",
   "./Assets/hkgun.png",
-  "./Assets/hoover.jpg",
+  "./Pics/hoover.jpg",
   "./Assets/hornyJail.gif",
   "./Assets/hot.gif",
   "./Assets/howCanYouStopMe.gif",
@@ -132,7 +132,7 @@ let gifs = [
   "./Assets/terror.gif",
   "./Assets/thatsPrettyNeat.gif",
   "./Assets/thatsWhatSheSaid.gif",
-  "./Assets/theFly.jpg",
+  "./Pics/theFly.jpg",
   "./Assets/timeTravel.gif",
   "./Assets/tyrion.gif",
   "./Assets/wakeUpVision.gif",
@@ -150,7 +150,7 @@ let hotGifs = [
   "./Assets/tyrion.gif",
   "./Assets/notAmused.gif",
   "./Assets/hornyJail.gif",
-  "./Assets/hotSnorlax.jpg"
+  "./Pics/hotSnorlax.jpg"
 
 ];
 
@@ -158,16 +158,16 @@ let innuendoGifs = ["./Assets/thatsWhatSheSaid.gif", "./Assets/nameOfYourSexTape
 
 let grossGifs = [
   "./Assets/flybarf.gif",
-  "./Assets/theFly.jpg",
+  "./Pics/theFly.jpg",
   "./Assets/lukemilk.gif",
   "./Assets/sausage.gif",
   "./Assets/aou4.gif",
-  "./Assets/bat.jpg"
+  "./Pics/bat.jpg"
 ];
 
-let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆", "./Assets/lickitung.jpg", "./Assets/mime.jpg", "./Assets/duck.jpg"]
+let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆", "./Pics/lickitung.jpg", "./Pics/mime.jpg", "./Pics/duck.jpg"]
 
-let pokePics = ["./Assets/sirBulba.png", "./Assets/sirChar.png", "./Assets/sirSquirt.png", "./Assets/sirPika.png"]
+let pokePics = ["./Pics/sirBulba.png", "./Pics/sirChar.png", "./Pics/sirSquirt.png", "./Pics/sirPika.png"]
 
 let jokes = [
   "I saw yo mama fall down the other day. It wasn't that funny to me...||But the sidewalk cracked up!||",
@@ -354,7 +354,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/coolCat.jpg"]})
+      message.channel.send({files: ["./Pics/coolCat.jpg"]})
     }
   }
 
@@ -434,7 +434,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/ryuk.png"]})
+      message.channel.send({files: ["./Pics/ryuk.png"]})
     }
   }
 
@@ -474,7 +474,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/burn.jpg"]})
+      message.channel.send({files: ["./Pics/burn.jpg"]})
     }
   }
 
