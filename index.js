@@ -86,22 +86,18 @@ let gifs = [
   "./Assets/aou3.gif",
   "./Assets/aou4.gif",
   "./Assets/aou5.gif",
-  "./Assets/baggle.gif",
   "./Assets/bat_signal.gif",
   "./Assets/bca.gif",
-  "./Assets/bears.gif",
   "./Assets/bidenshock.gif",
   "./Assets/burn.jpg",
   "./Assets/dk_shake.gif",
   "./Assets/DKRT.gif",
   "./Assets/exaggeration.gif",
   "./Assets/F.gif",
-  "./Assets/f3d.gif",
   "./Assets/flipflop.gif",
   "./Assets/flybarf.gif",
   "./Assets/grind.gif",
   "./Assets/grumpy_aku.gif",
-  "./Assets/heReadABook.gif",
   "./Assets/highfivedivorce.gif",
   "./Assets/hillary_wow.gif",
   "./Assets/hkgun.png",
@@ -109,23 +105,17 @@ let gifs = [
   "./Assets/hornyJail.gif",
   "./Assets/hot.gif",
   "./Assets/howCanYouStopMe.gif",
-  "./Assets/hype.gif",
   "./Assets/ironic.gif",
   "./Assets/kink.gif",
-  "./Assets/kittenMittons.gif",
   "./Assets/KO.gif",
   "./Assets/kronk.gif",
-  "./Assets/lesmisstefon.gif",
   "./Assets/littlefinger.gif",
-  "./Assets/lonely_jack.gif",
   "./Assets/lukekylo.gif",
-  "./Assets/lukemilk.gif",
   "./Assets/midgetwaist.gif",
   "./Assets/more.gif",
   "./Assets/nameOfYourSexTape.gif",
   "./Assets/NANI.gif",
   "./Assets/neverKissedAGuy.gif",
-  "./Assets/nk_smile.gif",
   "./Assets/notAmused.gif",
   "./Assets/NSTB1.gif",
   "./Assets/NSTB2.gif",
@@ -133,14 +123,11 @@ let gifs = [
   "./Assets/NSTB4.gif",
   "./Assets/porkmaster.gif",
   "./Assets/ryuk.png",
-  "./Assets/sadporg.gif",
   "./Assets/sausage.gif",
   "./Assets/skynet.gif",
   "./Assets/smarf.gif",
   "./Assets/srslyVis.png",
-  "./Assets/starlord.gif",
   "./Assets/stefonyes.gif",
-  "./Assets/strange.gif",
   "./Assets/suspicious.gif",
   "./Assets/terror.gif",
   "./Assets/thatsPrettyNeat.gif",
@@ -149,7 +136,6 @@ let gifs = [
   "./Assets/timeTravel.gif",
   "./Assets/tyrion.gif",
   "./Assets/wakeUpVision.gif",
-  "./Assets/yasQueen.gif",
   "./Assets/yikes.gif",
   "./Assets/zaddy.gif",
   "./Assets/zemo.gif",
@@ -164,7 +150,7 @@ let hotGifs = [
   "./Assets/tyrion.gif",
   "./Assets/notAmused.gif",
   "./Assets/hornyJail.gif",
-  "./Assets/hotSnorlax.jpg",
+  "./Assets/hotSnorlax.jpg"
 
 ];
 
@@ -392,7 +378,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("https://i.gifer.com/dW7.gif")
+      message.channel.send({files: ["./Assets/dW7.gif"]})
     }
   }
 
