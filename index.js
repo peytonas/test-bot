@@ -145,10 +145,12 @@ let gifs = [
   "./Assets/NSTB3.gif",
   "./Assets/NSTB4.gif",
   "./Assets/porkmaster.gif",
+  "./Assets/ryuk.png",
   "./Assets/sadporg.gif",
   "./Assets/sausage.gif",
   "./Assets/skynet.gif",
   "./Assets/smarf.gif",
+  "./Assets/srslyVis.png",
   "./Assets/starlord.gif",
   "./Assets/stefonyes.gif",
   "./Assets/strange.gif",
@@ -164,8 +166,7 @@ let gifs = [
   "./Assets/yikes.gif",
   "./Assets/zaddy.gif",
   "./Assets/zemo.gif",
-  "./Assets/zemo.gif",
-  "./Assets/ryuk.png"
+  "./Assets/zemo.gif"
 ];
 
 let hotGifs = [
@@ -176,6 +177,7 @@ let hotGifs = [
   "./Assets/tyrion.gif",
   "./Assets/notAmused.gif",
   "./Assets/hornyJail.gif",
+  "./Assets/hotSnorlax.jpg",
 
 ];
 
@@ -186,10 +188,11 @@ let grossGifs = [
   "./Assets/theFly.jpg",
   "./Assets/lukemilk.gif",
   "./Assets/sausage.gif",
-  "./Assets/aou4.gif"
+  "./Assets/aou4.gif",
+  "./Assets/bat.jpg"
 ];
 
-let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆"]
+let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆", "./Assets/lickitung.jpg", "./Assets/mime.jpg", "./Assets/duck.jpg"]
 
 let pokePics = ["./Assets/sirBulba.png", "./Assets/sirChar.png", "./Assets/sirSquirt.png", "./Assets/sirPika.png"]
 
@@ -333,6 +336,7 @@ bot.on("message", async (message) => {
       !awkward/!awk
       !banana
       !beans
+      !bored
       !burn
       !classy
       !dos
@@ -346,6 +350,7 @@ bot.on("message", async (message) => {
       !idky
       !inspo
       !irony/!ironic
+      !jams
       !jt
       !kinky
       !markov
@@ -405,6 +410,22 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send({files: ["./Assets/smarf.gif"]})
+    }
+  }
+
+  if (lowerCase.includes(prefix + "bored")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/waiting.gif"]})
+    }
+  }
+
+  if (lowerCase.includes(prefix + "jam")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/jammin.gif"]})
     }
   }
 
@@ -933,7 +954,12 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   }
 
   if (lowerCase.includes("good one") || lowerCase.includes("entertaining") || lowerCase.includes("entertained") ||lowerCase.includes("amused") || lowerCase.includes("amusing")) {
-    message.channel.send({ files: ["./Assets/notAmused.gif"] });
+    let y = getRandomInt(2)
+    if (y == 0) {
+      message.channel.send({ files: ["./Assets/notAmused.gif"] });
+    } else {
+      message.channel.send({ files: ["./Assets/srslyVis.gif"] });
+    }
   }
 
   if (lowerCase.includes("fight")) {
@@ -952,7 +978,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (lowerCase.includes(`don't get it`) || lowerCase.includes('understand')) {
+  if (lowerCase.includes(`don't get it`)) {
     if (message.author.bot) {
       return;
     } else {
