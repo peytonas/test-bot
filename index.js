@@ -165,7 +165,14 @@ let grossGifs = [
   "./Pics/bat.jpg"
 ];
 
-let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆", "./Pics/lickitung.jpg", "./Pics/mime.jpg", "./Pics/duck.jpg"]
+let uncomfortableReactions = [
+  //"ಠಠ", 
+  // "◉_◉",
+  // "⚆ _ ⚆",
+  "./Pics/lickitung.jpg",
+  "./Pics/mime.jpg",
+  "./Pics/duck.jpg"
+];
 
 let pokePics = ["./Pics/sirBulba.png", "./Pics/sirChar.png", "./Pics/sirSquirt.png", "./Pics/sirPika.png"]
 
@@ -516,14 +523,6 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
       return;
     } else {
       message.channel.send("https://youtu.be/bM25p7tGcOQ")
-    }
-  }
-
-  if (lowerCase.includes(prefix + "gat")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send({files: ["./Assets/hkgun.png"]})
     }
   }
 
