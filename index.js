@@ -389,11 +389,11 @@ bot.on("message", async (message) => {
   }
 
   if (lowerCase.includes(prefix + "bored")) {
-    // if (message.author.bot) {
-    //   return;
-    // } else {
-      message.channel.send({files: ["./Assets/waiting.gif"]})
-    // }
+    if (message.author.bot) {
+      return;
+    } else {
+      message.channel.send({files: ["./Assets/dW7.gif"]})
+    }
   }
 
   if (lowerCase.includes(prefix + "smarf")) {
@@ -412,7 +412,7 @@ bot.on("message", async (message) => {
     }
   }
 
-  if (lowerCase.includes(prefix + "terror") || (lowerCase.includes("hug")) || lowerCase.includes("hyped")) {
+  if (lowerCase.includes(prefix + "terror") || (lowerCase.includes("hugs")) || lowerCase.includes("hyped")) {
     if (message.author.bot) {
       return;
     } else {
