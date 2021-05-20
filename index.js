@@ -350,7 +350,7 @@ bot.on("message", async (message) => {
       !idky
       !inspo
       !irony/!ironic
-      !jams
+      !jammin
       !jt
       !kinky
       !markov
@@ -421,7 +421,7 @@ bot.on("message", async (message) => {
     }
   }
 
-  if (lowerCase.includes(prefix + "jam")) {
+  if (lowerCase.includes(prefix + "jammin")) {
     if (message.author.bot) {
       return;
     } else {
