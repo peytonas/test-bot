@@ -406,7 +406,7 @@ bot.on("message", async (message) => {
         message.channel.send("The Dark Side of the Force is a pathway to many abilities some consider to be unnatural.")
       }, 5000);
       setTimeout(function () {
-        message.channel.send("He became so powerful the only thing he was afraid of was losing his power, which eventually, of course, he did.Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.")
+        message.channel.send("He became so powerful the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.")
       }, 5000);
     }
   }
