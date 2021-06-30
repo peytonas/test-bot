@@ -1,3 +1,5 @@
+const prefix = process.env.PREFIX;
+
 function diceRoll(min, max) {
   return min + Math.floor(Math.random() * (max - min + 1));
 }
