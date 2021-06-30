@@ -147,6 +147,8 @@ function getNoodsGif() {
 }
 
 function noodsGif(message) {
+  console.log("noods");
+
   if (message.author.bot) {
     return;
   } else {
@@ -158,6 +160,8 @@ function noodsGif(message) {
 }
 
 function hootGif(message) {
+  console.log("hoot");
+
   if (message.author.bot) {
     return;
   } else {
@@ -169,6 +173,7 @@ function hootGif(message) {
 }
 
 function hotGif(message) {
+  console.log("hot");
   let x = getRandomInt(3);
   if (message.author.bot) {
     return;
@@ -188,6 +193,7 @@ function hotGif(message) {
 }
 
 function randomGif(message) {
+  console.log("random");
   let x = getRandomInt(3);
 
   if (message.author.bot) {
