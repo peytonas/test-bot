@@ -22,11 +22,9 @@ module.exports = {
   checkCmd: function (lowerCase) {
     found = false;
 
-    switch (lowerCase) {
-      case lowerCase.includes("r/"):
-        found = true;
-        redditRef(lowerCase);
-        break;
+    if (lowerCase.includes("r/")) {
+      found = true;
+      redditRef(lowerCase);
     }
     return found;
   },
