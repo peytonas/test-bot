@@ -265,7 +265,52 @@ bot.on("message", async (message) => {
       return;
     } else {
       let i = diceRoll(1, 20);
-      message.channel.send("You rolled a..." + i);
+      message.channel.send("You rolled..." + i);
+    }
+  }
+
+  if (lowerCase.includes(prefix + "d12")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = diceRoll(1, 12);
+      message.channel.send("You rolled..." + i);
+    }
+  }
+
+  if (lowerCase.includes(prefix + "d10")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = diceRoll(1, 10);
+      message.channel.send("You rolled..." + i);
+    }
+  }
+
+  if (lowerCase.includes(prefix + "d8")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = diceRoll(1, 8);
+      message.channel.send("You rolled..." + i);
+    }
+  }
+
+  if (lowerCase.includes(prefix + "d6")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = diceRoll(1, 6);
+      message.channel.send("You rolled..." + i);
+    }
+  }
+
+  if (lowerCase.includes(prefix + "d4")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = diceRoll(1, 4);
+      message.channel.send("You rolled..." + i);
     }
   }
 
