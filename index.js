@@ -222,6 +222,10 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+function diceRoll(min, max) {
+  return min + Math.floor(Math.random() * (max - min + 1));
+}
+
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
@@ -260,8 +264,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      let i = getRandomInt(20);
-      i == 0 ? (i = getRandomInt(20)) : null;
+      let i = diceRoll(1, 20);
       message.channel.send("You rolled a..." + i);
     }
   }
