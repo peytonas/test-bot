@@ -1,4 +1,4 @@
-function redditRef(lowerCase) {
+function redditRef(lowerCase, message) {
   var lowerCaseStringArray = lowerCase.split(" ");
   var i;
   for (i in lowerCaseStringArray) {
@@ -19,12 +19,12 @@ function redditRef(lowerCase) {
 }
 
 module.exports = {
-  checkCmd: function (lowerCase) {
+  checkCmd: function (lowerCase, message) {
     found = false;
 
     if (lowerCase.includes("r/")) {
       found = true;
-      redditRef(lowerCase);
+      redditRef(lowerCase, message);
     }
     return found;
   },

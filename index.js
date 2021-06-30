@@ -233,7 +233,7 @@ bot.on("message", async (message) => {
   var lowerCase = message.content.toLowerCase();
   // logger.write(message.content)
   if (diceCommands.checkCmd(lowerCase)) return;
-  if (redditRef.checkCmd(lowerCase)) return;
+  if (redditRef.checkCmd(lowerCase, message)) return;
 
   //   else {
   //     switch (command) {
