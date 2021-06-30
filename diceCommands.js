@@ -38,47 +38,57 @@ function d20Roll(message) {
 }
 
 function d12Roll(message) {
+  player = playerRoll(message);
+
   if (message.author.bot) {
     return;
   } else {
     let i = diceRoll(1, 12);
-    message.channel.send("You rolled..." + i);
+    message.channel.send(player + ", you rolled..." + i);
   }
 }
 
 function d10Roll(message) {
+  player = playerRoll(message);
+
   if (message.author.bot) {
     return;
   } else {
     let i = diceRoll(1, 10);
-    message.channel.send("You rolled..." + i);
+    message.channel.send(player + ", you rolled..." + i);
   }
 }
 
 function d8Roll(message) {
+  player = playerRoll(message);
+
   if (message.author.bot) {
     return;
   } else {
     let i = diceRoll(1, 8);
-    message.channel.send("You rolled..." + i);
+    message.channel.send(player + ", you rolled..." + i);
   }
 }
 
 function d6Roll(message) {
+  player = playerRoll(message);
+
   if (message.author.bot) {
     return;
   } else {
     let i = diceRoll(1, 6);
-    message.channel.send("You rolled..." + i);
+    message.channel.send(player + ", you rolled..." + i);
   }
 }
 
 function d4Roll(message) {
+  player = playerRoll(message);
+
   if (message.author.bot) {
     return;
   } else {
     let i = diceRoll(1, 4);
-    message.channel.send("You rolled..." + i);
+    message.channel.send(player + ", you rolled..." + i);
   }
 }
 
