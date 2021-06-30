@@ -22,13 +22,41 @@ function d12Roll(message) {
   }
 }
 
-function d10Roll() {}
+function d10Roll(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    let i = diceRoll(1, 10);
+    message.channel.send("You rolled..." + i);
+  }
+}
 
-function d8Roll() {}
+function d8Roll(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    let i = diceRoll(1, 8);
+    message.channel.send("You rolled..." + i);
+  }
+}
 
-function d6Roll() {}
+function d6Roll(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    let i = diceRoll(1, 6);
+    message.channel.send("You rolled..." + i);
+  }
+}
 
-function d4Roll() {}
+function d4Roll(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    let i = diceRoll(1, 4);
+    message.channel.send("You rolled..." + i);
+  }
+}
 
 module.exports = {
   checkCmd: function (message) {
@@ -37,25 +65,38 @@ module.exports = {
       found = false;
 
     switch (command) {
-      // your first admin command (can be whatever you want)
       case prefix + "d20":
         // set found equal to true so your index.js file knows
         //   to not try executing 'other' commands
         found = true;
-        // execute function associated with this command
         d20Roll(message);
         break;
 
-      // your second admin command (similar setup as above)
       case prefix + "d12":
         found = true;
         d12Roll();
         break;
 
-      // ... more admin commands
-    }
+      case message.content == prefix + "d10":
+        found = true;
+        d10Roll();
+        break;
 
-    // value of 'found' will be returned in index.js
+      case prefix + "d8":
+        found = true;
+        d8Roll();
+        break;
+
+      case prefix + "d6":
+        found = true;
+        d6Roll();
+        break;
+
+      case prefix + "d4":
+        found = true;
+        d4Roll();
+        break;
+    }
     return found;
   },
 };
