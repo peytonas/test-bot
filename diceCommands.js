@@ -77,7 +77,7 @@ module.exports = {
         d12Roll();
         break;
 
-      case message.content == prefix + "d10":
+      case prefix + "d10":
         found = true;
         d10Roll(message);
         break;
