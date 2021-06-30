@@ -146,7 +146,7 @@ function getNoodsGif() {
     .catch((err) => console.error(err));
 }
 
-function noodsGif() {
+function noodsGif(message) {
   if (message.author.bot) {
     return;
   } else {
@@ -157,7 +157,7 @@ function noodsGif() {
   }
 }
 
-function hootGif() {
+function hootGif(message) {
   if (message.author.bot) {
     return;
   } else {
@@ -220,11 +220,11 @@ module.exports = {
 
       case prefix + "noods":
         found = true;
-        noodsGif();
+        noodsGif(message);
 
       case prefix + "hoot":
         found = true;
-        hootGif();
+        hootGif(message);
 
       case prefix + "random":
         found = true;
