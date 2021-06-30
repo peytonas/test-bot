@@ -32,6 +32,7 @@ function d4Roll() {}
 
 module.exports = {
   checkCmd: function (message) {
+    console.log(message);
     let command = message.content,
       found = false;
 
