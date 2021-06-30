@@ -11,6 +11,8 @@ function d20Roll(message) {
     let i = diceRoll(1, 20);
     i == 20
       ? message.channel.send("You rolled..." + 20 + "! **NATURAL CRIT**")
+      : i == 1
+      ? message.channel.send("oof...That's a " + 1 + "...*crit fail*...")
       : message.channel.send("You rolled..." + i);
   }
 }
