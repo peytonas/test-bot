@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-var MarkovChain = require("markovchain");
 fs = require("fs");
 
 const bot = new Discord.Client();
@@ -7,8 +6,6 @@ const axios = require("axios");
 
 const prefix = process.env.PREFIX;
 const token = process.env.BOT_TOKEN;
-
-quotes = new MarkovChain(fs.readFileSync("./quotes.txt", "utf8"));
 
 const diceCommands = require("./diceCommands");
 const redditRef = require("./redditRef");

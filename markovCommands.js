@@ -1,3 +1,7 @@
+var MarkovChain = require("markovchain");
+
+quotes = new MarkovChain(fs.readFileSync("./quotes.txt", "utf8"));
+
 const prefix = process.env.PREFIX;
 
 function getMarkovChain(message) {
