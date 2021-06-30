@@ -1,8 +1,10 @@
 var MarkovChain = require("markovchain");
-
 quotes = new MarkovChain(fs.readFileSync("./quotes.txt", "utf8"));
-
 const prefix = process.env.PREFIX;
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
 function getMarkovChain(message) {
   if (message.author.bot) {
