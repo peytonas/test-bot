@@ -13,6 +13,7 @@ quotes = new MarkovChain(fs.readFileSync("./quotes.txt", "utf8"));
 const diceCommands = require("./diceCommands");
 const redditRef = require("./redditRef");
 const inspoCommands = require("./inspoCommands");
+const swearCommands = require("./swearCommands");
 
 // var logger = fs.createWriteStream('./quotes.txt', {
 //   flags: 'a'
@@ -235,35 +236,7 @@ bot.on("message", async (message) => {
   if (diceCommands.checkCmd(message)) return;
   if (redditRef.checkCmd(lowerCase, message)) return;
   if (inspoCommands.checkCmd(lowerCase, message)) return;
-
-  //   else {
-  //     switch (command) {
-  //       case "?PING":
-  //         message.reply("pong");
-  //         break;
-
-  // //       // ... other commands here
-  //     }
-  //   }
-
-  // if (lowerCase === "!quote") {
-  //   request(
-  //     "http://inspirobot.me/api?generate=true",
-  //     function (error, response, body) {
-  //       if (!error && response.statusCode == 200) {
-  //         message.channel.send({
-  //           embed: {
-  //             color: 0xff0000,
-  //             description: "Did you know...🧐",
-  //             image: {
-  //               url: body,
-  //             },
-  //           },
-  //         });
-  //       }
-  //     }
-  //   );
-  // }
+  if (swearCommands.checkCmd(lowerCase, message)) return;
 
   if (lowerCase.includes("chalooby")) {
     if (message.author.bot) {
@@ -678,91 +651,91 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (
-    lowerCase.includes("shit") ||
-    lowerCase.includes("damn") ||
-    lowerCase.includes("dammit") ||
-    lowerCase.includes("fuck") ||
-    lowerCase.includes("god") ||
-    lowerCase.includes("bitch") ||
-    lowerCase.includes("dick") ||
-    lowerCase.includes("pussy") ||
-    lowerCase.includes("pussies") ||
-    lowerCase.includes("ass")
-  ) {
-    if (message.author.bot) {
-      return;
-    }
-    let lc = lowerCase.split(" ");
-    for (var i in lc) {
-      if (lc[i].includes("https")) {
-        return;
-      }
-      if (
-        lc[i].endsWith("?") ||
-        lc[i].endsWith("!") ||
-        lc[i].endsWith(".") ||
-        lc[i].endsWith(",") ||
-        lc[i].endsWith(";") ||
-        lc[i].endsWith("*")
-      ) {
-        lc[i] = lc[i].slice(0, -1);
-      }
-      if (lc[i] == "shit") {
-        lc[i] = "*poop*";
-      }
-      if (lc[i].includes("shitty")) {
-        lc[i] = "*poopy*";
-      }
-      if (lc[i].includes("damn")) {
-        lc[i] = "*a beaver's home*";
-      }
-      if (lc[i].includes("dammit")) {
-        lc[i] = "*dangnabbit*";
-      }
-      if (lc[i] == "fuck") {
-        lc[i] = "*fudgesicle*";
-      }
-      if (lc[i].includes("fucking")) {
-        lc[i] = "*fudgesicle-ing*";
-      }
-      if (lc[i].includes("god")) {
-        lc[i] = "*golly*";
-      }
-      if (lc[i] == "bitch") {
-        lc[i] = "*female dog*";
-      }
-      if (lc[i] == "bitches") {
-        lc[i] = "*female dogs*";
-      }
-      if (lc[i].includes("bitchin")) {
-        lc[i] = "*female dogging*";
-      }
-      if (lc[i].includes("dick")) {
-        lc[i] = "*penis*";
-      }
-      if (lc[i] == "pussy") {
-        lc[i] = "*kitty cat*";
-      }
-      if (lc[i] == "pussies") {
-        lc[i] = "*kitty cats*";
-      }
-      if (lc[i] == "ass") {
-        lc[i] = "*booty*";
-      }
-      if (lc[i] == "asshole") {
-        lc[i] = "*bootyhole*";
-      }
-      if (lc[i] == "assholes") {
-        lc[i] = "*bootyholes*";
-      }
-      if (lc[i].includes("ass") && lc[i] != "ass") {
-        return;
-      }
-    }
-    let newStr = lc.join(" ");
-    message.channel.send(`Don't you mean "` + newStr + `"?`);
-  }
+  // if (
+  //   lowerCase.includes("shit") ||
+  //   lowerCase.includes("damn") ||
+  //   lowerCase.includes("dammit") ||
+  //   lowerCase.includes("fuck") ||
+  //   lowerCase.includes("god") ||
+  //   lowerCase.includes("bitch") ||
+  //   lowerCase.includes("dick") ||
+  //   lowerCase.includes("pussy") ||
+  //   lowerCase.includes("pussies") ||
+  //   lowerCase.includes("ass")
+  // ) {
+  //   if (message.author.bot) {
+  //     return;
+  //   }
+  //   let lc = lowerCase.split(" ");
+  //   for (var i in lc) {
+  //     if (lc[i].includes("https")) {
+  //       return;
+  //     }
+  //     if (
+  //       lc[i].endsWith("?") ||
+  //       lc[i].endsWith("!") ||
+  //       lc[i].endsWith(".") ||
+  //       lc[i].endsWith(",") ||
+  //       lc[i].endsWith(";") ||
+  //       lc[i].endsWith("*")
+  //     ) {
+  //       lc[i] = lc[i].slice(0, -1);
+  //     }
+  //     if (lc[i] == "shit") {
+  //       lc[i] = "*poop*";
+  //     }
+  //     if (lc[i].includes("shitty")) {
+  //       lc[i] = "*poopy*";
+  //     }
+  //     if (lc[i].includes("damn")) {
+  //       lc[i] = "*a beaver's home*";
+  //     }
+  //     if (lc[i].includes("dammit")) {
+  //       lc[i] = "*dangnabbit*";
+  //     }
+  //     if (lc[i] == "fuck") {
+  //       lc[i] = "*fudgesicle*";
+  //     }
+  //     if (lc[i].includes("fucking")) {
+  //       lc[i] = "*fudgesicle-ing*";
+  //     }
+  //     if (lc[i].includes("god")) {
+  //       lc[i] = "*golly*";
+  //     }
+  //     if (lc[i] == "bitch") {
+  //       lc[i] = "*female dog*";
+  //     }
+  //     if (lc[i] == "bitches") {
+  //       lc[i] = "*female dogs*";
+  //     }
+  //     if (lc[i].includes("bitchin")) {
+  //       lc[i] = "*female dogging*";
+  //     }
+  //     if (lc[i].includes("dick")) {
+  //       lc[i] = "*penis*";
+  //     }
+  //     if (lc[i] == "pussy") {
+  //       lc[i] = "*kitty cat*";
+  //     }
+  //     if (lc[i] == "pussies") {
+  //       lc[i] = "*kitty cats*";
+  //     }
+  //     if (lc[i] == "ass") {
+  //       lc[i] = "*booty*";
+  //     }
+  //     if (lc[i] == "asshole") {
+  //       lc[i] = "*bootyhole*";
+  //     }
+  //     if (lc[i] == "assholes") {
+  //       lc[i] = "*bootyholes*";
+  //     }
+  //     if (lc[i].includes("ass") && lc[i] != "ass") {
+  //       return;
+  //     }
+  //   }
+  //   let newStr = lc.join(" ");
+  //   message.channel.send(`Don't you mean "` + newStr + `"?`);
+  // }
 
   if (lowerCase.includes(prefix + "hot")) {
     let x = getRandomInt(3);
