@@ -60,10 +60,12 @@ function d4Roll(message) {
 
 module.exports = {
   checkCmd: function (message) {
-    let command = message.content,
-      found = false;
+    console.log(message.content);
+    let lowerCase = message.content.toLowerCase();
 
-    switch (command) {
+    found = false;
+
+    switch (lowerCase) {
       case prefix + "d20":
         // set found equal to true so your index.js file knows
         //   to not try executing 'other' commands
