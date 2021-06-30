@@ -20,12 +20,10 @@ function redditRef(lowerCase) {
 
 module.exports = {
   checkCmd: function (message) {
-    let command = message.content,
-      found = false;
+    found = false;
     lowerCase = message.content.toLowerCase();
 
     switch (lowerCase) {
-      // your first admin command (can be whatever you want)
       case lowerCase.includes("r/"):
         found = true;
         redditRef(lowerCase);
