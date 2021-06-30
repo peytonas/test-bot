@@ -91,7 +91,7 @@ let _noodsApi = axios.create({
 });
 
 let _hootApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=owl&rating=r`,
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hoot&rating=r`,
 });
 
 let _state = {
@@ -194,7 +194,7 @@ function hotGif(message) {
 
 function randomGif(message) {
   console.log("random");
-  let x = getRandomInt(3);
+  let x = getRandomInt(2);
 
   if (message.author.bot) {
     return;
@@ -210,8 +210,6 @@ function randomGif(message) {
     setTimeout(function () {
       message.channel.send(_state.currentGif.data.bitly_url);
     }, 3000);
-  } else if (x == 2) {
-    message.channel.send("Shawty bad with the Skechers on.");
   }
 }
 
