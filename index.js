@@ -261,8 +261,8 @@ bot.on("message", async (message) => {
       return;
     } else {
       let i = getRandomInt(20);
-      i == 0 ? i++ : null;
-      message.channel.send("You rolled a...", i);
+      i == 0 ? (i = getRandomInt(20)) : null;
+      message.channel.send("You rolled a..." + i);
     }
   }
 
