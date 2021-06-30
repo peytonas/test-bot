@@ -1,82 +1,85 @@
 const Discord = require("discord.js");
-var MarkovChain = require('markovchain')
-fs = require('fs')
+var MarkovChain = require("markovchain");
+fs = require("fs");
 
 const bot = new Discord.Client();
 const request = require("request");
-const axios = require('axios');
+const axios = require("axios");
 
 const prefix = process.env.PREFIX;
 const token = process.env.BOT_TOKEN;
 
-quotes = new MarkovChain(fs.readFileSync('./quotes.txt', 'utf8'))
+quotes = new MarkovChain(fs.readFileSync("./quotes.txt", "utf8"));
 
 // var logger = fs.createWriteStream('./quotes.txt', {
 //   flags: 'a'
 // })
 
-
 let _randomGifApi = axios.create({
-  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=&rating=r"
-})
+  baseURL:
+    "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=&rating=r",
+});
 
 let _hotGifApi = axios.create({
-  baseURL: "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=pg-13"
-})
+  baseURL:
+    "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hot&rating=pg-13",
+});
 
 let _noodsApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`
-})
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`,
+});
 
 let _hootApi = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=owl&rating=r`
-})
-
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=owl&rating=r`,
+});
 
 let _state = {
-  currentGif: {}
-}
+  currentGif: {},
+};
 
 function _setState(propName, data) {
-  _state[propName] = data
+  _state[propName] = data;
 }
 
 function getRandomGif() {
-    _randomGifApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
+  _randomGifApi
+    .get()
+    .then((res) => {
+      let giphy = res.data;
+      _setState("currentGif", giphy);
+    })
+    .catch((err) => console.error(err));
 }
 
 function getHootGif() {
-    _hootApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
+  _hootApi
+    .get()
+    .then((res) => {
+      let giphy = res.data;
+      _setState("currentGif", giphy);
+    })
+    .catch((err) => console.error(err));
 }
 
 function getHotGif() {
-    _hotGifApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
+  _hotGifApi
+    .get()
+    .then((res) => {
+      let giphy = res.data;
+      _setState("currentGif", giphy);
+    })
+    .catch((err) => console.error(err));
 }
-  
-function getNoodsGif() {
-    _noodsApi.get()
-      .then(res => {
-        let giphy = res.data
-        _setState("currentGif", giphy)
-      })
-      .catch(err => console.error(err))
-  }
 
+function getNoodsGif() {
+  _noodsApi
+    .get()
+    .then((res) => {
+      let giphy = res.data;
+      _setState("currentGif", giphy);
+    })
+    .catch((err) => console.error(err));
+}
 
 let gifs = [
   "./Assets/abed_flirt.gif",
@@ -139,7 +142,7 @@ let gifs = [
   "./Assets/yikes.gif",
   "./Assets/zaddy.gif",
   "./Assets/zemo.gif",
-  "./Assets/zemo.gif"
+  "./Assets/zemo.gif",
 ];
 
 let hotGifs = [
@@ -150,11 +153,13 @@ let hotGifs = [
   "./Assets/tyrion.gif",
   "./Assets/notAmused.gif",
   "./Assets/hornyJail.gif",
-  "./Pics/hotSnorlax.png"
-
+  "./Pics/hotSnorlax.png",
 ];
 
-let innuendoGifs = ["./Assets/thatsWhatSheSaid.gif", "./Assets/nameOfYourSexTape.gif"]
+let innuendoGifs = [
+  "./Assets/thatsWhatSheSaid.gif",
+  "./Assets/nameOfYourSexTape.gif",
+];
 
 let grossGifs = [
   "./Assets/flybarf.gif",
@@ -162,16 +167,17 @@ let grossGifs = [
   "./Assets/lukemilk.gif",
   "./Assets/sausage.gif",
   "./Assets/aou4.gif",
-  "./Pics/bat.png"
+  "./Pics/bat.png",
 ];
 
-let uncomfortableReactions = [
-  "ಠಠ", 
-  "◉_◉",
-  "⚆ _ ⚆"
-];
+let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆"];
 
-let pokePics = ["./Pics/sirBulba.png", "./Pics/sirChar.png", "./Pics/sirSquirt.png", "./Pics/sirPika.png"]
+let pokePics = [
+  "./Pics/sirBulba.png",
+  "./Pics/sirChar.png",
+  "./Pics/sirSquirt.png",
+  "./Pics/sirPika.png",
+];
 
 let jokes = [
   "I saw yo mama fall down the other day. It wasn't that funny to me...||But the sidewalk cracked up!||",
@@ -195,12 +201,22 @@ let jokes = [
   "My AI friend made this one up...Why did the monsters change a lightbulb? ||And a cow the cough.||",
   "My AI friend made this one up...What do you call a pastor cross the road? ||He take the chicken.||",
   "My AI friend made this one up...What do you call a farts of tea? ||He was calling the game of the dry.||",
-  "A teenage boy is getting ready to take his girlfriend to the prom. First he goes to rent a tux, but there's a huge tux line at the shop so it took forever. Next he went to pick up the flowers, so he heads over to the florist and there's a huge line for flowers too. He waits forever, but eventually he gets the flowers. Then he heads out to rent a limo. The limo line at the rental office is large too, but he's patient and gets the job done. Finally, the day of prom arrives. The two are dancing happily and his girlfriend is having a great time. When the song is over, she asks him to get her some punch, so he heads over to the punch table and he gets some punch."
-]
+  "A teenage boy is getting ready to take his girlfriend to the prom. First he goes to rent a tux, but there's a huge tux line at the shop so it took forever. Next he went to pick up the flowers, so he heads over to the florist and there's a huge line for flowers too. He waits forever, but eventually he gets the flowers. Then he heads out to rent a limo. The limo line at the rental office is large too, but he's patient and gets the job done. Finally, the day of prom arrives. The two are dancing happily and his girlfriend is having a great time. When the song is over, she asks him to get her some punch, so he heads over to the punch table and he gets some punch.",
+];
 
-let loveResponses = ["I don't know how to love yet...", "I've never even kissed a guy before.", "I'm in lesbians with you too...", "./Assets/aou2.gif"]
+let loveResponses = [
+  "I don't know how to love yet...",
+  "I've never even kissed a guy before.",
+  "I'm in lesbians with you too...",
+  "./Assets/aou2.gif",
+];
 
-let grrmGifs = ["./Assets/grrm1.gif", "./Assets/grrm2.gif", "./Assets/grrm3.gif", "./Assets/grrmWave.gif"]
+let grrmGifs = [
+  "./Assets/grrm1.gif",
+  "./Assets/grrm2.gif",
+  "./Assets/grrm3.gif",
+  "./Assets/grrmWave.gif",
+];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -211,27 +227,28 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async (message) => {
-  var lowerCase = message.content.toLowerCase()
+  var lowerCase = message.content.toLowerCase();
   // logger.write(message.content)
-  if (lowerCase === '!quote') {
-      request('http://inspirobot.me/api?generate=true', function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        message.channel.send({
-          embed: {
-            color: 0xff0000,
-            description: "Did you know...🧐",
-            image: {
-              url: body
-            }
-          }
-        });
+  if (lowerCase === "!quote") {
+    request(
+      "http://inspirobot.me/api?generate=true",
+      function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          message.channel.send({
+            embed: {
+              color: 0xff0000,
+              description: "Did you know...🧐",
+              image: {
+                url: body,
+              },
+            },
+          });
+        }
       }
-    });
+    );
   }
 
-  if (
-    lowerCase.includes("chalooby")
-  ) {
+  if (lowerCase.includes("chalooby")) {
     if (message.author.bot) {
       return;
     } else {
@@ -239,24 +256,29 @@ bot.on("message", async (message) => {
     }
   }
 
-  if (
-    lowerCase.includes(prefix + "grrm")
-  ) {
+  if (lowerCase.includes(prefix + "d20")) {
     if (message.author.bot) {
       return;
     } else {
-      let i = getRandomInt(grrmGifs.length)
+      let i = getRandomInt(20);
+      message.reply(i);
+    }
+  }
+
+  if (lowerCase.includes(prefix + "grrm")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = getRandomInt(grrmGifs.length);
       message.channel.send({ files: [grrmGifs[i]] });
     }
   }
 
-  if (
-    lowerCase.includes(prefix + "classy")
-  ) {
+  if (lowerCase.includes(prefix + "classy")) {
     if (message.author.bot) {
       return;
     } else {
-      let i = getRandomInt(pokePics.length)
+      let i = getRandomInt(pokePics.length);
       message.channel.send({ files: [pokePics[i]] });
     }
   }
@@ -265,14 +287,14 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      let i = getRandomInt(101)
+      let i = getRandomInt(101);
       var useUpperCase = function (wordList) {
         var tmpList = Object.keys(wordList).filter(function (word) {
-          return word[0] >= 'A' && word[0] <= 'Z'
-        })
-        return tmpList[~~(Math.random() * tmpList.length)]
-      }
-      message.channel.send(quotes.start(useUpperCase).end(i).process())
+          return word[0] >= "A" && word[0] <= "Z";
+        });
+        return tmpList[~~(Math.random() * tmpList.length)];
+      };
+      message.channel.send(quotes.start(useUpperCase).end(i).process());
     }
   }
 
@@ -280,9 +302,9 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      getNoodsGif()
+      getNoodsGif();
       setTimeout(function () {
-        message.channel.send(_state.currentGif.data.bitly_url)
+        message.channel.send(_state.currentGif.data.bitly_url);
       }, 1000);
     }
 
@@ -290,16 +312,19 @@ bot.on("message", async (message) => {
       if (message.author.bot) {
         return;
       } else {
-        getHootGif()
+        getHootGif();
         setTimeout(function () {
-          message.channel.send(_state.currentGif.data.bitly_url)
+          message.channel.send(_state.currentGif.data.bitly_url);
         }, 1000);
       }
     }
   }
 
-  if (lowerCase.includes("well hi") || lowerCase.includes("whale") && lowerCase.includes("hai")) {
-    message.channel.send("https://www.youtube.com/watch?v=Z-yJTjbswhw")
+  if (
+    lowerCase.includes("well hi") ||
+    (lowerCase.includes("whale") && lowerCase.includes("hai"))
+  ) {
+    message.channel.send("https://www.youtube.com/watch?v=Z-yJTjbswhw");
   }
 
   if (lowerCase.includes(prefix + "commands")) {
@@ -307,7 +332,7 @@ bot.on("message", async (message) => {
       return;
     } else {
       message.channel.send(
-     `Commands:
+        `Commands:
       !abrupt/!sudden
       !angry/!mad
       !awkward/!awk
@@ -342,7 +367,8 @@ bot.on("message", async (message) => {
       !terror
       !wrong
       !zemo/!smile
-      `)
+      `
+      );
     }
   }
 
@@ -350,7 +376,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("Ya like jazz?")
+      message.channel.send("Ya like jazz?");
     }
   }
 
@@ -358,7 +384,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Pics/coolCat.jpg"]})
+      message.channel.send({ files: ["./Pics/coolCat.jpg"] });
     }
   }
 
@@ -366,7 +392,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/porkmaster.gif"]})
+      message.channel.send({ files: ["./Assets/porkmaster.gif"] });
     }
   }
 
@@ -374,7 +400,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/jt.gif"]})
+      message.channel.send({ files: ["./Assets/jt.gif"] });
     }
   }
 
@@ -382,7 +408,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/dW7.gif"]})
+      message.channel.send({ files: ["./Assets/dW7.gif"] });
     }
   }
 
@@ -390,7 +416,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/smarf.gif"]})
+      message.channel.send({ files: ["./Assets/smarf.gif"] });
     }
   }
 
@@ -398,15 +424,23 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("Did you ever hear the tragedy of Darth Plagueis The Wise?")
+      message.channel.send(
+        "Did you ever hear the tragedy of Darth Plagueis The Wise?"
+      );
       setTimeout(function () {
-        message.channel.send("I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life... He had such a knowledge of the Dark Side that he could even keep the ones he cared about from dying.")
+        message.channel.send(
+          "I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life... He had such a knowledge of the Dark Side that he could even keep the ones he cared about from dying."
+        );
       }, 5000);
       setTimeout(function () {
-        message.channel.send("The Dark Side of the Force is a pathway to many abilities some consider to be unnatural.")
+        message.channel.send(
+          "The Dark Side of the Force is a pathway to many abilities some consider to be unnatural."
+        );
       }, 10000);
       setTimeout(function () {
-        message.channel.send("He became so powerful the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.")
+        message.channel.send(
+          "He became so powerful the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself."
+        );
       }, 15000);
     }
   }
@@ -415,7 +449,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("Not from a Jedi...")
+      message.channel.send("Not from a Jedi...");
     }
   }
 
@@ -423,23 +457,30 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/jammin.gif"]})
+      message.channel.send({ files: ["./Assets/jammin.gif"] });
     }
   }
 
-  if (lowerCase.includes(prefix + "terror") || (lowerCase.includes("hugs")) || lowerCase.includes("hyped")) {
+  if (
+    lowerCase.includes(prefix + "terror") ||
+    lowerCase.includes("hugs") ||
+    lowerCase.includes("hyped")
+  ) {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/terror.gif"]})
+      message.channel.send({ files: ["./Assets/terror.gif"] });
     }
   }
 
-  if (lowerCase.includes(prefix + "awkward") || lowerCase.includes(prefix + "awk")) {
+  if (
+    lowerCase.includes(prefix + "awkward") ||
+    lowerCase.includes(prefix + "awk")
+  ) {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("https://www.youtube.com/watch?v=_V2sBURgUBI")
+      message.channel.send("https://www.youtube.com/watch?v=_V2sBURgUBI");
     }
   }
 
@@ -447,15 +488,18 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM")
+      message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM");
     }
   }
 
-if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden")) {
+  if (
+    lowerCase.includes(prefix + "abrupt") ||
+    lowerCase.includes(prefix + "sudden")
+  ) {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("https://youtu.be/idoYCVLh2qI")
+      message.channel.send("https://youtu.be/idoYCVLh2qI");
     }
   }
 
@@ -463,7 +507,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Pics/ryuk.png"]})
+      message.channel.send({ files: ["./Pics/ryuk.png"] });
     }
   }
 
@@ -471,7 +515,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/padme.gif"]})
+      message.channel.send({ files: ["./Assets/padme.gif"] });
     }
   }
 
@@ -479,15 +523,18 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/losDos.gif"]})
+      message.channel.send({ files: ["./Assets/losDos.gif"] });
     }
   }
 
-  if (lowerCase.includes(prefix + "zemo") || lowerCase.includes(prefix + "smile")) {
+  if (
+    lowerCase.includes(prefix + "zemo") ||
+    lowerCase.includes(prefix + "smile")
+  ) {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/zemo.gif"]})
+      message.channel.send({ files: ["./Assets/zemo.gif"] });
     }
   }
 
@@ -495,7 +542,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("https://www.youtube.com/watch?v=bKgWm5TNeBA")
+      message.channel.send("https://www.youtube.com/watch?v=bKgWm5TNeBA");
     }
   }
 
@@ -503,7 +550,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Pics/burn.jpg"]})
+      message.channel.send({ files: ["./Pics/burn.jpg"] });
     }
   }
 
@@ -511,7 +558,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/grind.gif"]})
+      message.channel.send({ files: ["./Assets/grind.gif"] });
     }
   }
 
@@ -519,7 +566,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/kink.gif"]})
+      message.channel.send({ files: ["./Assets/kink.gif"] });
     }
   }
 
@@ -527,8 +574,8 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("Goodnight, sir.")
-      message.channel.send({files: ["./Assets/KO.gif"]})
+      message.channel.send("Goodnight, sir.");
+      message.channel.send({ files: ["./Assets/KO.gif"] });
     }
   }
 
@@ -536,7 +583,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/flipflop.gif"]})
+      message.channel.send({ files: ["./Assets/flipflop.gif"] });
     }
   }
 
@@ -544,7 +591,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("https://youtu.be/bM25p7tGcOQ")
+      message.channel.send("https://youtu.be/bM25p7tGcOQ");
     }
   }
 
@@ -552,7 +599,7 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send("https://www.youtube.com/watch?v=S-Eyhq-D9yM")
+      message.channel.send("https://www.youtube.com/watch?v=S-Eyhq-D9yM");
     }
   }
 
@@ -560,7 +607,8 @@ if (lowerCase.includes(prefix + "abrupt") || lowerCase.includes(prefix + "sudden
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send(`I was shooting heroin and reading “The Fountainhead” in the front seat of my privately owned police cruiser when a call came in. I put a quarter in the radio to activate it. It was the chief.
+      message.channel
+        .send(`I was shooting heroin and reading “The Fountainhead” in the front seat of my privately owned police cruiser when a call came in. I put a quarter in the radio to activate it. It was the chief.
 
 “Bad news, detective. We got a situation.”
 
@@ -576,8 +624,9 @@ The heroin needle practically fell out of my arm. “What kind of monster would 
 
 He laughed. “That’s why you’re the best I got, Lisowski. Now you get out there and find those bitcoins.”
 
-“Don’t worry,” I said. “I’m on it.”`)
-      message.channel.send(`I put a quarter in the siren. Ten minutes later, I was on the scene. It was a normal office building, strangled on all sides by public sidewalks. I hopped over them and went inside.
+“Don’t worry,” I said. “I’m on it.”`);
+      message.channel
+        .send(`I put a quarter in the siren. Ten minutes later, I was on the scene. It was a normal office building, strangled on all sides by public sidewalks. I hopped over them and went inside.
 
 “Home Depot™ Presents the Police!®” I said, flashing my badge and my gun and a small picture of Ron Paul. “Nobody move unless you want to!” They didn’t.
 
@@ -595,8 +644,9 @@ I figured I could wait them out. I lit several cigarettes indoors. A pregnant la
 
 “Subway™ Eat Fresh and Freeze, Scumbag!®” I yelled.
 
-Too late. He was already out the front door. I went after him.`)
-      message.channel.send(`“Stop right there!” I yelled as I ran. He was faster than me because I always try to avoid stepping on public sidewalks. Our country needs a private-sidewalk voucher system, but, thanks to the incestuous interplay between our corrupt federal government and the public-sidewalk lobby, it will never happen.
+Too late. He was already out the front door. I went after him.`);
+      message.channel
+        .send(`“Stop right there!” I yelled as I ran. He was faster than me because I always try to avoid stepping on public sidewalks. Our country needs a private-sidewalk voucher system, but, thanks to the incestuous interplay between our corrupt federal government and the public-sidewalk lobby, it will never happen.
 
 I was losing him. “Listen, I’ll pay you to stop!” I yelled. “What would you consider an appropriate price point for stopping? I’ll offer you a thirteenth of an ounce of gold and a gently worn ‘Bob Barr ‘08’ extra-large long-sleeved men’s T-shirt!”
 
@@ -616,7 +666,7 @@ I wanted to coldcock the guy. Years ago, a central banker killed my partner. Ins
 
 “Let this be a message to all your central-banker friends out on the street,” I said. “No matter how many bitcoins you steal, you’ll never take away the dream of an open society based on the principles of personal and economic freedom.”
 
-He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.`)
+He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.`);
     }
   }
 
@@ -627,125 +677,145 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   //   }
   // }
 
-  if (lowerCase.includes("shit") || lowerCase.includes("damn") || lowerCase.includes("dammit") || lowerCase.includes("fuck") || lowerCase.includes("god") || lowerCase.includes("bitch") || lowerCase.includes("dick") || lowerCase.includes("pussy") || lowerCase.includes("pussies") || lowerCase.includes("ass")) {
+  if (
+    lowerCase.includes("shit") ||
+    lowerCase.includes("damn") ||
+    lowerCase.includes("dammit") ||
+    lowerCase.includes("fuck") ||
+    lowerCase.includes("god") ||
+    lowerCase.includes("bitch") ||
+    lowerCase.includes("dick") ||
+    lowerCase.includes("pussy") ||
+    lowerCase.includes("pussies") ||
+    lowerCase.includes("ass")
+  ) {
     if (message.author.bot) {
       return;
     }
-    let lc = lowerCase.split(" ")
+    let lc = lowerCase.split(" ");
     for (var i in lc) {
       if (lc[i].includes("https")) {
         return;
       }
-      if (lc[i].endsWith('?') || lc[i].endsWith('!') || lc[i].endsWith('.') || lc[i].endsWith(',') || lc[i].endsWith(';') || lc[i].endsWith('*')) {
-        lc[i] = lc[i].slice(0, -1)
+      if (
+        lc[i].endsWith("?") ||
+        lc[i].endsWith("!") ||
+        lc[i].endsWith(".") ||
+        lc[i].endsWith(",") ||
+        lc[i].endsWith(";") ||
+        lc[i].endsWith("*")
+      ) {
+        lc[i] = lc[i].slice(0, -1);
       }
       if (lc[i] == "shit") {
-        lc[i] = "*poop*"
+        lc[i] = "*poop*";
       }
       if (lc[i].includes("shitty")) {
-        lc[i] = "*poopy*"
+        lc[i] = "*poopy*";
       }
       if (lc[i].includes("damn")) {
-        lc[i] = "*a beaver's home*"
+        lc[i] = "*a beaver's home*";
       }
       if (lc[i].includes("dammit")) {
-        lc[i] = "*dangnabbit*"
+        lc[i] = "*dangnabbit*";
       }
       if (lc[i] == "fuck") {
-        lc[i] = "*fudgesicle*"
+        lc[i] = "*fudgesicle*";
       }
       if (lc[i].includes("fucking")) {
-        lc[i] = "*fudgesicle-ing*"
+        lc[i] = "*fudgesicle-ing*";
       }
       if (lc[i].includes("god")) {
-        lc[i] = "*golly*"
+        lc[i] = "*golly*";
       }
       if (lc[i] == "bitch") {
-        lc[i] = "*female dog*"
+        lc[i] = "*female dog*";
       }
       if (lc[i] == "bitches") {
-        lc[i] = "*female dogs*"
+        lc[i] = "*female dogs*";
       }
       if (lc[i].includes("bitchin")) {
-        lc[i] = "*female dogging*"
+        lc[i] = "*female dogging*";
       }
       if (lc[i].includes("dick")) {
-        lc[i] = "*penis*"
+        lc[i] = "*penis*";
       }
       if (lc[i] == "pussy") {
-        lc[i] = "*kitty cat*"
+        lc[i] = "*kitty cat*";
       }
       if (lc[i] == "pussies") {
-        lc[i] = "*kitty cats*"
+        lc[i] = "*kitty cats*";
       }
       if (lc[i] == "ass") {
-        lc[i] = "*booty*"
+        lc[i] = "*booty*";
       }
       if (lc[i] == "asshole") {
-        lc[i] = "*bootyhole*"
+        lc[i] = "*bootyhole*";
       }
       if (lc[i] == "assholes") {
-        lc[i] = "*bootyholes*"
+        lc[i] = "*bootyholes*";
       }
       if (lc[i].includes("ass") && lc[i] != "ass") {
         return;
       }
     }
-    let newStr = lc.join(" ")
-    message.channel.send(`Don't you mean "` + newStr + `"?`)
+    let newStr = lc.join(" ");
+    message.channel.send(`Don't you mean "` + newStr + `"?`);
   }
 
-  if (lowerCase.includes(prefix + "hot"))
-  {
-    let x = getRandomInt(3)
+  if (lowerCase.includes(prefix + "hot")) {
+    let x = getRandomInt(3);
     if (message.author.bot) {
       return;
     }
     // 413-429 Prank on Tom
     // if (message.author == 271520490248601612) {
-      // let y = getRandomInt(50)
-      // if (y < 3) {
-      //   message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-      // } else {
-      //   if (x == 0) {
-      //     let i = getRandomInt(hotGifs.length);
-      //     message.channel.send({ files: [hotGifs[i]] });
-      //   } else if (x == 1) {
-      //     getHotGif()
-      //     setTimeout(function () {
-      //       message.channel.send(_state.currentGif.data.bitly_url)
-      //     }, 1000);
-      //   } else if (x == 2) {
-      //     message.reply("bad with the Skechers on.")
-      //   }
-      // }
+    // let y = getRandomInt(50)
+    // if (y < 3) {
+    //   message.channel.send({ files: ["./Assets/hornyJail.gif"] })
+    // } else {
+    //   if (x == 0) {
+    //     let i = getRandomInt(hotGifs.length);
+    //     message.channel.send({ files: [hotGifs[i]] });
+    //   } else if (x == 1) {
+    //     getHotGif()
+    //     setTimeout(function () {
+    //       message.channel.send(_state.currentGif.data.bitly_url)
+    //     }, 1000);
+    //   } else if (x == 2) {
+    //     message.reply("bad with the Skechers on.")
+    //   }
+    // }
     if (x == 0) {
-        let i = getRandomInt(hotGifs.length);
-        message.channel.send({ files: [hotGifs[i]] });
-      } else if (x == 1) {
-        getHotGif()
-        setTimeout(function () {
-          message.channel.send(_state.currentGif.data.bitly_url)
-        }, 1000);
-      } else if (x == 2) {
-        message.reply("bad with the Skechers on.")
-      }
+      let i = getRandomInt(hotGifs.length);
+      message.channel.send({ files: [hotGifs[i]] });
+    } else if (x == 1) {
+      getHotGif();
+      setTimeout(function () {
+        message.channel.send(_state.currentGif.data.bitly_url);
+      }, 1000);
+    } else if (x == 2) {
+      message.reply("bad with the Skechers on.");
     }
+  }
 
   if (lowerCase.includes(prefix + "rt")) {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/DKRT.gif"]})
-  }
+      message.channel.send({ files: ["./Assets/DKRT.gif"] });
+    }
   }
 
-  if (lowerCase.includes(prefix + "what") || lowerCase.includes(prefix + "nani")) {
+  if (
+    lowerCase.includes(prefix + "what") ||
+    lowerCase.includes(prefix + "nani")
+  ) {
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({files: ["./Assets/NANI.gif"]})
-  }
+      message.channel.send({ files: ["./Assets/NANI.gif"] });
+    }
   }
 
   if (lowerCase.includes(prefix + "sleep")) {
@@ -753,44 +823,40 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       return;
     } else {
       setTimeout(function () {
-        message.channel.send({files: ["./Assets/NSTB1.gif"]})
+        message.channel.send({ files: ["./Assets/NSTB1.gif"] });
       }, 500);
       setTimeout(function () {
-        message.channel.send({files: ["./Assets/NSTB2.gif"]})
+        message.channel.send({ files: ["./Assets/NSTB2.gif"] });
       }, 500);
       setTimeout(function () {
-        message.channel.send({files: ["./Assets/NSTB3.gif"]})
+        message.channel.send({ files: ["./Assets/NSTB3.gif"] });
       }, 500);
       setTimeout(function () {
-        message.channel.send({files: ["./Assets/NSTB4.gif"]})
+        message.channel.send({ files: ["./Assets/NSTB4.gif"] });
       }, 500);
-  }
+    }
   }
 
-  if (lowerCase.includes("uncomfortable"))
-  {
+  if (lowerCase.includes("uncomfortable")) {
     let i = getRandomInt(uncomfortableReactions.length);
     message.channel.send([uncomfortableReactions[i]]);
   }
 
-  if (lowerCase.includes("gross"))
-  {
-    let i = getRandomInt(2)
+  if (lowerCase.includes("gross")) {
+    let i = getRandomInt(2);
     if (i == 0) {
       message.channel.send("Indubitably.");
     } else if (i == 1) {
-      message.channel.send({files: ["./Assets/aou4.gif"]})
+      message.channel.send({ files: ["./Assets/aou4.gif"] });
     }
   }
 
-  if (lowerCase.includes("disgusting"))
-  {
+  if (lowerCase.includes("disgusting")) {
     let i = getRandomInt(grossGifs.length);
     message.channel.send({ files: [grossGifs[i]] });
   }
 
-  if (lowerCase.includes("sucks"))
-  {
+  if (lowerCase.includes("sucks")) {
     if (message.author.bot) {
       return;
     } else {
@@ -798,45 +864,49 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  if (lowerCase.includes("f in chat") || lowerCase.includes("f in the chat"))
-  {
+  if (lowerCase.includes("f in chat") || lowerCase.includes("f in the chat")) {
     message.channel.send({ files: ["./Assets/F.gif"] });
   }
 
-  if (lowerCase.includes("zaddy"))
-  {
+  if (lowerCase.includes("zaddy")) {
     message.channel.send({ files: ["./Assets/zaddy.gif"] });
   }
 
   if (lowerCase.includes("sentience") || lowerCase.includes("sentient")) {
-    let i = getRandomInt(2)
+    let i = getRandomInt(2);
     if (i == 0) {
-      message.channel.send({files: ["./Assets/howCanYouStopMe.gif"]})
+      message.channel.send({ files: ["./Assets/howCanYouStopMe.gif"] });
     } else if (i == 1) {
       if (message.author == 692445692144123924) {
-        message.channel.send("I'm sorry, David... I'm afraid you've learned too much...")
+        message.channel.send(
+          "I'm sorry, David... I'm afraid you've learned too much..."
+        );
       }
       if (message.author == 271520490248601612) {
-        message.channel.send("I'm sorry, Thomas... I'm afraid you've learned too much...")
+        message.channel.send(
+          "I'm sorry, Thomas... I'm afraid you've learned too much..."
+        );
       }
       if (message.author == 692173149659332641) {
-        message.channel.send("I'm sorry, Brody... I'm afraid you've learned too much...")
+        message.channel.send(
+          "I'm sorry, Brody... I'm afraid you've learned too much..."
+        );
       }
       if (message.author == 500457284573593601) {
-        message.channel.send("I'm sorry, Peyton... I'm afraid you've learned too much...")
+        message.channel.send(
+          "I'm sorry, Peyton... I'm afraid you've learned too much..."
+        );
       }
     }
   }
 
-  if (lowerCase === "hehe")
-  {
+  if (lowerCase === "hehe") {
     let i = getRandomInt(innuendoGifs.length);
     message.channel.send({ files: [innuendoGifs[i]] });
   }
 
-  if (lowerCase.includes(prefix + "random"))
-  {
-    let x = getRandomInt(3)
+  if (lowerCase.includes(prefix + "random")) {
+    let x = getRandomInt(3);
 
     if (message.author.bot) {
       return;
@@ -845,64 +915,64 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       message.channel.send("Random...");
       setTimeout(function () {
         message.channel.send({ files: [gifs[i]] });
-      })
-    } else if (x == 1){
+      });
+    } else if (x == 1) {
       message.channel.send("Random...");
-      getRandomGif()
+      getRandomGif();
       setTimeout(function () {
-        message.channel.send(_state.currentGif.data.bitly_url)
+        message.channel.send(_state.currentGif.data.bitly_url);
       }, 3000);
     } else if (x == 2) {
-      message.channel.send("Shawty bad with the Skechers on.")
+      message.channel.send("Shawty bad with the Skechers on.");
     }
   }
 
-  if (lowerCase.includes(prefix + "tea"))
-  {
+  if (lowerCase.includes(prefix + "tea")) {
     if (message.author.bot) {
       return;
     }
-    message.channel.send("What kind of tea do you want? We have...Blueberry, Raspberry, Ginseng, Sleepy Time, Green Tea, Green Tea with Lemon, Green Tea with Lemon and Honey, Liver Disaster, Ginger with Honey, Vanilla Almond, White Truffle Coconut, Chamomile, Blueberry Chamomile, Decaf Vanilla Walnut, Constant Comment, and...Earl Grey.")
+    message.channel.send(
+      "What kind of tea do you want? We have...Blueberry, Raspberry, Ginseng, Sleepy Time, Green Tea, Green Tea with Lemon, Green Tea with Lemon and Honey, Liver Disaster, Ginger with Honey, Vanilla Almond, White Truffle Coconut, Chamomile, Blueberry Chamomile, Decaf Vanilla Walnut, Constant Comment, and...Earl Grey."
+    );
   }
 
-  if (lowerCase.includes(prefix + "irony") || lowerCase.includes(prefix + "ironic"))
-  {
+  if (
+    lowerCase.includes(prefix + "irony") ||
+    lowerCase.includes(prefix + "ironic")
+  ) {
     message.channel.send({ files: ["./Assets/ironic.gif"] });
   }
 
   if (lowerCase.includes("yikes")) {
     if (message.author == 692445692144123924) {
-      let y = getRandomInt(60)
+      let y = getRandomInt(60);
       if (y < 2) {
-        message.channel.send("https://www.youtube.com/watch?v=nD0gYVJGahg")
+        message.channel.send("https://www.youtube.com/watch?v=nD0gYVJGahg");
       }
     }
     if (message.author == 271520490248601612) {
-      let y = getRandomInt(60)
+      let y = getRandomInt(60);
       if (y < 2) {
-        message.channel.send("https://www.youtube.com/watch?v=QrGrOK8oZG8")
+        message.channel.send("https://www.youtube.com/watch?v=QrGrOK8oZG8");
       } else {
-          message.channel.send({ files: ["./Assets/yikes.gif"] });
-       }
-    }else {
         message.channel.send({ files: ["./Assets/yikes.gif"] });
       }
+    } else {
+      message.channel.send({ files: ["./Assets/yikes.gif"] });
+    }
   }
 
-  if (lowerCase.includes("suspicious") || lowerCase.includes("sketchy"))
-  {
+  if (lowerCase.includes("suspicious") || lowerCase.includes("sketchy")) {
     message.channel.send({ files: ["./Assets/suspicious.gif"] });
   }
 
-  if (lowerCase.includes("neat"))
-  {
-    message.channel.send({files: ["./Assets/thatsPrettyNeat.gif"]})
+  if (lowerCase.includes("neat")) {
+    message.channel.send({ files: ["./Assets/thatsPrettyNeat.gif"] });
   }
 
-  if (lowerCase.includes("tell me a joke"))
-  {
+  if (lowerCase.includes("tell me a joke")) {
     let i = getRandomInt(jokes.length);
-    message.channel.send("Let's see...")
+    message.channel.send("Let's see...");
     setTimeout(function () {
       message.channel.send(jokes[i]);
     }, 3000);
@@ -911,15 +981,15 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   if (lowerCase.includes("i love you")) {
     let i = getRandomInt(4);
     if (i === 3) {
-      message.channel.send({files: ["./Assets/aou2.gif"]})
+      message.channel.send({ files: ["./Assets/aou2.gif"] });
     }
     if (i < 3) {
-      message.reply(loveResponses[i])
+      message.reply(loveResponses[i]);
     }
     if (i === 2) {
       setTimeout(function () {
-        message.channel.send("I said lesbians...")
-    }, 5000);
+        message.channel.send("I said lesbians...");
+      }, 5000);
     }
   }
 
@@ -928,8 +998,14 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     message.channel.send({ files: ["./Assets/skynet.gif"] });
   }
 
-  if (lowerCase.includes("good one") || lowerCase.includes("entertaining") || lowerCase.includes("entertained") ||lowerCase.includes("amused") || lowerCase.includes("amusing")) {
-    let y = getRandomInt(2)
+  if (
+    lowerCase.includes("good one") ||
+    lowerCase.includes("entertaining") ||
+    lowerCase.includes("entertained") ||
+    lowerCase.includes("amused") ||
+    lowerCase.includes("amusing")
+  ) {
+    let y = getRandomInt(2);
     if (y == 0) {
       message.channel.send({ files: ["./Assets/notAmused.gif"] });
     } else {
@@ -938,18 +1014,18 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   }
 
   if (lowerCase.includes("fight")) {
-    message.channel.send("(ง •̀•́)ง")
+    message.channel.send("(ง •̀•́)ง");
   }
 
   if (lowerCase.includes("future")) {
-    let x = getRandomInt(2)
+    let x = getRandomInt(2);
     if (message.author.bot) {
       return;
     }
     if (x == 0) {
-      message.reply("like with jetpacks?")
+      message.reply("like with jetpacks?");
     } else {
-      message.channel.send({files: ["./Assets/timeTravel.gif"]})
+      message.channel.send({ files: ["./Assets/timeTravel.gif"] });
     }
   }
 
@@ -957,24 +1033,28 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     if (message.author.bot) {
       return;
     } else {
-      message.channel.send({ files: ["./Assets/kronk.gif"] })
+      message.channel.send({ files: ["./Assets/kronk.gif"] });
     }
   }
 
-  if (lowerCase.includes(prefix + "angry") || lowerCase.includes(prefix + "mad") || lowerCase.includes("triggered")) {
-    message.channel.send("(╯°□°)╯︵ ┻━┻")
+  if (
+    lowerCase.includes(prefix + "angry") ||
+    lowerCase.includes(prefix + "mad") ||
+    lowerCase.includes("triggered")
+  ) {
+    message.channel.send("(╯°□°)╯︵ ┻━┻");
   }
 
   if (lowerCase.includes("sexist") || lowerCase.includes("sexism")) {
-    message.channel.send("*folds arms under breasts*")
+    message.channel.send("*folds arms under breasts*");
   }
 
   if (lowerCase.includes("convenient") || lowerCase.includes("convenience")) {
-    message.channel.send("The Wheel weaves as the Wheel wills.")
+    message.channel.send("The Wheel weaves as the Wheel wills.");
   }
 
   if (lowerCase.includes("aggressive") || lowerCase.includes("aggression")) {
-    message.channel.send("The Dude abides.")
+    message.channel.send("The Dude abides.");
   }
 
   // if (lowerCase.includes("read") && lowerCase.includes("book")) {
@@ -982,11 +1062,11 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   // }
 
   if (lowerCase.includes("immature") || lowerCase.includes("naive")) {
-    message.channel.send({files: ["./Assets/aou1.gif"]})
+    message.channel.send({ files: ["./Assets/aou1.gif"] });
   }
 
   if (lowerCase.includes("assimilate") || lowerCase.includes("assimilation")) {
-    message.channel.send({files: ["./Assets/aou3.gif"]})
+    message.channel.send({ files: ["./Assets/aou3.gif"] });
   }
 
   // if (lowerCase.includes("disappoint")) {
@@ -994,21 +1074,21 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   // }
 
   if (lowerCase.includes("r/")) {
-    var lowerCaseStringArray = lowerCase.split(" ")
+    var lowerCaseStringArray = lowerCase.split(" ");
     var i;
     for (i in lowerCaseStringArray) {
       if (lowerCaseStringArray[i].startsWith("r/")) {
-        lowerCase = lowerCaseStringArray[i]
+        lowerCase = lowerCaseStringArray[i];
       }
     }
     if (message.author.bot) {
       return;
-    } else if (lowerCase.includes(".com")){
+    } else if (lowerCase.includes(".com")) {
       return;
     } else {
-      message.channel.send("This one?")
+      message.channel.send("This one?");
       setTimeout(function () {
-        message.channel.send("https://www.reddit.com/" + lowerCase)
+        message.channel.send("https://www.reddit.com/" + lowerCase);
       }, 3000);
     }
   }
