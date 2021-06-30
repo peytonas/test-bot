@@ -4,7 +4,7 @@ function diceRoll(min, max) {
   return min + Math.floor(Math.random() * (max - min + 1));
 }
 
-function d20Roll() {
+function d20Roll(message) {
   if (message.author.bot) {
     return;
   } else {
@@ -13,7 +13,7 @@ function d20Roll() {
   }
 }
 
-function d12Roll() {
+function d12Roll(message) {
   if (message.author.bot) {
     return;
   } else {
@@ -32,7 +32,7 @@ function d4Roll() {}
 
 module.exports = {
   checkCmd: function (message) {
-    console.log(message);
+    console.log(message.content);
     let command = message.content,
       found = false;
 
@@ -43,7 +43,7 @@ module.exports = {
         //   to not try executing 'other' commands
         found = true;
         // execute function associated with this command
-        d20Roll();
+        d20Roll(message);
         break;
 
       // your second admin command (similar setup as above)
