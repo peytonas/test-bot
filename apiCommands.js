@@ -223,18 +223,22 @@ module.exports = {
       case prefix + "hot":
         found = true;
         hotGif(message);
+        break;
 
       case prefix + "noods":
         found = true;
         noodsGif(message);
+        break;
 
       case prefix + "hoot":
         found = true;
         hootGif(message);
+        break;
 
       case prefix + "random":
         found = true;
         randomGif(message);
+        break;
     }
     return found;
   },
