@@ -93,10 +93,7 @@ function d4Roll(message) {
 }
 
 module.exports = {
-  checkCmd: function (message) {
-    console.log(message.content);
-    let lowerCase = message.content.toLowerCase();
-
+  checkCmd: function (lowerCase, message) {
     found = false;
 
     switch (lowerCase) {

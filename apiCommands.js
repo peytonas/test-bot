@@ -102,6 +102,10 @@ function _setState(propName, data) {
   _state[propName] = data;
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function getRandomGif() {
   _randomGifApi
     .get()
@@ -142,7 +146,7 @@ function getNoodsGif() {
     .catch((err) => console.error(err));
 }
 
-if (lowerCase.includes(prefix + "noods")) {
+function noodsGif() {
   if (message.author.bot) {
     return;
   } else {
@@ -151,20 +155,20 @@ if (lowerCase.includes(prefix + "noods")) {
       message.channel.send(_state.currentGif.data.bitly_url);
     }, 1000);
   }
+}
 
-  if (lowerCase.includes(prefix + "hoot")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      getHootGif();
-      setTimeout(function () {
-        message.channel.send(_state.currentGif.data.bitly_url);
-      }, 1000);
-    }
+function hootGif() {
+  if (message.author.bot) {
+    return;
+  } else {
+    getHootGif();
+    setTimeout(function () {
+      message.channel.send(_state.currentGif.data.bitly_url);
+    }, 1000);
   }
 }
 
-if (lowerCase.includes(prefix + "hot")) {
+function hotGif(message) {
   let x = getRandomInt(3);
   if (message.author.bot) {
     return;
@@ -183,7 +187,7 @@ if (lowerCase.includes(prefix + "hot")) {
   }
 }
 
-if (lowerCase.includes(prefix + "random")) {
+function randomGif(message) {
   let x = getRandomInt(3);
 
   if (message.author.bot) {
@@ -205,32 +209,26 @@ if (lowerCase.includes(prefix + "random")) {
   }
 }
 
-function getQuote(message) {
-  request(
-    "http://inspirobot.me/api?generate=true",
-    function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        message.channel.send({
-          embed: {
-            color: 0xff0000,
-            description: "Did you know...🧐",
-            image: {
-              url: body,
-            },
-          },
-        });
-      }
-    }
-  );
-}
-
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
 
-    if (lowerCase.includes(prefix + "quote")) {
-      found = true;
-      getQuote(message);
+    switch (lowerCase) {
+      case prefix + "hot":
+        found = true;
+        hotGif(message);
+
+      case prefix + "noods":
+        found = true;
+        noodsGif();
+
+      case prefix + "hoot":
+        found = true;
+        hootGif();
+
+      case prefix + "random":
+        found = true;
+        randomGif(message);
     }
     return found;
   },

@@ -201,7 +201,7 @@ bot.on("ready", async () => {
 bot.on("message", async (message) => {
   var lowerCase = message.content.toLowerCase();
   // logger.write(message.content)
-  if (diceCommands.checkCmd(message)) return;
+  if (diceCommands.checkCmd(lowerCase, message)) return;
   if (redditRef.checkCmd(lowerCase, message)) return;
   if (inspoCommands.checkCmd(lowerCase, message)) return;
   if (swearCommands.checkCmd(lowerCase, message)) return;
@@ -217,14 +217,14 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (lowerCase.includes(prefix + "grrm")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = getRandomInt(grrmGifs.length);
-  //     message.channel.send({ files: [grrmGifs[i]] });
-  //   }
-  // }
+  if (lowerCase.includes(prefix + "grrm")) {
+    if (message.author.bot) {
+      return;
+    } else {
+      let i = getRandomInt(grrmGifs.length);
+      message.channel.send({ files: [grrmGifs[i]] });
+    }
+  }
 
   // if (lowerCase.includes(prefix + "noods")) {
   //   if (message.author.bot) {
