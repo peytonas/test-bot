@@ -60,7 +60,6 @@ function d4Roll(message) {
 
 module.exports = {
   checkCmd: function (message) {
-    console.log(message.content);
     let command = message.content,
       found = false;
 

@@ -12,6 +12,7 @@ const token = process.env.BOT_TOKEN;
 quotes = new MarkovChain(fs.readFileSync("./quotes.txt", "utf8"));
 
 const diceCommands = require("./diceCommands");
+const redditRef = require("./redditRef");
 
 // var logger = fs.createWriteStream('./quotes.txt', {
 //   flags: 'a'
@@ -224,10 +225,6 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function diceRoll(min, max) {
-  return min + Math.floor(Math.random() * (max - min + 1));
-}
-
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
@@ -236,6 +233,7 @@ bot.on("message", async (message) => {
   var lowerCase = message.content.toLowerCase();
   // logger.write(message.content)
   if (diceCommands.checkCmd(message)) return;
+  if (redditRef.checkCmd(message)) return;
 
   //   else {
   //     switch (command) {
@@ -273,60 +271,6 @@ bot.on("message", async (message) => {
       message.reply("you rang, sir?");
     }
   }
-
-  // if (lowerCase.includes(prefix + "d20")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = diceRoll(1, 20);
-  //     message.channel.send("You rolled..." + i);
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "d12")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = diceRoll(1, 12);
-  //     message.channel.send("You rolled..." + i);
-  //   }
-  // }
-
-  // if (lowerCase == prefix + "d10") {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = diceRoll(1, 10);
-  //     message.channel.send("You rolled..." + i);
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "d8")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = diceRoll(1, 8);
-  //     message.channel.send("You rolled..." + i);
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "d6")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = diceRoll(1, 6);
-  //     message.channel.send("You rolled..." + i);
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "d4")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = diceRoll(1, 4);
-  //     message.channel.send("You rolled..." + i);
-  //   }
-  // }
 
   if (lowerCase.includes(prefix + "grrm")) {
     if (message.author.bot) {
@@ -733,13 +677,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  // if (message.author == 271520490248601612) {
-  //   let x = getRandomInt(300)
-  //   if (x < 4) {
-  //       message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-  //   }
-  // }
-
   if (
     lowerCase.includes("shit") ||
     lowerCase.includes("damn") ||
@@ -831,24 +768,7 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     if (message.author.bot) {
       return;
     }
-    // 413-429 Prank on Tom
-    // if (message.author == 271520490248601612) {
-    // let y = getRandomInt(50)
-    // if (y < 3) {
-    //   message.channel.send({ files: ["./Assets/hornyJail.gif"] })
-    // } else {
-    //   if (x == 0) {
-    //     let i = getRandomInt(hotGifs.length);
-    //     message.channel.send({ files: [hotGifs[i]] });
-    //   } else if (x == 1) {
-    //     getHotGif()
-    //     setTimeout(function () {
-    //       message.channel.send(_state.currentGif.data.bitly_url)
-    //     }, 1000);
-    //   } else if (x == 2) {
-    //     message.reply("bad with the Skechers on.")
-    //   }
-    // }
+
     if (x == 0) {
       let i = getRandomInt(hotGifs.length);
       message.channel.send({ files: [hotGifs[i]] });
@@ -1136,25 +1056,25 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
   //   message.channel.send({files: ["./Assets/aou5.gif"]})
   // }
 
-  if (lowerCase.includes("r/")) {
-    var lowerCaseStringArray = lowerCase.split(" ");
-    var i;
-    for (i in lowerCaseStringArray) {
-      if (lowerCaseStringArray[i].startsWith("r/")) {
-        lowerCase = lowerCaseStringArray[i];
-      }
-    }
-    if (message.author.bot) {
-      return;
-    } else if (lowerCase.includes(".com")) {
-      return;
-    } else {
-      message.channel.send("This one?");
-      setTimeout(function () {
-        message.channel.send("https://www.reddit.com/" + lowerCase);
-      }, 3000);
-    }
-  }
+  // if (lowerCase.includes("r/")) {
+  //   var lowerCaseStringArray = lowerCase.split(" ");
+  //   var i;
+  //   for (i in lowerCaseStringArray) {
+  //     if (lowerCaseStringArray[i].startsWith("r/")) {
+  //       lowerCase = lowerCaseStringArray[i];
+  //     }
+  //   }
+  //   if (message.author.bot) {
+  //     return;
+  //   } else if (lowerCase.includes(".com")) {
+  //     return;
+  //   } else {
+  //     message.channel.send("This one?");
+  //     setTimeout(function () {
+  //       message.channel.send("https://www.reddit.com/" + lowerCase);
+  //     }, 3000);
+  //   }
+  // }
 });
 
 bot.login(token);
