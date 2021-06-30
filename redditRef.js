@@ -19,9 +19,8 @@ function redditRef(lowerCase) {
 }
 
 module.exports = {
-  checkCmd: function (message) {
+  checkCmd: function (lowerCase) {
     found = false;
-    lowerCase = message.content.toLowerCase();
 
     switch (lowerCase) {
       case lowerCase.includes("r/"):
