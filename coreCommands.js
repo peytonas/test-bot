@@ -227,6 +227,11 @@ module.exports = {
         found = true;
         sendAngry(message);
         break;
+
+      case "triggered":
+        found = true;
+        sendAngry(message);
+        break;
     }
     return found;
   },
