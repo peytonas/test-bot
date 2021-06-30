@@ -43,13 +43,6 @@ let loveResponses = [
   "./Assets/aou2.gif",
 ];
 
-// let grrmGifs = [
-//   "./Assets/grrm1.gif",
-//   "./Assets/grrm2.gif",
-//   "./Assets/grrm3.gif",
-//   "./Assets/grrmWave.gif",
-// ];
-
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -77,15 +70,6 @@ bot.on("message", async (message) => {
       message.reply("you rang, sir?");
     }
   }
-
-  // if (lowerCase.includes(prefix + "grrm")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     let i = getRandomInt(grrmGifs.length);
-  //     message.channel.send({ files: [grrmGifs[i]] });
-  //   }
-  // }
 
   if (
     lowerCase.includes("well hi") ||
@@ -147,38 +131,6 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (lowerCase.includes(prefix + "toocool")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Pics/coolCat.jpg"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "pork")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/porkmaster.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "jt")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/jt.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "smarf")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/smarf.gif"] });
-  //   }
-  // }
-
   if (lowerCase.includes(prefix + "tragedy")) {
     if (message.author.bot) {
       return;
@@ -211,14 +163,6 @@ bot.on("message", async (message) => {
       message.channel.send("Not from a Jedi...");
     }
   }
-
-  // if (lowerCase.includes(prefix + "jammin")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/jammin.gif"] });
-  //   }
-  // }
 
   if (
     lowerCase.includes(prefix + "terror") ||
@@ -262,14 +206,6 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (lowerCase.includes(prefix + "ryuk")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Pics/ryuk.png"] });
-  //   }
-  // }
-
   if (lowerCase.includes(prefix + "idky")) {
     if (message.author.bot) {
       return;
@@ -305,14 +241,6 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (lowerCase.includes(prefix + "burn")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Pics/burn.jpg"] });
-  //   }
-  // }
-
   if (lowerCase.includes(prefix + "grind")) {
     if (message.author.bot) {
       return;
@@ -320,31 +248,6 @@ bot.on("message", async (message) => {
       message.channel.send({ files: ["./Assets/grind.gif"] });
     }
   }
-
-  // if (lowerCase.includes(prefix + "kinky")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/kink.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "goodnight")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("Goodnight, sir.");
-  //     message.channel.send({ files: ["./Assets/KO.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "flipflop")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/flipflop.gif"] });
-  //   }
-  // }
 
   if (lowerCase.includes(prefix + "beans")) {
     if (message.author.bot) {
@@ -428,25 +331,6 @@ I wanted to coldcock the guy. Years ago, a central banker killed my partner. Ins
 He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.`);
     }
   }
-
-  // if (lowerCase.includes(prefix + "rt")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/DKRT.gif"] });
-  //   }
-  // }
-
-  // if (
-  //   lowerCase.includes(prefix + "what") ||
-  //   lowerCase.includes(prefix + "nani")
-  // ) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/NANI.gif"] });
-  //   }
-  // }
 
   if (lowerCase.includes(prefix + "sleep")) {
     if (message.author.bot) {
@@ -544,13 +428,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     );
   }
 
-  // if (
-  //   lowerCase.includes(prefix + "irony") ||
-  //   lowerCase.includes(prefix + "ironic")
-  // ) {
-  //   message.channel.send({ files: ["./Assets/ironic.gif"] });
-  // }
-
   if (lowerCase.includes("yikes")) {
     if (message.author == 692445692144123924) {
       let y = getRandomInt(60);
@@ -636,14 +513,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
       message.channel.send({ files: ["./Assets/kronk.gif"] });
     }
   }
-
-  // if (
-  //   lowerCase.includes(prefix + "angry") ||
-  //   lowerCase.includes(prefix + "mad") ||
-  //   lowerCase.includes("triggered")
-  // ) {
-  //   message.channel.send("(╯°□°)╯︵ ┻━┻");
-  // }
 
   if (lowerCase.includes("sexist") || lowerCase.includes("sexism")) {
     message.channel.send("*folds arms under breasts*");
