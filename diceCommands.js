@@ -9,7 +9,7 @@ function d20Roll(message) {
     return;
   } else {
     let i = diceRoll(1, 20);
-    i = 20
+    i == 20
       ? message.channel.send("You rolled..." + 20 + "! **NATURAL CRIT**")
       : message.channel.send("You rolled..." + i);
   }
