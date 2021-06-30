@@ -4,16 +4,36 @@ function diceRoll(min, max) {
   return min + Math.floor(Math.random() * (max - min + 1));
 }
 
+function playerRoll(message) {
+  let player = "";
+  if (message.author == 692445692144123924) {
+    player = "David";
+  }
+  if (message.author == 271520490248601612) {
+    player = "Tom";
+  }
+  if (message.author == 692173149659332641) {
+    player = "Brody";
+  }
+  if (message.author == 500457284573593601) {
+    player = "Peyton";
+  }
+  return player;
+}
+
 function d20Roll(message) {
+  player = playerRoll(message);
   if (message.author.bot) {
     return;
   } else {
     let i = diceRoll(1, 20);
     i == 20
-      ? message.channel.send("You rolled..." + 20 + "! **NATURAL CRIT**")
+      ? message.channel.send(
+          player + ", you rolled..." + 20 + "! **NATURAL CRIT**"
+        )
       : i == 1
-      ? message.channel.send("oof...That's a " + 1 + "...*crit fail*...")
-      : message.channel.send("You rolled..." + i);
+      ? message.channel.send(player + "...That's a " + 1 + "...*crit fail*...")
+      : message.channel.send(player + ", you rolled..." + i);
   }
 }
 
