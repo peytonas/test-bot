@@ -1,7 +1,7 @@
 const prefix = process.env.PREFIX;
 const request = require("request");
 
-function getQuote() {
+function getQuote(message) {
   request(
     "http://inspirobot.me/api?generate=true",
     function (error, response, body) {
@@ -26,7 +26,7 @@ module.exports = {
 
     if (lowerCase.includes(prefix + "quote")) {
       found = true;
-      getQuote();
+      getQuote(message);
     }
     return found;
   },
