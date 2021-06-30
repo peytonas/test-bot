@@ -79,22 +79,22 @@ module.exports = {
 
       case message.content == prefix + "d10":
         found = true;
-        d10Roll();
+        d10Roll(message);
         break;
 
       case prefix + "d8":
         found = true;
-        d8Roll();
+        d8Roll(message);
         break;
 
       case prefix + "d6":
         found = true;
-        d6Roll();
+        d6Roll(message);
         break;
 
       case prefix + "d4":
         found = true;
-        d4Roll();
+        d4Roll(message);
         break;
     }
     return found;
