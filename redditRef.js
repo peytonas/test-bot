@@ -1,30 +1,32 @@
-function redditRef(lowerCase, message) {
-  var lowerCaseStringArray = lowerCase.split(" ");
-  var i;
-  for (i in lowerCaseStringArray) {
-    if (lowerCaseStringArray[i].startsWith("r/")) {
-      lowerCase = lowerCaseStringArray[i];
+const prefix = process.env.PREFIX;
+const request = require("request");
+
+function getQuote() {
+  request(
+    "http://inspirobot.me/api?generate=true",
+    function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        message.channel.send({
+          embed: {
+            color: 0xff0000,
+            description: "Did you know...🧐",
+            image: {
+              url: body,
+            },
+          },
+        });
+      }
     }
-  }
-  if (message.author.bot) {
-    return;
-  } else if (lowerCase.includes(".com")) {
-    return;
-  } else {
-    message.channel.send("This one?");
-    setTimeout(function () {
-      message.channel.send("https://www.reddit.com/" + lowerCase);
-    }, 1500);
-  }
+  );
 }
 
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
 
-    if (lowerCase.includes("r/")) {
+    if (lowerCase.includes(prefix + "quote")) {
       found = true;
-      redditRef(lowerCase, message);
+      getQuote();
     }
     return found;
   },

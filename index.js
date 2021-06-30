@@ -3,7 +3,6 @@ var MarkovChain = require("markovchain");
 fs = require("fs");
 
 const bot = new Discord.Client();
-const request = require("request");
 const axios = require("axios");
 
 const prefix = process.env.PREFIX;
@@ -13,6 +12,7 @@ quotes = new MarkovChain(fs.readFileSync("./quotes.txt", "utf8"));
 
 const diceCommands = require("./diceCommands");
 const redditRef = require("./redditRef");
+const inspoCommands = require("./inspoCommands");
 
 // var logger = fs.createWriteStream('./quotes.txt', {
 //   flags: 'a'
@@ -234,6 +234,7 @@ bot.on("message", async (message) => {
   // logger.write(message.content)
   if (diceCommands.checkCmd(message)) return;
   if (redditRef.checkCmd(lowerCase, message)) return;
+  if (inspoCommands.checkCmd(lowerCase, message)) return;
 
   //   else {
   //     switch (command) {
@@ -245,24 +246,24 @@ bot.on("message", async (message) => {
   //     }
   //   }
 
-  if (lowerCase === "!quote") {
-    request(
-      "http://inspirobot.me/api?generate=true",
-      function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-          message.channel.send({
-            embed: {
-              color: 0xff0000,
-              description: "Did you know...🧐",
-              image: {
-                url: body,
-              },
-            },
-          });
-        }
-      }
-    );
-  }
+  // if (lowerCase === "!quote") {
+  //   request(
+  //     "http://inspirobot.me/api?generate=true",
+  //     function (error, response, body) {
+  //       if (!error && response.statusCode == 200) {
+  //         message.channel.send({
+  //           embed: {
+  //             color: 0xff0000,
+  //             description: "Did you know...🧐",
+  //             image: {
+  //               url: body,
+  //             },
+  //           },
+  //         });
+  //       }
+  //     }
+  //   );
+  // }
 
   if (lowerCase.includes("chalooby")) {
     if (message.author.bot) {
@@ -1054,26 +1055,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
 
   // if (lowerCase.includes("disappoint")) {
   //   message.channel.send({files: ["./Assets/aou5.gif"]})
-  // }
-
-  // if (lowerCase.includes("r/")) {
-  //   var lowerCaseStringArray = lowerCase.split(" ");
-  //   var i;
-  //   for (i in lowerCaseStringArray) {
-  //     if (lowerCaseStringArray[i].startsWith("r/")) {
-  //       lowerCase = lowerCaseStringArray[i];
-  //     }
-  //   }
-  //   if (message.author.bot) {
-  //     return;
-  //   } else if (lowerCase.includes(".com")) {
-  //     return;
-  //   } else {
-  //     message.channel.send("This one?");
-  //     setTimeout(function () {
-  //       message.channel.send("https://www.reddit.com/" + lowerCase);
-  //     }, 3000);
-  //   }
   // }
 });
 
