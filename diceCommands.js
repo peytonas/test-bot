@@ -92,33 +92,14 @@ function d4Roll(message) {
   }
 }
 
-function dXRoll(lowerCase, message) {
-  player = playerRoll(message);
-  numArr = [];
-  let i;
-
-  if (message.author.bot) {
-    return;
-  } else {
-    let lc = lowerCase.split("");
-    for (x = 2; x < lc.length; x++) {
-      numArr.push(lc[i]);
-    }
-    console.log(numArr);
-    console.log(lc);
-    arrString = numArr.toString();
-    stringToNum = parseInt(arrString);
-    console.log(arrString);
-    console.log(stringToNum);
-
-    i = diceRoll(1, stringToNum);
-    message.channel.send(player + ", you rolled..." + i);
-  }
-}
-
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
+    var num = [];
+    for (var i = 1; i <= 10000; i++) {
+      num.push(i);
+    }
+    getRandomInt(100000000000000);
 
     switch (lowerCase) {
       case prefix + "d20":
@@ -151,11 +132,6 @@ module.exports = {
       case prefix + "d4":
         found = true;
         d4Roll(message);
-        break;
-
-      case prefix + "d" + Number:
-        found = true;
-        dXRoll(message);
         break;
     }
     return found;
