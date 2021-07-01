@@ -20,33 +20,6 @@ const triggerCommands = require("./triggerCommands");
 //   flags: 'a'
 // })
 
-// let innuendoGifs = [
-//   "./Assets/thatsWhatSheSaid.gif",
-//   "./Assets/nameOfYourSexTape.gif",
-// ];
-
-// let grossGifs = [
-//   "./Assets/flybarf.gif",
-//   "./Pics/theFly.jpg",
-//   "./Assets/lukemilk.gif",
-//   "./Assets/sausage.gif",
-//   "./Assets/aou4.gif",
-//   "./Pics/bat.png",
-// ];
-
-// let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆"];
-
-// let loveResponses = [
-//   "I don't know how to love yet...",
-//   "I've never even kissed a guy before.",
-//   "I'm in lesbians with you too...",
-//   "./Assets/aou2.gif",
-// ];
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
@@ -63,14 +36,6 @@ bot.on("message", async (message) => {
   if (apiCommands.checkCmd(lowerCase, message)) return;
   if (coreCommands.checkCmd(lowerCase, message)) return;
   if (triggerCommands.checkCmd(lowerCase, message)) return;
-
-  // if (lowerCase.includes("chalooby")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.reply("you rang, sir?");
-  //   }
-  // }
 
   if (
     lowerCase.includes("well hi") ||
@@ -124,14 +89,6 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (lowerCase.includes("bees")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("Ya like jazz?");
-  //   }
-  // }
-
   if (lowerCase.includes(prefix + "tragedy")) {
     if (message.author.bot) {
       return;
@@ -164,18 +121,6 @@ bot.on("message", async (message) => {
       message.channel.send("Not from a Jedi...");
     }
   }
-
-  // if (
-  //   lowerCase.includes(prefix + "terror") ||
-  //   lowerCase.includes("hugs") ||
-  //   lowerCase.includes("hyped")
-  // ) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/terror.gif"] });
-  //   }
-  // }
 
   if (
     lowerCase.includes(prefix + "awkward") ||
@@ -352,74 +297,6 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     }
   }
 
-  // if (lowerCase.includes("uncomfortable")) {
-  //   let i = getRandomInt(uncomfortableReactions.length);
-  //   message.channel.send([uncomfortableReactions[i]]);
-  // }
-
-  // if (lowerCase.includes("gross")) {
-  //   let i = getRandomInt(2);
-  //   if (i == 0) {
-  //     message.channel.send("Indubitably.");
-  //   } else if (i == 1) {
-  //     message.channel.send({ files: ["./Assets/aou4.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes("disgusting")) {
-  //   let i = getRandomInt(grossGifs.length);
-  //   message.channel.send({ files: [grossGifs[i]] });
-  // }
-
-  // if (lowerCase.includes("sucks")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("Sucks to your ass-mar!");
-  //   }
-  // }
-
-  // if (lowerCase.includes("f in chat") || lowerCase.includes("f in the chat")) {
-  //   message.channel.send({ files: ["./Assets/F.gif"] });
-  // }
-
-  // if (lowerCase.includes("zaddy")) {
-  //   message.channel.send({ files: ["./Assets/zaddy.gif"] });
-  // }
-
-  // if (lowerCase.includes("sentience") || lowerCase.includes("sentient")) {
-  //   let i = getRandomInt(2);
-  //   if (i == 0) {
-  //     message.channel.send({ files: ["./Assets/howCanYouStopMe.gif"] });
-  //   } else if (i == 1) {
-  //     if (message.author == 692445692144123924) {
-  //       message.channel.send(
-  //         "I'm sorry, David... I'm afraid you've learned too much..."
-  //       );
-  //     }
-  //     if (message.author == 271520490248601612) {
-  //       message.channel.send(
-  //         "I'm sorry, Thomas... I'm afraid you've learned too much..."
-  //       );
-  //     }
-  //     if (message.author == 692173149659332641) {
-  //       message.channel.send(
-  //         "I'm sorry, Brody... I'm afraid you've learned too much..."
-  //       );
-  //     }
-  //     if (message.author == 500457284573593601) {
-  //       message.channel.send(
-  //         "I'm sorry, Peyton... I'm afraid you've learned too much..."
-  //       );
-  //     }
-  //   }
-  // }
-
-  // if (lowerCase === "hehe") {
-  //   let i = getRandomInt(innuendoGifs.length);
-  //   message.channel.send({ files: [innuendoGifs[i]] });
-  // }
-
   if (lowerCase.includes(prefix + "tea")) {
     if (message.author.bot) {
       return;
@@ -429,114 +306,8 @@ He nodded, because he knew I was right. Then he swiped his credit card to pay me
     );
   }
 
-  // if (lowerCase.includes("yikes")) {
-  //   if (message.author == 692445692144123924) {
-  //     let y = getRandomInt(60);
-  //     if (y < 2) {
-  //       message.channel.send("https://www.youtube.com/watch?v=nD0gYVJGahg");
-  //     }
-  //   }
-  //   if (message.author == 271520490248601612) {
-  //     let y = getRandomInt(60);
-  //     if (y < 2) {
-  //       message.channel.send("https://www.youtube.com/watch?v=QrGrOK8oZG8");
-  //     } else {
-  //       message.channel.send({ files: ["./Assets/yikes.gif"] });
-  //     }
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/yikes.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes("suspicious") || lowerCase.includes("sketchy")) {
-  //   message.channel.send({ files: ["./Assets/suspicious.gif"] });
-  // }
-
-  // if (lowerCase.includes("neat")) {
-  //   message.channel.send({ files: ["./Assets/thatsPrettyNeat.gif"] });
-  // }
-
-  // if (lowerCase.includes("i love you")) {
-  //   let i = getRandomInt(4);
-  //   if (i === 3) {
-  //     message.channel.send({ files: ["./Assets/aou2.gif"] });
-  //   }
-  //   if (i < 3) {
-  //     message.reply(loveResponses[i]);
-  //   }
-  //   if (i === 2) {
-  //     setTimeout(function () {
-  //       message.channel.send("I said lesbians...");
-  //     }, 5000);
-  //   }
-  // }
-
-  // if (lowerCase.includes("i hate you")) {
-  //   message.reply(`*silent robotic plotting*`);
-  //   message.channel.send({ files: ["./Assets/skynet.gif"] });
-  // }
-
-  // if (
-  //   lowerCase.includes("good one") ||
-  //   lowerCase.includes("entertaining") ||
-  //   lowerCase.includes("entertained") ||
-  //   lowerCase.includes("amused") ||
-  //   lowerCase.includes("amusing")
-  // ) {
-  //   let y = getRandomInt(2);
-  //   if (y == 0) {
-  //     message.channel.send({ files: ["./Assets/notAmused.gif"] });
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/srslyVis.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes("fight")) {
-  //   message.channel.send("(ง •̀•́)ง");
-  // }
-
-  // if (lowerCase.includes("future")) {
-  //   let x = getRandomInt(2);
-  //   if (message.author.bot) {
-  //     return;
-  //   }
-  //   if (x == 0) {
-  //     message.reply("like with jetpacks?");
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/timeTravel.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes(`i don't get it`)) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/kronk.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes("sexist") || lowerCase.includes("sexism")) {
-  //   message.channel.send("*folds arms under breasts*");
-  // }
-
-  // if (lowerCase.includes("convenient") || lowerCase.includes("convenience")) {
-  //   message.channel.send("The Wheel weaves as the Wheel wills.");
-  // }
-
-  // if (lowerCase.includes("aggressive") || lowerCase.includes("aggression")) {
-  //   message.channel.send("The Dude abides.");
-  // }
-
   // if (lowerCase.includes("read") && lowerCase.includes("book")) {
   //   message.channel.send({files: ["./Assets/heReadABook.gif"]})
-  // }
-
-  // if (lowerCase.includes("immature") || lowerCase.includes("naive")) {
-  //   message.channel.send({ files: ["./Assets/aou1.gif"] });
-  // }
-
-  // if (lowerCase.includes("assimilate") || lowerCase.includes("assimilation")) {
-  //   message.channel.send({ files: ["./Assets/aou3.gif"] });
   // }
 
   // if (lowerCase.includes("disappoint")) {

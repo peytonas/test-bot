@@ -1,5 +1,68 @@
 const prefix = process.env.PREFIX;
-const request = require("request");
+
+function censor(lowerCase, message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    let lc = lowerCase.split(" ");
+    for (var i in lc) {
+      if (lc[i].includes("https")) {
+        return;
+      } else if (
+        lc[i].endsWith("?") ||
+        lc[i].endsWith("!") ||
+        lc[i].endsWith(".") ||
+        lc[i].endsWith(",") ||
+        lc[i].endsWith(";") ||
+        lc[i].endsWith("*")
+      ) {
+        lc[i] = lc[i].slice(0, -1);
+      } else if (lc[i] == "shit") {
+        lc[i] = "*poop*";
+      } else if (lc[i] == "horseshit") {
+        lc[i] = "*horse poop*";
+      } else if (lc[i].includes("shitty")) {
+        lc[i] = "*poopy*";
+      } else if (lc[i].includes("damn")) {
+        lc[i] = "*a beaver's home*";
+      } else if (lc[i].includes("dammit")) {
+        lc[i] = "*dangnabbit*";
+      } else if (lc[i] == "fuck") {
+        lc[i] = "*fudgesicle*";
+      } else if (lc[i].includes("fucking")) {
+        lc[i] = "*fudgesicle-ing*";
+      } else if (lc[i].includes("god")) {
+        lc[i] = "*golly*";
+      } else if (lc[i] == "bitch") {
+        lc[i] = "*female dog*";
+      } else if (lc[i] == "bitches") {
+        lc[i] = "*female dogs*";
+      } else if (lc[i].includes("bitchin")) {
+        lc[i] = "*female dogging*";
+      } else if (lc[i].includes("dick")) {
+        lc[i] = "*penis*";
+      } else if (lc[i] == "pussy") {
+        lc[i] = "*kitty cat*";
+      } else if (lc[i] == "pussies") {
+        lc[i] = "*kitty cats*";
+      } else if (lc[i] == "ass") {
+        lc[i] = "*booty*";
+      } else if (lc[i] == "asses") {
+        lc[i] = "*booties*";
+      } else if (lc[i] == "asshole") {
+        lc[i] = "*bootyhole*";
+      } else if (lc[i] == "assholes") {
+        lc[i] = "*bootyholes*";
+      } else if (lc[i] == "bullshit") {
+        lc[i] = "*male cow poop*";
+      } else if (lc[i].includes("ass") && lc[i] != "ass") {
+        return;
+      }
+    }
+    let newStr = lc.join(" ");
+    message.channel.send(`Don't you mean "` + newStr + `"?`);
+  }
+}
 
 module.exports = {
   checkCmd: function (lowerCase, message) {
@@ -7,105 +70,25 @@ module.exports = {
 
     if (
       lowerCase.includes("shit") ||
+      lowerCase.includes("horseshit") ||
       lowerCase.includes("damn") ||
       lowerCase.includes("dammit") ||
       lowerCase.includes("fuck") ||
+      lowerCase.includes("fucking") ||
       lowerCase.includes("god") ||
       lowerCase.includes("bitch") ||
+      lowerCase.includes("bitches") ||
       lowerCase.includes("dick") ||
       lowerCase.includes("pussy") ||
       lowerCase.includes("pussies") ||
-      lowerCase.includes("ass")
+      lowerCase.includes("ass") ||
+      lowerCase.includes("asses") ||
+      lowerCase.includes("asshole") ||
+      lowerCase.includes("assholes") ||
+      lowerCase.includes("bullshit")
     ) {
-      if (message.author.bot) {
-        return;
-      }
-      let lc = lowerCase.split(" ");
-      for (var i in lc) {
-        if (lc[i].includes("https")) {
-          return;
-        }
-        if (
-          lc[i].endsWith("?") ||
-          lc[i].endsWith("!") ||
-          lc[i].endsWith(".") ||
-          lc[i].endsWith(",") ||
-          lc[i].endsWith(";") ||
-          lc[i].endsWith("*")
-        ) {
-          lc[i] = lc[i].slice(0, -1);
-        }
-        if (lc[i] == "shit") {
-          lc[i] = "*poop*";
-          found = true;
-        }
-        if (lc[i].includes("shitty")) {
-          lc[i] = "*poopy*";
-          found = true;
-        }
-        if (lc[i].includes("damn")) {
-          lc[i] = "*a beaver's home*";
-          found = true;
-        }
-        if (lc[i].includes("dammit")) {
-          lc[i] = "*dangnabbit*";
-          found = true;
-        }
-        if (lc[i] == "fuck") {
-          lc[i] = "*fudgesicle*";
-          found = true;
-        }
-        if (lc[i].includes("fucking")) {
-          lc[i] = "*fudgesicle-ing*";
-          found = true;
-        }
-        if (lc[i].includes("god")) {
-          lc[i] = "*golly*";
-          found = true;
-        }
-        if (lc[i] == "bitch") {
-          lc[i] = "*female dog*";
-          found = true;
-        }
-        if (lc[i] == "bitches") {
-          lc[i] = "*female dogs*";
-          found = true;
-        }
-        if (lc[i].includes("bitchin")) {
-          lc[i] = "*female dogging*";
-          found = true;
-        }
-        if (lc[i].includes("dick")) {
-          lc[i] = "*penis*";
-          found = true;
-        }
-        if (lc[i] == "pussy") {
-          lc[i] = "*kitty cat*";
-          found = true;
-        }
-        if (lc[i] == "pussies") {
-          lc[i] = "*kitty cats*";
-          found = true;
-        }
-        if (lc[i] == "ass") {
-          lc[i] = "*booty*";
-          found = true;
-        }
-        if (lc[i] == "asshole") {
-          lc[i] = "*bootyhole*";
-          found = true;
-        }
-        if (lc[i] == "assholes") {
-          lc[i] = "*bootyholes*";
-          found = true;
-        }
-        if (lc[i].includes("ass") && lc[i] != "ass") {
-          found = true;
-          return;
-        }
-      }
-      let newStr = lc.join(" ");
-      message.channel.send(`Don't you mean "` + newStr + `"?`);
+      censor(lowerCase, message);
+      found = true;
     }
     return found;
   },
