@@ -92,6 +92,29 @@ function d4Roll(message) {
   }
 }
 
+function dXRoll(lowerCase, message) {
+  player = playerRoll(message);
+  numArr = [];
+
+  if (message.author.bot) {
+    return;
+  } else {
+    let lc = lowerCase.split("");
+    for (x = 2; x < lc.length; x++) {
+      numArr.push(lc[i]);
+    }
+    console.log(numArr);
+    console.log(lc);
+    arrString = numArr.toString();
+    stringToNum = parseInt(arrString);
+    console.log(arrString);
+    console.log(stringToNum);
+
+    let i = diceRoll(1, stringToNum);
+    message.channel.send(player + ", you rolled..." + i);
+  }
+}
+
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
@@ -128,6 +151,10 @@ module.exports = {
         found = true;
         d4Roll(message);
         break;
+
+      default:
+        found = true;
+        dXRoll(lowerCase, message);
     }
     return found;
   },
