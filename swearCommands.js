@@ -55,7 +55,7 @@ function censor(lowerCase, message) {
         lc[i] = "*bootyholes*";
       } else if (lc[i] == "bullshit") {
         lc[i] = "*male cow poop*";
-      } else if (lc[i] == "ass" && lc[i].length != 3) {
+      } else if (lc[i].includes("ass") && lc[i].length != 3) {
         return;
       }
     }
