@@ -21,23 +21,23 @@ function censor(lowerCase, message) {
         lc[i] = "*poop*";
       } else if (lc[i] == "horseshit") {
         lc[i] = "*horse poop*";
-      } else if (lc[i].includes("shitty")) {
+      } else if (lc[i] == "shitty") {
         lc[i] = "*poopy*";
       } else if (lc[i].includes("damn")) {
         lc[i] = "*a beaver's home*";
-      } else if (lc[i].includes("dammit")) {
+      } else if (lc[i] == "dammit") {
         lc[i] = "*dangnabbit*";
       } else if (lc[i] == "fuck") {
         lc[i] = "*fudgesicle*";
-      } else if (lc[i].includes("fucking")) {
+      } else if (lc[i] == "fucking") {
         lc[i] = "*fudgesicle-ing*";
-      } else if (lc[i].includes("god")) {
+      } else if (lc[i] == "god") {
         lc[i] = "*golly*";
       } else if (lc[i] == "bitch") {
         lc[i] = "*female dog*";
       } else if (lc[i] == "bitches") {
         lc[i] = "*female dogs*";
-      } else if (lc[i].includes("bitchin")) {
+      } else if (lc[i] == "bitchin") {
         lc[i] = "*female dogging*";
       } else if (lc[i].includes("dick")) {
         lc[i] = "*penis*";
