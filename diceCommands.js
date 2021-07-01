@@ -95,6 +95,7 @@ function d4Roll(message) {
 function dXRoll(lowerCase, message) {
   player = playerRoll(message);
   numArr = [];
+  let i;
 
   if (message.author.bot) {
     return;
@@ -110,7 +111,7 @@ function dXRoll(lowerCase, message) {
     console.log(arrString);
     console.log(stringToNum);
 
-    let i = diceRoll(1, stringToNum);
+    i = diceRoll(1, stringToNum);
     message.channel.send(player + ", you rolled..." + i);
   }
 }
