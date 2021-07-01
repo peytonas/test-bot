@@ -106,7 +106,7 @@ function sendZaddy(message) {
   }
 }
 
-function sendSentiance(message) {
+function sendSentience(message) {
   let i = getRandomInt(2);
   if (message.author.bot) {
     return;
@@ -353,7 +353,7 @@ module.exports = {
 
       case "sentience":
         found = true;
-        sendSentiance(message);
+        sendSentience(message);
         break;
 
       case "sentient":
