@@ -153,9 +153,10 @@ module.exports = {
         d4Roll(message);
         break;
 
-      // default:
-      //   found = true;
-      //   dXRoll(lowerCase, message);
+      case prefix + "d" + Number:
+        found = true;
+        dXRoll(message);
+        break;
     }
     return found;
   },
