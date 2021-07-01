@@ -1,10 +1,10 @@
 const prefix = process.env.PREFIX;
 
 function censor(lowerCase, message) {
+  let lc = lowerCase.split(" ");
   if (message.author.bot) {
     return;
   } else {
-    let lc = lowerCase.split(" ");
     for (var i in lc) {
       if (lc[i].includes("https")) {
         return;
@@ -18,43 +18,61 @@ function censor(lowerCase, message) {
       ) {
         lc[i] = lc[i].slice(0, -1);
       }
-      if (lc[i] == "shit") {
+      if (lc[i].includes("shit")) {
         lc[i] = "*poop*";
-      } else if (lc[i] == "horseshit") {
+      }
+      if (lc[i].includes("horseshit")) {
         lc[i] = "*horse poop*";
-      } else if (lc[i].includes("shitty")) {
+      }
+      if (lc[i].includes("shitty")) {
         lc[i] = "*poopy*";
-      } else if (lc[i].includes("damn")) {
+      }
+      if (lc[i].includes("damn")) {
         lc[i] = "*a beaver's home*";
-      } else if (lc[i].includes("dammit")) {
+      }
+      if (lc[i].includes("dammit")) {
         lc[i] = "*dangnabbit*";
-      } else if (lc[i].includes("fuck")) {
+      }
+      if (lc[i].includes("fuck")) {
         lc[i] = "*fudgesicle*";
-      } else if (lc[i].includes("fucking")) {
+      }
+      if (lc[i].includes("fucking")) {
         lc[i] = "*fudgesicle-ing*";
-      } else if (lc[i].includes("god")) {
+      }
+      if (lc[i].includes("god")) {
         lc[i] = "*golly*";
-      } else if (lc[i].includes("bitch")) {
+      }
+      if (lc[i].includes("bitch")) {
         lc[i] = "*female dog*";
-      } else if (lc[i] == "bitches") {
+      }
+      if (lc[i].includes("bitches")) {
         lc[i] = "*female dogs*";
-      } else if (lc[i].includes("bitchin")) {
+      }
+      if (lc[i].includes("bitchin")) {
         lc[i] = "*female dogging*";
-      } else if (lc[i].includes("dick")) {
+      }
+      if (lc[i].includes("dick")) {
         lc[i] = "*penis*";
-      } else if (lc[i] == "pussy") {
+      }
+      if (lc[i].includes("pussy")) {
         lc[i] = "*kitty cat*";
-      } else if (lc[i] == "pussies") {
+      }
+      if (lc[i].includes("pussies")) {
         lc[i] = "*kitty cats*";
-      } else if (lc[i] == "ass") {
+      }
+      if (lc[i].includes("ass")) {
         lc[i] = "*booty*";
-      } else if (lc[i] == "asses") {
+      }
+      if (lc[i].includes("asses")) {
         lc[i] = "*booties*";
-      } else if (lc[i] == "asshole") {
+      }
+      if (lc[i].includes("asshole")) {
         lc[i] = "*bootyhole*";
-      } else if (lc[i] == "assholes") {
+      }
+      if (lc[i].includes("assholes")) {
         lc[i] = "*bootyholes*";
-      } else if (lc[i] == "bullshit") {
+      }
+      if (lc[i].includes("bullshit")) {
         lc[i] = "*male cow poop*";
       } else {
         return;
