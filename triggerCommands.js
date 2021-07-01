@@ -101,7 +101,7 @@ function fInChat(message) {
 function sendZaddy(message) {
   if (message.author.bot) {
     return;
-  } else if (lowerCase.includes("zaddy")) {
+  } else {
     message.channel.send({ files: ["./Assets/zaddy.gif"] });
   }
 }
