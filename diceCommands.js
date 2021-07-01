@@ -153,9 +153,9 @@ module.exports = {
         d4Roll(message);
         break;
 
-      default:
-        found = true;
-        dXRoll(lowerCase, message);
+      // default:
+      //   found = true;
+      //   dXRoll(lowerCase, message);
     }
     return found;
   },
