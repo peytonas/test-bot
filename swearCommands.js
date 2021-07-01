@@ -17,7 +17,8 @@ function censor(lowerCase, message) {
         lc[i].endsWith("*")
       ) {
         lc[i] = lc[i].slice(0, -1);
-      } else if (lc[i] == "shit") {
+      }
+      if (lc[i] == "shit") {
         lc[i] = "*poop*";
       } else if (lc[i] == "horseshit") {
         lc[i] = "*horse poop*";
