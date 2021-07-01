@@ -95,11 +95,6 @@ function d4Roll(message) {
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
-    var num = [];
-    for (var i = 1; i <= 10000; i++) {
-      num.push(i);
-    }
-    getRandomInt(100000000000000);
 
     switch (lowerCase) {
       case prefix + "d20":
