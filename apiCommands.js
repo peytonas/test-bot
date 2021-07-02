@@ -217,27 +217,24 @@ module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
 
-    switch (lowerCase) {
-      case lowerCase.includes(prefix + "hot"):
-        found = true;
-        hotGif(message);
-        break;
-
-      case lowerCase.includes(prefix + "noods"):
-        found = true;
-        noodsGif(message);
-        break;
-
-      case lowerCase.includes(prefix + "hoot"):
-        found = true;
-        hootGif(message);
-        break;
-
-      case lowerCase.includes(prefix + "random"):
-        found = true;
-        randomGif(message);
-        break;
+    if (lowerCase.includes(prefix + "hot")) {
+      found = true;
+      hotGif(message);
     }
-    return found;
+
+    if (lowerCase.includes(prefix + "noods")) {
+      found = true;
+      noodsGif(message);
+    }
+
+    if (lowerCase.includes(prefix + "hoot")) {
+      found = true;
+      hootGif(message);
+    }
+
+    if (lowerCase.includes(prefix + "random")) {
+      found = true;
+      randomGif(message);
+    }
   },
 };
