@@ -1,24 +1,44 @@
-const prefix = process.env.PREFIX;
+function formatMessage(lowerCase) {
+  let lc = lowerCase.split(" ");
+  for (var i in lc) {
+    if (lc[i].includes("https")) {
+      return;
+    }
+    if (
+      lc[i].endsWith("?") ||
+      lc[i].endsWith("!") ||
+      lc[i].endsWith(".") ||
+      lc[i].endsWith(",") ||
+      lc[i].endsWith(";") ||
+      lc[i].endsWith("*")
+    ) {
+      lc[i] = lc[i].slice(0, -1);
+    }
+  }
+  console.log(lc);
+  return lc;
+}
 
 function censor(lowerCase, message) {
-  let lc = lowerCase.split(" ");
+  let lc = formatMessage(lowerCase);
+  console.log(lc);
   if (message.author.bot) {
     return;
   } else {
     for (var i in lc) {
-      if (lc[i].includes("https")) {
-        return;
-      }
-      if (
-        lc[i].endsWith("?") ||
-        lc[i].endsWith("!") ||
-        lc[i].endsWith(".") ||
-        lc[i].endsWith(",") ||
-        lc[i].endsWith(";") ||
-        lc[i].endsWith("*")
-      ) {
-        lc[i] = lc[i].slice(0, -1);
-      }
+      // if (lc[i].includes("https")) {
+      //   return;
+      // }
+      // if (
+      //   lc[i].endsWith("?") ||
+      //   lc[i].endsWith("!") ||
+      //   lc[i].endsWith(".") ||
+      //   lc[i].endsWith(",") ||
+      //   lc[i].endsWith(";") ||
+      //   lc[i].endsWith("*")
+      // ) {
+      //   lc[i] = lc[i].slice(0, -1);
+      // }
       if (lc[i].includes("shit")) {
         lc[i] = "*poop*";
       }
