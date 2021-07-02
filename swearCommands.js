@@ -75,7 +75,7 @@ function censor(lowerCase, message) {
         lc[i] = "*bootyholes*";
       }
       if (lc[i] === "ass") {
-        console.log(lc[i]);
+        console.log("bad word:", lc[i]);
         lc[i] = "*booty*";
       }
       if (lc[i].includes("bullshit")) {
