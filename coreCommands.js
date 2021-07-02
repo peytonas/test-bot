@@ -12,11 +12,9 @@ function getRandomInt(max) {
 }
 
 function sendRyuk(message) {
-  console.log("sendRyuk");
   if (message.author.bot) {
     return;
   } else {
-    console.log("send!");
     message.channel.send({ files: ["./Pics/ryuk.png"] });
   }
 }
@@ -138,108 +136,99 @@ function sendJammin(message) {
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
-    console.log(lowerCase);
     if (lowerCase.includes(prefix + "ryuk")) {
       found = true;
       sendRyuk(message);
     }
 
-    switch (lowerCase) {
-      // case lowerCase.includes(prefix + "ryuk"):
-      //   found = true;
-      //   sendRyuk(message);
-      //   break;
-
-      case lowerCase.includes(prefix + "burn"):
-        found = true;
-        sendBurn(message);
-        break;
-
-      case lowerCase.includes(prefix + "kinky"):
-        found = true;
-        sendKinky(message);
-        break;
-
-      case lowerCase.includes(prefix + "goodnight"):
-        found = true;
-        sendGoodnight(message);
-        break;
-
-      case lowerCase.includes(prefix + "grrm"):
-        found = true;
-        sendGrrm(message);
-        break;
-
-      case lowerCase.includes(prefix + "jt"):
-        found = true;
-        sendJt(message);
-        break;
-
-      case lowerCase.includes(prefix + "flipflop"):
-        found = true;
-        sendFlipflop(message);
-        break;
-
-      case lowerCase.includes(prefix + "rt"):
-        found = true;
-        sendRt(message);
-        break;
-
-      case lowerCase.includes(prefix + "toocool"):
-        found = true;
-        sendTooCool(message);
-        break;
-
-      case lowerCase.includes(prefix + "pork"):
-        found = true;
-        sendPork(message);
-        break;
-
-      case lowerCase.includes(prefix + "smarf"):
-        found = true;
-        sendSmarf(message);
-        break;
-
-      case lowerCase.includes(prefix + "jammin"):
-        found = true;
-        sendJammin(message);
-        break;
-
-      case lowerCase.includes(prefix + "what"):
-        found = true;
-        sendWhat(message);
-        break;
-
-      case lowerCase.includes(prefix + "nani"):
-        found = true;
-        sendWhat(message);
-        break;
-
-      case lowerCase.includes(prefix + "irony"):
-        found = true;
-        sendIrony(message);
-        break;
-
-      case lowerCase.includes(prefix + "ironic"):
-        found = true;
-        sendIrony(message);
-        break;
-
-      case lowerCase.includes(prefix + "angry"):
-        found = true;
-        sendAngry(message);
-        break;
-
-      case lowerCase.includes(prefix + "mad"):
-        found = true;
-        sendAngry(message);
-        break;
-
-      case lowerCase.includes("triggered"):
-        found = true;
-        sendAngry(message);
-        break;
+    if (lowerCase.includes(prefix + "burn")) {
+      found = true;
+      sendBurn(message);
     }
-    return found;
+
+    if (lowerCase.includes(prefix + "kinky")) {
+      found = true;
+      sendKinky(message);
+    }
+
+    if (lowerCase.includes(prefix + "goodnight")) {
+      found = true;
+      sendGoodnight(message);
+    }
+
+    if (lowerCase.includes(prefix + "grrm")) {
+      found = true;
+      sendGrrm(message);
+    }
+
+    if (lowerCase.includes(prefix + "jt")) {
+      found = true;
+      sendJt(message);
+    }
+
+    if (lowerCase.includes(prefix + "flipflop")) {
+      found = true;
+      sendFlipflop(message);
+    }
+
+    if (lowerCase.includes(prefix + "rt")) {
+      found = true;
+      sendRt(message);
+    }
+
+    if (lowerCase.includes(prefix + "toocool")) {
+      found = true;
+      sendTooCool(message);
+    }
+
+    if (lowerCase.includes(prefix + "pork")) {
+      found = true;
+      sendPork(message);
+    }
+
+    if (lowerCase.includes(prefix + "smarf")) {
+      found = true;
+      sendSmarf(message);
+    }
+
+    if (lowerCase.includes(prefix + "jammin")) {
+      found = true;
+      sendJammin(message);
+    }
+
+    if (lowerCase.includes(prefix + "what")) {
+      found = true;
+      sendWhat(message);
+    }
+
+    if (lowerCase.includes(prefix + "nani")) {
+      found = true;
+      sendWhat(message);
+    }
+
+    if (lowerCase.includes(prefix + "irony")) {
+      found = true;
+      sendIrony(message);
+    }
+
+    if (lowerCase.includes(prefix + "ironic")) {
+      found = true;
+      sendIrony(message);
+    }
+
+    if (lowerCase.includes(prefix + "angry")) {
+      found = true;
+      sendAngry(message);
+    }
+
+    if (lowerCase.includes(prefix + "mad")) {
+      found = true;
+      sendAngry(message);
+    }
+
+    if (lowerCase.includes("triggered")) {
+      found = true;
+      sendAngry(message);
+    }
   },
 };
