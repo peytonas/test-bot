@@ -1,29 +1,29 @@
-function formatMessage(lowerCase) {
-  console.log("format:", lowerCase);
-  let lc = lowerCase.split(" ");
-  for (var i in lc) {
-    if (lc[i].includes("https")) {
-      return;
-    }
-    if (
-      lc[i].endsWith("?") ||
-      lc[i].endsWith("!") ||
-      lc[i].endsWith(".") ||
-      lc[i].endsWith(",") ||
-      lc[i].endsWith(";") ||
-      lc[i].endsWith(`"`) ||
-      lc[i].endsWith(`'`) ||
-      lc[i].endsWith(":") ||
-      lc[i].endsWith(")") ||
-      lc[i].endsWith("|") ||
-      lc[i].endsWith("*")
-    ) {
-      lc[i] = lc[i].slice(0, -1);
-    }
-  }
-  console.log("formatted:", lc);
-  return lc;
-}
+// function formatMessage(lowerCase) {
+//   console.log("format:", lowerCase);
+//   let lc = lowerCase.split(" ");
+//   for (var i in lc) {
+//     if (lc[i].includes("https")) {
+//       return;
+//     }
+//     if (
+//       lc[i].endsWith("?") ||
+//       lc[i].endsWith("!") ||
+//       lc[i].endsWith(".") ||
+//       lc[i].endsWith(",") ||
+//       lc[i].endsWith(";") ||
+//       lc[i].endsWith(`"`) ||
+//       lc[i].endsWith(`'`) ||
+//       lc[i].endsWith(":") ||
+//       lc[i].endsWith(")") ||
+//       lc[i].endsWith("|") ||
+//       lc[i].endsWith("*")
+//     ) {
+//       lc[i] = lc[i].slice(0, -1);
+//     }
+//   }
+//   console.log("formatted:", lc);
+//   return lc;
+// }
 
 function censor(lowerCase, message) {
   let lc = lowerCase.split(" ");
@@ -52,6 +52,7 @@ function censor(lowerCase, message) {
   }
   console.log("censored:", lc);
   for (var i in lc) {
+    console.log(lc[i]);
     if (lc[i].includes("damn")) {
       lc[i] = "*a beaver's home*";
     }
