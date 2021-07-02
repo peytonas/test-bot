@@ -136,7 +136,7 @@ function sendJammin(message) {
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
-
+    console.log(lowerCase);
     switch (lowerCase) {
       case lowerCase.includes(prefix + "ryuk"):
         found = true;
