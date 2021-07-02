@@ -14,6 +14,7 @@ const markovCommands = require("./markovCommands");
 const apiCommands = require("./apiCommands");
 const coreCommands = require("./coreCommands");
 const triggerCommands = require("./triggerCommands");
+const memeCommands = require("./memeCommands");
 const swearCommands = require("./swearCommands");
 
 // var logger = fs.createWriteStream('./quotes.txt', {
@@ -35,6 +36,7 @@ bot.on("message", async (message) => {
   if (apiCommands.checkCmd(lowerCase, message)) return;
   if (coreCommands.checkCmd(lowerCase, message)) return;
   if (triggerCommands.checkCmd(lowerCase, message)) return;
+  if (memeCommands.checkCmd(lowerCase, message)) return;
   if (swearCommands.checkCmd(lowerCase, message)) return;
 
   if (
