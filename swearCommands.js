@@ -118,8 +118,6 @@ function censor(lowerCase, message) {
     }
     if (lc[i].includes("shit")) {
       lc[i] = "*poop*";
-    } else {
-      return;
     }
   }
   let newStr = lc.join(" ");
