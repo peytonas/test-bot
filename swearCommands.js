@@ -64,7 +64,7 @@ function censor(lowerCase, message) {
     if (lc[i].includes("pussies")) {
       lc[i] = "*kitty cats*";
     }
-    if (lc[i].includes("ass")) {
+    if (lc[i].includes("ass") && lc[i].length == 3) {
       console.log("booty");
       lc[i] = "*booty*";
     }
