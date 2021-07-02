@@ -290,202 +290,163 @@ module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
 
-    switch (lowerCase) {
-      case lowerCase.includes("chalooby"):
-        found = true;
-        sendChalooby(message);
-        break;
-
-      case lowerCase.includes("bees"):
-        found = true;
-        sendBees(message);
-        break;
-
-      case lowerCase.includes("terror"):
-        found = true;
-        sendTerror(message);
-        break;
-
-      case lowerCase.includes("hugs"):
-        found = true;
-        sendTerror(message);
-        break;
-
-      case lowerCase.includes("hyped"):
-        found = true;
-        sendTerror(message);
-        break;
-
-      case lowerCase.includes("uncomfortable"):
-        found = true;
-        sendUncomfortable(message);
-        break;
-
-      case lowerCase.includes("gross"):
-        found = true;
-        sendGross(message);
-        break;
-
-      case lowerCase.includes("disgusting"):
-        found = true;
-        sendDisgusting(message);
-        break;
-
-      case lowerCase.includes("sucks"):
-        found = true;
-        sendSucks(message);
-        break;
-
-      case lowerCase.includes("f in chat"):
-        found = true;
-        fInChat(message);
-        break;
-
-      case lowerCase.includes("f in the chat"):
-        found = true;
-        fInChat(message);
-        break;
-
-      case lowerCase.includes("zaddy"):
-        found = true;
-        sendZaddy(message);
-        break;
-
-      case lowerCase.includes("sentience"):
-        found = true;
-        sendSentience(message);
-        break;
-
-      case lowerCase.includes("sentient"):
-        found = true;
-        sendSentience(message);
-        break;
-
-      case lowerCase.includes("yikes"):
-        found = true;
-        sendYikes(message);
-        break;
-
-      case lowerCase.includes("suspicious"):
-        found = true;
-        sendSus(message);
-        break;
-
-      case lowerCase.includes("sketchy"):
-        found = true;
-        sendSus(message);
-        break;
-
-      case lowerCase.includes("neat"):
-        found = true;
-        sendNeat(message);
-        break;
-
-      case lowerCase.includes("i love you"):
-        found = true;
-        sendLove(message);
-        break;
-
-      case lowerCase.includes("i hate you"):
-        found = true;
-        sendHate(message);
-        break;
-
-      case lowerCase.includes("good one"):
-        found = true;
-        sendNotAmused(message);
-        break;
-
-      case lowerCase.includes("entertaining"):
-        found = true;
-        sendNotAmused(message);
-        break;
-
-      case lowerCase.includes("entertained"):
-        found = true;
-        sendNotAmused(message);
-        break;
-
-      case lowerCase.includes("amused"):
-        found = true;
-        sendNotAmused(message);
-        break;
-
-      case lowerCase.includes("amusing"):
-        found = true;
-        sendNotAmused(message);
-        break;
-
-      case lowerCase.includes("fight"):
-        found = true;
-        sendFight(message);
-        break;
-
-      case lowerCase.includes("future"):
-        found = true;
-        sendFuture(message);
-        break;
-
-      case lowerCase.includes("i don't get it"):
-        found = true;
-        sendConfusion(message);
-        break;
-
-      case lowerCase.includes("sexist"):
-        found = true;
-        sendSexism(message);
-        break;
-
-      case lowerCase.includes("sexism"):
-        found = true;
-        sendSexism(message);
-        break;
-
-      case lowerCase.includes("convenient"):
-        found = true;
-        sendConvenience(message);
-        break;
-
-      case lowerCase.includes("convenience"):
-        found = true;
-        sendConvenience(message);
-        break;
-
-      case lowerCase.includes("aggressive"):
-        found = true;
-        sendAggression(message);
-        break;
-
-      case lowerCase.includes("aggression"):
-        found = true;
-        sendAggression(message);
-        break;
-
-      case lowerCase.includes("hehe"):
-        found = true;
-        sendHehe(message);
-        break;
-
-      case lowerCase.includes("immature"):
-        found = true;
-        sendImmature(message);
-        break;
-
-      case lowerCase.includes("naive"):
-        found = true;
-        sendImmature(message);
-        break;
-
-      case lowerCase.includes("assimilate"):
-        found = true;
-        sendAssimilation(message);
-        break;
-
-      case lowerCase.includes("assimilation"):
-        found = true;
-        sendAssimilation(message);
-        break;
+    if (lowerCase.includes("chalooby")) {
+      found = true;
+      sendChalooby(message);
     }
-    return found;
+    if (lowerCase.includes("bees")) {
+      found = true;
+      sendBees(message);
+    }
+    if (lowerCase.includes("terror")) {
+      found = true;
+      sendTerror(message);
+    }
+    if (lowerCase.includes("hugs")) {
+      found = true;
+      sendTerror(message);
+    }
+    if (lowerCase.includes("hyped")) {
+      (found = true), sendTerror(message);
+    }
+    if (lowerCase.includes("uncomfortable")) {
+      (found = true), sendUncomfortable(message);
+    }
+    if (lowerCase.includes("gross")) {
+      found = true;
+      sendGross(message);
+    }
+    if (lowerCase.includes("disgusting")) {
+      found = true;
+      sendDisgusting(message);
+    }
+    if (lowerCase.includes("sucks")) {
+      found = true;
+      sendSucks(message);
+    }
+    if (lowerCase.includes("f in chat")) {
+      found = true;
+      fInChat(message);
+    }
+    if (lowerCase.includes("f in the chat")) {
+      found = true;
+      fInChat(message);
+    }
+    if (lowerCase.includes("zaddy")) {
+      found = true;
+      sendZaddy(message);
+    }
+    if (lowerCase.includes("sentience")) {
+      found = true;
+      sendSentience(message);
+    }
+    if (lowerCase.includes("sentient")) {
+      found = true;
+      sendSentience(message);
+    }
+    if (lowerCase.includes("yikes")) {
+      found = true;
+      sendYikes(message);
+    }
+    if (lowerCase.includes("suspicious")) {
+      found = true;
+      sendSus(message);
+    }
+    if (lowerCase.includes("sketchy")) {
+      found = true;
+      sendSus(message);
+    }
+    if (lowerCase.includes("neat")) {
+      found = true;
+      sendNeat(message);
+    }
+    if (lowerCase.includes("i love you")) {
+      found = true;
+      sendLove(message);
+    }
+    if (lowerCase.includes("i hate you")) {
+      found = true;
+      sendHate(message);
+    }
+    if (lowerCase.includes("good one")) {
+      found = true;
+      sendNotAmused(message);
+    }
+    if (lowerCase.includes("entertaining")) {
+      found = true;
+      sendNotAmused(message);
+    }
+    if (lowerCase.includes("entertained")) {
+      found = true;
+      sendNotAmused(message);
+    }
+    if (lowerCase.includes("amused")) {
+      found = true;
+      sendNotAmused(message);
+    }
+    if (lowerCase.includes("amusing")) {
+      found = true;
+      sendNotAmused(message);
+    }
+    if (lowerCase.includes("fight")) {
+      found = true;
+      sendFight(message);
+    }
+    if (lowerCase.includes("future")) {
+      found = true;
+      sendFuture(message);
+    }
+    if (lowerCase.includes("i don't get it")) {
+      found = true;
+      sendConfusion(message);
+    }
+    if (lowerCase.includes("sexist")) {
+      found = true;
+      sendSexism(message);
+    }
+    if (lowerCase.includes("sexism")) {
+      found = true;
+      sendSexism(message);
+    }
+    if (lowerCase.includes("convenient")) {
+      found = true;
+      sendConvenience(message);
+    }
+    if (lowerCase.includes("convenience")) {
+      found = true;
+      sendConvenience(message);
+    }
+    if (lowerCase.includes("aggressive")) {
+      found = true;
+      sendAggression(message);
+    }
+    if (lowerCase.includes("aggression")) {
+      found = true;
+      sendAggression(message);
+    }
+    if (lowerCase.includes("hehe")) {
+      found = true;
+      sendHehe(message);
+    }
+
+    if (lowerCase.includes("immature")) {
+      found = true;
+      sendImmature(message);
+    }
+
+    if (lowerCase.includes("naive")) {
+      found = true;
+      sendImmature(message);
+    }
+
+    if (lowerCase.includes("assimilate")) {
+      found = true;
+      sendAssimilation(message);
+    }
+
+    if (lowerCase.includes("assimilation")) {
+      found = true;
+      sendAssimilation(message);
+    }
   },
 };
