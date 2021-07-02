@@ -3,6 +3,7 @@ const prefix = process.env.PREFIX;
 function censor(lowerCase, message) {
   console.log("CENSOR");
   let lc = lowerCase.split(" ");
+  console.log(lc);
   if (message.author.bot) {
     return;
   } else {
@@ -62,6 +63,7 @@ function censor(lowerCase, message) {
         lc[i] = "*kitty cats*";
       }
       if (lc[i].includes("ass")) {
+        console.log("booty");
         lc[i] = "*booty*";
       }
       if (lc[i].includes("asses")) {
