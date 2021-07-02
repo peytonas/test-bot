@@ -143,92 +143,92 @@ module.exports = {
         sendRyuk(message);
         break;
 
-      case prefix + "burn":
+      case lowerCase.includes(prefix + "burn"):
         found = true;
         sendBurn(message);
         break;
 
-      case prefix + "kinky":
+      case lowerCase.includes(prefix + "kinky"):
         found = true;
         sendKinky(message);
         break;
 
-      case prefix + "goodnight":
+      case lowerCase.includes(prefix + "goodnight"):
         found = true;
         sendGoodnight(message);
         break;
 
-      case prefix + "grrm":
+      case lowerCase.includes(prefix + "grrm"):
         found = true;
         sendGrrm(message);
         break;
 
-      case prefix + "jt":
+      case lowerCase.includes(prefix + "jt"):
         found = true;
         sendJt(message);
         break;
 
-      case prefix + "flipflop":
+      case lowerCase.includes(prefix + "flipflop"):
         found = true;
         sendFlipflop(message);
         break;
 
-      case prefix + "rt":
+      case lowerCase.includes(prefix + "rt"):
         found = true;
         sendRt(message);
         break;
 
-      case prefix + "toocool":
+      case lowerCase.includes(prefix + "toocool"):
         found = true;
         sendTooCool(message);
         break;
 
-      case prefix + "pork":
+      case lowerCase.includes(prefix + "pork"):
         found = true;
         sendPork(message);
         break;
 
-      case prefix + "smarf":
+      case lowerCase.includes(prefix + "smarf"):
         found = true;
         sendSmarf(message);
         break;
 
-      case prefix + "jammin":
+      case lowerCase.includes(prefix + "jammin"):
         found = true;
         sendJammin(message);
         break;
 
-      case prefix + "what":
+      case lowerCase.includes(prefix + "what"):
         found = true;
         sendWhat(message);
         break;
 
-      case prefix + "nani":
+      case lowerCase.includes(prefix + "nani"):
         found = true;
         sendWhat(message);
         break;
 
-      case prefix + "irony":
+      case lowerCase.includes(prefix + "irony"):
         found = true;
         sendIrony(message);
         break;
 
-      case prefix + "ironic":
+      case lowerCase.includes(prefix + "ironic"):
         found = true;
         sendIrony(message);
         break;
 
-      case prefix + "angry":
+      case lowerCase.includes(prefix + "angry"):
         found = true;
         sendAngry(message);
         break;
 
-      case prefix + "mad":
+      case lowerCase.includes(prefix + "mad"):
         found = true;
         sendAngry(message);
         break;
 
-      case "triggered":
+      case lowerCase.includes("triggered"):
         found = true;
         sendAngry(message);
         break;

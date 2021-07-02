@@ -218,22 +218,22 @@ module.exports = {
     found = false;
 
     switch (lowerCase) {
-      case prefix + "hot":
+      case lowerCase.includes(prefix + "hot"):
         found = true;
         hotGif(message);
         break;
 
-      case prefix + "noods":
+      case lowerCase.includes(prefix + "noods"):
         found = true;
         noodsGif(message);
         break;
 
-      case prefix + "hoot":
+      case lowerCase.includes(prefix + "hoot"):
         found = true;
         hootGif(message);
         break;
 
-      case prefix + "random":
+      case lowerCase.includes(prefix + "random"):
         found = true;
         randomGif(message);
         break;

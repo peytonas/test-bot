@@ -291,197 +291,197 @@ module.exports = {
     found = false;
 
     switch (lowerCase) {
-      case "chalooby":
+      case lowerCase.includes("chalooby"):
         found = true;
         sendChalooby(message);
         break;
 
-      case "bees":
+      case lowerCase.includes("bees"):
         found = true;
         sendBees(message);
         break;
 
-      case "terror":
+      case lowerCase.includes("terror"):
         found = true;
         sendTerror(message);
         break;
 
-      case "hugs":
+      case lowerCase.includes("hugs"):
         found = true;
         sendTerror(message);
         break;
 
-      case "hyped":
+      case lowerCase.includes("hyped"):
         found = true;
         sendTerror(message);
         break;
 
-      case "uncomfortable":
+      case lowerCase.includes("uncomfortable"):
         found = true;
         sendUncomfortable(message);
         break;
 
-      case "gross":
+      case lowerCase.includes("gross"):
         found = true;
         sendGross(message);
         break;
 
-      case "disgusting":
+      case lowerCase.includes("disgusting"):
         found = true;
         sendDisgusting(message);
         break;
 
-      case "sucks":
+      case lowerCase.includes("sucks"):
         found = true;
         sendSucks(message);
         break;
 
-      case "f in chat":
+      case lowerCase.includes("f in chat"):
         found = true;
         fInChat(message);
         break;
 
-      case "f in the chat":
+      case lowerCase.includes("f in the chat"):
         found = true;
         fInChat(message);
         break;
 
-      case "zaddy":
+      case lowerCase.includes("zaddy"):
         found = true;
         sendZaddy(message);
         break;
 
-      case "sentience":
+      case lowerCase.includes("sentience"):
         found = true;
         sendSentience(message);
         break;
 
-      case "sentient":
+      case lowerCase.includes("sentient"):
         found = true;
         sendSentience(message);
         break;
 
-      case "yikes":
+      case lowerCase.includes("yikes"):
         found = true;
         sendYikes(message);
         break;
 
-      case "suspicious":
+      case lowerCase.includes("suspicious"):
         found = true;
         sendSus(message);
         break;
 
-      case "sketchy":
+      case lowerCase.includes("sketchy"):
         found = true;
         sendSus(message);
         break;
 
-      case "neat":
+      case lowerCase.includes("neat"):
         found = true;
         sendNeat(message);
         break;
 
-      case "i love you":
+      case lowerCase.includes("i love you"):
         found = true;
         sendLove(message);
         break;
 
-      case "i hate you":
+      case lowerCase.includes("i hate you"):
         found = true;
         sendHate(message);
         break;
 
-      case "good one":
+      case lowerCase.includes("good one"):
         found = true;
         sendNotAmused(message);
         break;
 
-      case "entertaining":
+      case lowerCase.includes("entertaining"):
         found = true;
         sendNotAmused(message);
         break;
 
-      case "entertained":
+      case lowerCase.includes("entertained"):
         found = true;
         sendNotAmused(message);
         break;
 
-      case "amused":
+      case lowerCase.includes("amused"):
         found = true;
         sendNotAmused(message);
         break;
 
-      case "amusing":
+      case lowerCase.includes("amusing"):
         found = true;
         sendNotAmused(message);
         break;
 
-      case "fight":
+      case lowerCase.includes("fight"):
         found = true;
         sendFight(message);
         break;
 
-      case "future":
+      case lowerCase.includes("future"):
         found = true;
         sendFuture(message);
         break;
 
-      case "i don't get it":
+      case lowerCase.includes("i don't get it"):
         found = true;
         sendConfusion(message);
         break;
 
-      case "sexist":
+      case lowerCase.includes("sexist"):
         found = true;
         sendSexism(message);
         break;
 
-      case "sexism":
+      case lowerCase.includes("sexism"):
         found = true;
         sendSexism(message);
         break;
 
-      case "convenient":
+      case lowerCase.includes("convenient"):
         found = true;
         sendConvenience(message);
         break;
 
-      case "convenience":
+      case lowerCase.includes("convenience"):
         found = true;
         sendConvenience(message);
         break;
 
-      case "aggressive":
+      case lowerCase.includes("aggressive"):
         found = true;
         sendAggression(message);
         break;
 
-      case "aggression":
+      case lowerCase.includes("aggression"):
         found = true;
         sendAggression(message);
         break;
 
-      case "hehe":
+      case lowerCase.includes("hehe"):
         found = true;
         sendHehe(message);
         break;
 
-      case "immature":
+      case lowerCase.includes("immature"):
         found = true;
         sendImmature(message);
         break;
 
-      case "naive":
+      case lowerCase.includes("naive"):
         found = true;
         sendImmature(message);
         break;
 
-      case "assimilate":
+      case lowerCase.includes("assimilate"):
         found = true;
         sendAssimilation(message);
         break;
 
-      case "assimilation":
+      case lowerCase.includes("assimilation"):
         found = true;
         sendAssimilation(message);
         break;
