@@ -8,9 +8,11 @@ function censor(lowerCase, message) {
     return;
   } else {
     for (var i in lc) {
+      console.log(i);
       if (lc[i].includes("https")) {
         return;
-      } else if (
+      }
+      if (
         lc[i].endsWith("?") ||
         lc[i].endsWith("!") ||
         lc[i].endsWith(".") ||
