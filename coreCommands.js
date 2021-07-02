@@ -19,6 +19,14 @@ function sendRyuk(message) {
   }
 }
 
+function sendGrind(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send({ files: ["./Assets/grind.gif"] });
+  }
+}
+
 function sendBurn(message) {
   if (message.author.bot) {
     return;
@@ -139,6 +147,11 @@ module.exports = {
     if (lowerCase.includes(prefix + "ryuk")) {
       found = true;
       sendRyuk(message);
+    }
+
+    if (lowerCase.includes(prefix + "grind")) {
+      found = true;
+      sendGrind(message);
     }
 
     if (lowerCase.includes(prefix + "burn")) {

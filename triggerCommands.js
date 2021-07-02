@@ -294,6 +294,7 @@ module.exports = {
       found = true;
       sendChalooby(message);
     }
+
     if (lowerCase.includes("bees")) {
       found = true;
       sendBees(message);
