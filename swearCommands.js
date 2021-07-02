@@ -71,7 +71,7 @@ function censor(lowerCase, message) {
     if (lc[i].includes("assholes")) {
       lc[i] = "*bootyholes*";
     }
-    if (lc[i].includes("classic")) {
+    if (lc[i].includes("class")) {
       return;
     }
     if (lc[i].includes("assimilate")) {
@@ -80,7 +80,7 @@ function censor(lowerCase, message) {
     if (lc[i].includes("assimilation")) {
       return;
     }
-    if (lc[i].includes("massive")) {
+    if (lc[i].includes("mass")) {
       return;
     }
     if (lc[i].includes("ass")) {
