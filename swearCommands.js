@@ -71,11 +71,19 @@ function censor(lowerCase, message) {
       if (lc[i].includes("asshole")) {
         lc[i] = "*bootyhole*";
       }
+      if (lc[i].includes("jackass")) {
+        lc[i] = "*burro*";
+      }
       if (lc[i].includes("assholes")) {
         lc[i] = "*bootyholes*";
       }
+      if (lc[i] == "classic") {
+        return;
+      }
+      if (lc[i] == "massive") {
+        return;
+      }
       if (lc[i] === "ass") {
-        console.log(lc[i]);
         lc[i] = "*booty*";
       }
       if (lc[i].includes("bullshit")) {
