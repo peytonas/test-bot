@@ -52,7 +52,7 @@ function censor(lowerCase, message) {
   }
   console.log("censored:", lc);
   for (var i in lc) {
-    console.log(lc[i]);
+    console.log("loop:", lc[i]);
     if (lc[i].includes("damn")) {
       lc[i] = "*a beaver's home*";
     }
