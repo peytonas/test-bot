@@ -9,12 +9,12 @@ const token = process.env.BOT_TOKEN;
 const diceCommands = require("./diceCommands");
 const redditRef = require("./redditRef");
 const inspoCommands = require("./inspoCommands");
-const swearCommands = require("./swearCommands");
 const jokeCommands = require("./jokeCommands");
 const markovCommands = require("./markovCommands");
 const apiCommands = require("./apiCommands");
 const coreCommands = require("./coreCommands");
 const triggerCommands = require("./triggerCommands");
+const swearCommands = require("./swearCommands");
 
 // var logger = fs.createWriteStream('./quotes.txt', {
 //   flags: 'a'
@@ -30,12 +30,12 @@ bot.on("message", async (message) => {
   if (diceCommands.checkCmd(lowerCase, message)) return;
   if (redditRef.checkCmd(lowerCase, message)) return;
   if (inspoCommands.checkCmd(lowerCase, message)) return;
-  if (swearCommands.checkCmd(lowerCase, message)) return;
   if (jokeCommands.checkCmd(lowerCase, message)) return;
   if (markovCommands.checkCmd(lowerCase, message)) return;
   if (apiCommands.checkCmd(lowerCase, message)) return;
   if (coreCommands.checkCmd(lowerCase, message)) return;
   if (triggerCommands.checkCmd(lowerCase, message)) return;
+  if (swearCommands.checkCmd(lowerCase, message)) return;
 
   if (
     lowerCase.includes("well hi") ||
