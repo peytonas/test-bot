@@ -51,7 +51,7 @@ function censor(lowerCase, message) {
     }
   }
   console.log("censored:", lc);
-  for (var i in lc) {
+  for (var i = 0; i < lc.length; i++) {
     console.log("loop:", lc[i]);
     if (lc[i].includes("damn")) {
       lc[i] = "*a beaver's home*";
@@ -130,7 +130,7 @@ function censor(lowerCase, message) {
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
-    console.log(lowerCase);
+    console.log("input:", lowerCase);
     if (
       lowerCase.includes("shit") ||
       lowerCase.includes("horseshit") ||
