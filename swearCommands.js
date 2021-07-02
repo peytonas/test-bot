@@ -74,7 +74,7 @@ function censor(lowerCase, message) {
       if (lc[i].includes("assholes")) {
         lc[i] = "*bootyholes*";
       }
-      if (lc[i] == "ass") {
+      if (lc[i] === "ass") {
         console.log(lc[i]);
         lc[i] = "*booty*";
       }
@@ -89,6 +89,8 @@ function censor(lowerCase, message) {
       }
       if (lc[i].includes("shit")) {
         lc[i] = "*poop*";
+      } else {
+        return;
       }
     }
     let newStr = lc.join(" ");
