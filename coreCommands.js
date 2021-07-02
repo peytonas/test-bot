@@ -138,7 +138,7 @@ module.exports = {
     found = false;
 
     switch (lowerCase) {
-      case prefix + "ryuk":
+      case lowerCase.includes(prefix + "ryuk"):
         found = true;
         sendRyuk(message);
         break;
