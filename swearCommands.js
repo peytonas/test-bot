@@ -1,6 +1,7 @@
 const prefix = process.env.PREFIX;
 
 function censor(lowerCase, message) {
+  console.log("CENSOR");
   let lc = lowerCase.split(" ");
   if (message.author.bot) {
     return;
@@ -80,13 +81,14 @@ function censor(lowerCase, message) {
     }
     let newStr = lc.join(" ");
     message.channel.send(`Don't you mean "` + newStr + `"?`);
+    console.log("end");
   }
 }
 
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
-
+    console.log(lowerCase);
     if (
       lowerCase.includes("shit") ||
       lowerCase.includes("horseshit") ||
