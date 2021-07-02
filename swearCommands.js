@@ -25,11 +25,6 @@ function formatMessage(lowerCase) {
   return lc;
 }
 
-function formatResponse(lc) {
-  let newStr = lc.join(" ");
-  message.channel.send(`Don't you mean "` + newStr + `"?`);
-}
-
 function censor(lowerCase, message) {
   let lc = formatMessage(lowerCase);
   console.log("censored:", lc);
@@ -80,8 +75,8 @@ function censor(lowerCase, message) {
         lc[i] = "*bootyholes*";
       }
       if (lc[i] === "ass") {
+        console.log(lc[i]);
         lc[i] = "*booty*";
-        formatResponse(lc[i]);
       }
       if (lc[i].includes("bullshit")) {
         lc[i] = "*male cow poop*";
@@ -98,7 +93,8 @@ function censor(lowerCase, message) {
         return;
       }
     }
-    formatResponse(lc);
+    let newStr = lc.join(" ");
+    message.channel.send(`Don't you mean "` + newStr + `"?`);
     console.log("end");
   }
 }
