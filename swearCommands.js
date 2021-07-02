@@ -74,6 +74,12 @@ function censor(lowerCase, message) {
     if (lc[i].includes("classic")) {
       return;
     }
+    if (lc[i].includes("assimilate")) {
+      return;
+    }
+    if (lc[i].includes("assimilation")) {
+      return;
+    }
     if (lc[i].includes("massive")) {
       return;
     }
