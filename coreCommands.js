@@ -139,11 +139,16 @@ module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
     console.log(lowerCase);
+    if (lowerCase.includes(prefix + "ryuk")) {
+      found = true;
+      sendRyuk(message);
+    }
+
     switch (lowerCase) {
-      case lowerCase.includes(prefix + "ryuk"):
-        found = true;
-        sendRyuk(message);
-        break;
+      // case lowerCase.includes(prefix + "ryuk"):
+      //   found = true;
+      //   sendRyuk(message);
+      //   break;
 
       case lowerCase.includes(prefix + "burn"):
         found = true;
