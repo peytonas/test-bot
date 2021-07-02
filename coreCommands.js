@@ -12,9 +12,11 @@ function getRandomInt(max) {
 }
 
 function sendRyuk(message) {
+  console.log("sendRyuk");
   if (message.author.bot) {
     return;
   } else {
+    console.log("send!");
     message.channel.send({ files: ["./Pics/ryuk.png"] });
   }
 }
