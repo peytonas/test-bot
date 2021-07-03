@@ -16,6 +16,7 @@ const coreCommands = require("./coreCommands");
 const triggerCommands = require("./triggerCommands");
 const memeCommands = require("./memeCommands");
 const swearCommands = require("./swearCommands");
+const videoCommands = require("./videoCommands");
 
 // var logger = fs.createWriteStream('./quotes.txt', {
 //   flags: 'a'
@@ -37,6 +38,7 @@ bot.on("message", async (message) => {
   if (coreCommands.checkCmd(lowerCase, message)) return;
   if (triggerCommands.checkCmd(lowerCase, message)) return;
   if (memeCommands.checkCmd(lowerCase, message)) return;
+  if (videoCommands.checkCmd(lowerCase, message)) return;
   if (swearCommands.checkCmd(lowerCase, message)) return;
 
   if (
@@ -91,229 +93,58 @@ bot.on("message", async (message) => {
     }
   }
 
-  // if (lowerCase.includes(prefix + "tragedy")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send(
-  //       "Did you ever hear the tragedy of Darth Plagueis The Wise?"
-  //     );
-  //     setTimeout(function () {
-  //       message.channel.send(
-  //         "I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life... He had such a knowledge of the Dark Side that he could even keep the ones he cared about from dying."
-  //       );
-  //     }, 5000);
-  //     setTimeout(function () {
-  //       message.channel.send(
-  //         "The Dark Side of the Force is a pathway to many abilities some consider to be unnatural."
-  //       );
-  //     }, 10000);
-  //     setTimeout(function () {
-  //       message.channel.send(
-  //         "He became so powerful the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself."
-  //       );
-  //     }, 15000);
-  //   }
-  // }
-
-  // if (lowerCase === "is it possible to learn this power?") {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("Not from a Jedi...");
-  //   }
-  // }
-
-  if (
-    lowerCase.includes(prefix + "awkward") ||
-    lowerCase.includes(prefix + "awk")
-  ) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send("https://www.youtube.com/watch?v=_V2sBURgUBI");
-    }
-  }
-
-  if (lowerCase.includes(prefix + "fail")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM");
-    }
-  }
-
-  if (
-    lowerCase.includes(prefix + "abrupt") ||
-    lowerCase.includes(prefix + "sudden")
-  ) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send("https://youtu.be/idoYCVLh2qI");
-    }
-  }
-
-  // if (lowerCase.includes(prefix + "idky")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/padme.gif"] });
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "dos")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send({ files: ["./Assets/losDos.gif"] });
-  //   }
-  // }
-
   // if (
-  //   lowerCase.includes(prefix + "zemo") ||
-  //   lowerCase.includes(prefix + "smile")
+  //   lowerCase.includes(prefix + "awkward") ||
+  //   lowerCase.includes(prefix + "awk")
   // ) {
   //   if (message.author.bot) {
   //     return;
   //   } else {
-  //     message.channel.send({ files: ["./Assets/zemo.gif"] });
+  //     message.channel.send("https://www.youtube.com/watch?v=_V2sBURgUBI");
   //   }
   // }
 
-  if (lowerCase.includes(prefix + "wrong")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send("https://www.youtube.com/watch?v=bKgWm5TNeBA");
-    }
-  }
-
-  // if (lowerCase.includes(prefix + "grind")) {
+  // if (lowerCase.includes(prefix + "fail")) {
   //   if (message.author.bot) {
   //     return;
   //   } else {
-  //     message.channel.send({ files: ["./Assets/grind.gif"] });
+  //     message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM");
   //   }
   // }
 
-  if (lowerCase.includes(prefix + "beans")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send("https://youtu.be/bM25p7tGcOQ");
-    }
-  }
-
-  if (lowerCase.includes(prefix + "banana")) {
-    if (message.author.bot) {
-      return;
-    } else {
-      message.channel.send("https://www.youtube.com/watch?v=S-Eyhq-D9yM");
-    }
-  }
-
-  //   if (lowerCase.includes(prefix + "paradise")) {
-  //     if (message.author.bot) {
-  //       return;
-  //     } else {
-  //       message.channel
-  //         .send(`I was shooting heroin and reading “The Fountainhead” in the front seat of my privately owned police cruiser when a call came in. I put a quarter in the radio to activate it. It was the chief.
-
-  // “Bad news, detective. We got a situation.”
-
-  // “What? Is the mayor trying to ban trans fats again?”
-
-  // “Worse. Somebody just stole four hundred and forty-seven million dollars’ worth of bitcoins.”
-
-  // The heroin needle practically fell out of my arm. “What kind of monster would do something like that? Bitcoins are the ultimate currency: virtual, anonymous, stateless. They represent true economic freedom, not subject to arbitrary manipulation by any government. Do we have any leads?”
-
-  // “Not yet. But mark my words: we’re going to figure out who did this and we’re going to take them down … provided someone pays us a fair market rate to do so.”
-
-  // “Easy, chief,” I said. “Any rate the market offers is, by definition, fair.”
-
-  // He laughed. “That’s why you’re the best I got, Lisowski. Now you get out there and find those bitcoins.”
-
-  // “Don’t worry,” I said. “I’m on it.”`);
-  //       message.channel
-  //         .send(`I put a quarter in the siren. Ten minutes later, I was on the scene. It was a normal office building, strangled on all sides by public sidewalks. I hopped over them and went inside.
-
-  // “Home Depot™ Presents the Police!®” I said, flashing my badge and my gun and a small picture of Ron Paul. “Nobody move unless you want to!” They didn’t.
-
-  // “Now, which one of you punks is going to pay me to investigate this crime?” No one spoke up.
-
-  // “Come on,” I said. “Don’t you all understand that the protection of private property is the foundation of all personal liberty?”
-
-  // It didn’t seem like they did.
-
-  // “Seriously, guys. Without a strong economic motivator, I’m just going to stand here and not solve this case. Cash is fine, but I prefer being paid in gold bullion or autographed Penn Jillette posters.”
-
-  // Nothing. These people were stonewalling me. It almost seemed like they didn’t care that a fortune in computer money invented to buy drugs was missing.
-
-  // I figured I could wait them out. I lit several cigarettes indoors. A pregnant lady coughed, and I told her that secondhand smoke is a myth. Just then, a man in glasses made a break for it.
-
-  // “Subway™ Eat Fresh and Freeze, Scumbag!®” I yelled.
-
-  // Too late. He was already out the front door. I went after him.`);
-  //       message.channel
-  //         .send(`“Stop right there!” I yelled as I ran. He was faster than me because I always try to avoid stepping on public sidewalks. Our country needs a private-sidewalk voucher system, but, thanks to the incestuous interplay between our corrupt federal government and the public-sidewalk lobby, it will never happen.
-
-  // I was losing him. “Listen, I’ll pay you to stop!” I yelled. “What would you consider an appropriate price point for stopping? I’ll offer you a thirteenth of an ounce of gold and a gently worn ‘Bob Barr ‘08’ extra-large long-sleeved men’s T-shirt!”
-
-  // He turned. In his hand was a revolver that the Constitution said he had every right to own. He fired at me and missed. I pulled my own gun, put a quarter in it, and fired back. The bullet lodged in a U.S.P.S. mailbox less than a foot from his head. I shot the mailbox again, on purpose.
-
-  // “All right, all right!” the man yelled, throwing down his weapon. “I give up, cop! I confess: I took the bitcoins.”
-
-  // “Why’d you do it?” I asked, as I slapped a pair of Oikos™ Greek Yogurt Presents Handcuffs® on the guy.
-
-  // “Because I was afraid.”
-
-  // “Afraid?”
-
-  // “Afraid of an economic future free from the pernicious meddling of central bankers,” he said. “I’m a central banker.”
-
-  // I wanted to coldcock the guy. Years ago, a central banker killed my partner. Instead, I shook my head.
-
-  // “Let this be a message to all your central-banker friends out on the street,” I said. “No matter how many bitcoins you steal, you’ll never take away the dream of an open society based on the principles of personal and economic freedom.”
-
-  // He nodded, because he knew I was right. Then he swiped his credit card to pay me for arresting him.`);
-  //     }
-  //   }
-
-  // if (lowerCase.includes(prefix + "sleep")) {
+  // if (
+  //   lowerCase.includes(prefix + "abrupt") ||
+  //   lowerCase.includes(prefix + "sudden")
+  // ) {
   //   if (message.author.bot) {
   //     return;
   //   } else {
-  //     setTimeout(function () {
-  //       message.channel.send({ files: ["./Assets/NSTB1.gif"] });
-  //     }, 500);
-  //     setTimeout(function () {
-  //       message.channel.send({ files: ["./Assets/NSTB2.gif"] });
-  //     }, 500);
-  //     setTimeout(function () {
-  //       message.channel.send({ files: ["./Assets/NSTB3.gif"] });
-  //     }, 500);
-  //     setTimeout(function () {
-  //       message.channel.send({ files: ["./Assets/NSTB4.gif"] });
-  //     }, 500);
+  //     message.channel.send("https://youtu.be/idoYCVLh2qI");
   //   }
   // }
 
-  // if (lowerCase.includes(prefix + "tea")) {
+  // if (lowerCase.includes(prefix + "wrong")) {
   //   if (message.author.bot) {
   //     return;
+  //   } else {
+  //     message.channel.send("https://www.youtube.com/watch?v=bKgWm5TNeBA");
   //   }
-  //   message.channel.send(
-  //     "What kind of tea do you want? We have...Blueberry, Raspberry, Ginseng, Sleepy Time, Green Tea, Green Tea with Lemon, Green Tea with Lemon and Honey, Liver Disaster, Ginger with Honey, Vanilla Almond, White Truffle Coconut, Chamomile, Blueberry Chamomile, Decaf Vanilla Walnut, Constant Comment, and...Earl Grey."
-  //   );
   // }
 
-  // if (lowerCase.includes("read") && lowerCase.includes("book")) {
-  //   message.channel.send({files: ["./Assets/heReadABook.gif"]})
+  // if (lowerCase.includes(prefix + "beans")) {
+  //   if (message.author.bot) {
+  //     return;
+  //   } else {
+  //     message.channel.send("https://youtu.be/bM25p7tGcOQ");
+  //   }
   // }
 
-  // if (lowerCase.includes("disappoint")) {
-  //   message.channel.send({files: ["./Assets/aou5.gif"]})
+  // if (lowerCase.includes(prefix + "banana")) {
+  //   if (message.author.bot) {
+  //     return;
+  //   } else {
+  //     message.channel.send("https://www.youtube.com/watch?v=S-Eyhq-D9yM");
+  //   }
   // }
 });
 
