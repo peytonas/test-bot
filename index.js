@@ -18,10 +18,6 @@ const memeCommands = require("./memeCommands");
 const swearCommands = require("./swearCommands");
 const videoCommands = require("./videoCommands");
 
-// var logger = fs.createWriteStream('./quotes.txt', {
-//   flags: 'a'
-// })
-
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
@@ -92,60 +88,6 @@ bot.on("message", async (message) => {
       );
     }
   }
-
-  // if (
-  //   lowerCase.includes(prefix + "awkward") ||
-  //   lowerCase.includes(prefix + "awk")
-  // ) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("https://www.youtube.com/watch?v=_V2sBURgUBI");
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "fail")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("https://www.youtube.com/watch?v=Ag1o3koTLWM");
-  //   }
-  // }
-
-  // if (
-  //   lowerCase.includes(prefix + "abrupt") ||
-  //   lowerCase.includes(prefix + "sudden")
-  // ) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("https://youtu.be/idoYCVLh2qI");
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "wrong")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("https://www.youtube.com/watch?v=bKgWm5TNeBA");
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "beans")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("https://youtu.be/bM25p7tGcOQ");
-  //   }
-  // }
-
-  // if (lowerCase.includes(prefix + "banana")) {
-  //   if (message.author.bot) {
-  //     return;
-  //   } else {
-  //     message.channel.send("https://www.youtube.com/watch?v=S-Eyhq-D9yM");
-  //   }
-  // }
 });
 
 bot.login(token);
