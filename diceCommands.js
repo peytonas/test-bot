@@ -43,9 +43,9 @@ function d20Roll(message) {
   } else {
     let i = diceRoll(1, 20);
     i == 20
-      ? message.channel.send(natCritResponses[getRandomInt(3)])
+      ? message.channel.send(player + ": " + natCritResponses[getRandomInt(3)])
       : i == 1
-      ? message.channel.send(critFailResponses[getRandomInt(3)])
+      ? message.channel.send(player + ": " + critFailResponses[getRandomInt(3)])
       : message.channel.send(player + ", you rolled..." + i);
   }
 }
