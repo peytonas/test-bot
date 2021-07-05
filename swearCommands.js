@@ -73,10 +73,10 @@ function censor(lowerCase, message) {
     if (lc[i].includes("class")) {
       return;
     }
-    if (lc[i].includes("assimilate")) {
+    if (lc[i].includes("assi")) {
       return;
     }
-    if (lc[i].includes("assimilation")) {
+    if (lc[i].includes("assu")) {
       return;
     }
     if (lc[i].includes("mass")) {
