@@ -46,7 +46,7 @@ bot.on("message", async (message) => {
       !abrupt/!sudden &bull; !angry/!mad
       !awkward/!awk &bull; !banana
       !beans &bull; !blog
-      !bored &bull; !burn
+      !bored ${"&bull;"} !burn
       !classy &bull; !cooks
       !dos &bull; !fail
       !flipflop &bull; !goodnight
