@@ -19,6 +19,22 @@ function sendRyuk(message) {
   }
 }
 
+function sendWheezy(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send({ files: ["./Pics/wheezy.png"] });
+  }
+}
+
+function sendPreference(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send({ files: ["./Pics/prefer_not_to.png"] });
+  }
+}
+
 function sendGrind(message) {
   if (message.author.bot) {
     return;
@@ -242,6 +258,16 @@ module.exports = {
     if (lowerCase.includes("triggered")) {
       found = true;
       sendAngry(message);
+    }
+
+    if (lowerCase.includes(prefix + "blog")) {
+      found = true;
+      sendWheezy(message);
+    }
+
+    if (lowerCase.includes(prefix + "no")) {
+      found = true;
+      sendPreference(message);
     }
   },
 };
