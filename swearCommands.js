@@ -58,9 +58,6 @@ function censor(lowerCase, message) {
     if (lc[i].includes("pussies")) {
       lc[i] = "*kitty cats*";
     }
-    if (lc[i].includes("asses")) {
-      lc[i] = "*booties*";
-    }
     if (lc[i].includes("asshole")) {
       lc[i] = "*bootyhole*";
     }
@@ -102,6 +99,12 @@ function censor(lowerCase, message) {
     }
     if (lc[i].includes("pass")) {
       return;
+    }
+    if (lc[i].includes("lass")) {
+      return;
+    }
+    if (lc[i].includes("asses")) {
+      lc[i] = "*booties*";
     }
     if (lc[i].includes("ass")) {
       lc[i] = "*booty*";
