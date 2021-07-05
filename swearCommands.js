@@ -17,10 +17,11 @@ function censor(lowerCase, message) {
       lc[i].endsWith(`'`) ||
       lc[i].endsWith(":") ||
       lc[i].endsWith(")") ||
-      // lc[i].endsWith("|") ||
       lc[i].endsWith("*")
     ) {
       lc[i] = lc[i].slice(0, -1);
+    } else if (lc[i].startsWith("||")) {
+      return;
     }
   }
   for (var i = 0; i < lc.length; i++) {
