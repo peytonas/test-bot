@@ -81,6 +81,21 @@ function censor(lowerCase, message) {
     if (lc[i].includes("mass")) {
       return;
     }
+    if (lc[i].includes("sass")) {
+      return;
+    }
+    if (lc[i].includes("tass")) {
+      return;
+    }
+    if (lc[i].includes("bass")) {
+      return;
+    }
+    if (lc[i].includes("yass")) {
+      return;
+    }
+    if (lc[i].includes("pass")) {
+      return;
+    }
     if (lc[i].includes("ass")) {
       lc[i] = "*booty*";
     }
