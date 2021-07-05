@@ -66,6 +66,9 @@ function censor(lowerCase, message) {
     if (lc[i].includes("jackass")) {
       lc[i] = "*burro*";
     }
+    if (lc[i].includes("dumbass")) {
+      lc[i] = "*dumb burro*";
+    }
     if (lc[i].includes("assholes")) {
       lc[i] = "*bootyholes*";
     }
