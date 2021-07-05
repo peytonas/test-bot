@@ -1,5 +1,20 @@
 const prefix = process.env.PREFIX;
 
+let natCritResponses = [
+  "Fudgesicle, yes! That's a 20!",
+  "Uh-oh, looks like someone just entered the *CRIT*-aceous period...You rolled a 20!",
+  "Hey, I just met you, and this is crazy, but here's your number (20), so CRIT-i-call me maybe?",
+];
+let critFailResponses = [
+  "So you're actually just really bad at this, I guess? That was a 1, in case you weren't sure by my disappointed demeanor.",
+  "Don't feel too bad, at least your mom would still be proud of that 1. That is,if you weren't too ashamed of her knowing you're still playing DnD as a full grown man.",
+  "You had 19 chances to land on something better than a 1 and failed. Are we campaigning your sex life?",
+];
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function diceRoll(min, max) {
   return min + Math.floor(Math.random() * (max - min + 1));
 }
@@ -28,11 +43,9 @@ function d20Roll(message) {
   } else {
     let i = diceRoll(1, 20);
     i == 20
-      ? message.channel.send(
-          player + ", you rolled..." + 20 + "! **NATURAL CRIT**"
-        )
+      ? message.channel.send(natCritResponses[getRandomInt(3)])
       : i == 1
-      ? message.channel.send(player + "...That's a " + 1 + "...*crit fail*...")
+      ? message.channel.send(critFailResponses[getRandomInt(3)])
       : message.channel.send(player + ", you rolled..." + i);
   }
 }
@@ -98,8 +111,6 @@ module.exports = {
 
     switch (lowerCase) {
       case prefix + "d20":
-        // set found equal to true so your index.js file knows
-        //   to not try executing 'other' commands
         found = true;
         d20Roll(message);
         break;

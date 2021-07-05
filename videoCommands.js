@@ -1,5 +1,13 @@
 const prefix = process.env.PREFIX;
 
+function sendHai(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send("https://www.youtube.com/watch?v=Z-yJTjbswhw");
+  }
+}
+
 function sendSeinfeld(message) {
   if (message.author.bot) {
     return;
@@ -131,6 +139,14 @@ module.exports = {
     if (lowerCase.includes(prefix + "cooks")) {
       found = true;
       sendCooks(message);
+    }
+    if (lowerCase.includes("well hi")) {
+      found = true;
+      sendCooks(message);
+    }
+    if (lowerCase.includes("whale") && lowerCase.includes("hai")) {
+      found = true;
+      sendHai(message);
     }
     return found;
   },
