@@ -43,27 +43,27 @@ bot.on("message", async (message) => {
     } else {
       message.channel.send(
         `Commands:
-      !abrupt/!sudden &bull; !angry/!mad
-      !awkward/!awk &bull; !banana
-      !beans &bull; !blog
-      !bored ${"&bull;"} !burn
-      !classy &bull; !cooks
-      !dos &bull; !fail
-      !flipflop &bull; !goodnight
-      !grind &bull; !grrm
-      !hot &bull; !idky
-      !iron &bull; !irony/!ironic
-      !jammin &bull; !jt
-      !kinky &bull; !markov
-      !no &bull; !nani/!what
-      !noods &bull; !paradise
-      !pork &bull; !porkin
-      !random &bull; !rp1
-      !rt &bull; !ryuk
-      !sleep &bull; !smarf
-      !tea &bull; !terror
-      !toocool &bull; !tragedy
-      !wrong &bull; !zemo/!smile
+      !abrupt/!sudden | !angry/!mad
+      !awkward/!awk | !banana
+      !beans | !blog
+      !bored | !burn
+      !classy | !cooks
+      !dos | !fail
+      !flipflop | !goodnight
+      !grind | !grrm
+      !hot | !idky
+      !iron | !irony/!ironic
+      !jammin | !jt
+      !kinky | !markov
+      !no | !nani/!what
+      !noods | !paradise
+      !pork | !porkin
+      !random | !rp1
+      !rt | !ryuk
+      !sleep | !smarf
+      !tea | !terror
+      !toocool | !tragedy
+      !wrong | !zemo/!smile
       `
       );
     }
