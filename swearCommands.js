@@ -81,6 +81,9 @@ function censor(lowerCase, message) {
     if (lc[i].includes("mass")) {
       return;
     }
+    if (lc[i].includes("rass")) {
+      return;
+    }
     if (lc[i].includes("sass")) {
       return;
     }
