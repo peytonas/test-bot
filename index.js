@@ -23,7 +23,6 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async (message) => {
-  message.channel.send(i);
   var lowerCase = message.content.toLowerCase();
   // if (counterCommands.checkCmd(lowerCase, message)) return;
   if (diceCommands.checkCmd(lowerCase, message)) return;
