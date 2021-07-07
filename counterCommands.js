@@ -1,24 +1,23 @@
 const prefix = process.env.PREFIX;
-const { Guild } = require("discord.js");
 const request = require("request");
 
-function startInterval(message, members) {
-  setInterval(checkStatus(message, members), 10000);
-}
+// function startInterval(message, members) {
+//   setInterval(checkStatus(message, members), 10000);
+// }
 
-function checkStatus(message, members) {
-  var i = members;
-  message.channel.send(i);
-  i == 4 ? message.channel.send("yes") : message.channel.send("no");
-}
+// function checkStatus(message, guild) {
+//   var i = guild;
+//   message.channel.send(i);
+//   i == 4 ? message.channel.send("yes") : message.channel.send("no");
+// }
 
 module.exports = {
-  checkCmd: function (lowerCase, message) {
+  checkCmd: function (lowerCase, message, guild) {
     found = false;
-    message.channel.send(Guild.name);
     if (lowerCase.includes(prefix + "status")) {
       found = true;
-      startInterval(message, members);
+      message.channel.send(guild);
+      // startInterval(message, members);
     }
     return found;
   },
