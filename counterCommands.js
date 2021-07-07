@@ -1,3 +1,4 @@
+const Discord = require("discord.js");
 const prefix = process.env.PREFIX;
 const guild = new Discord.Guild(bot, data);
 
