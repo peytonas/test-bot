@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const guild = Discord.Guild(bot);
+const guild = new Discord.Guild(bot);
 fs = require("fs");
 
 const prefix = process.env.PREFIX;
