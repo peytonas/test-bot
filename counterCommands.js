@@ -1,6 +1,4 @@
-const Discord = require("discord.js");
 const prefix = process.env.PREFIX;
-const guild = new Discord.Guild(bot, data);
 
 // function startInterval(message, members) {
 //   setInterval(checkStatus(message, members), 10000);
