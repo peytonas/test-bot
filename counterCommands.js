@@ -16,7 +16,7 @@ module.exports = {
     found = false;
     if (lowerCase.includes(prefix + "status")) {
       found = true;
-      message.channel.send(guild);
+      message.channel.send(guild[0]);
       // startInterval(message, members);
     }
     return found;
