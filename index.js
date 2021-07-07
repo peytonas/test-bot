@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
+const guild = Discord.Guild(bot, data);
 fs = require("fs");
 
 const prefix = process.env.PREFIX;
@@ -18,11 +19,14 @@ const swearCommands = require("./swearCommands");
 const videoCommands = require("./videoCommands");
 const counterCommands = require("./counterCommands");
 
+var i = guild.memberCount;
+
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
 
 bot.on("message", async (message) => {
+  message.channel.send(i);
   var lowerCase = message.content.toLowerCase();
   if (counterCommands.checkCmd(lowerCase, message)) return;
   if (diceCommands.checkCmd(lowerCase, message)) return;
