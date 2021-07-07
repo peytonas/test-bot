@@ -15,7 +15,7 @@ function checkStatus(message, members) {
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
-    members = Guild.members.filter((member) => !member.user.bot).size;
+    message.channel.send(Guild.name);
     if (lowerCase.includes(prefix + "status")) {
       found = true;
       startInterval(message, members);
