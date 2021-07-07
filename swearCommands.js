@@ -100,7 +100,55 @@ function censor(lowerCase, message) {
     if (lc[i].includes("assy")) {
       return;
     }
+    if (lc[i].includes("aass")) {
+      return;
+    }
+    if (lc[i].includes("bass")) {
+      return;
+    }
+    if (lc[i].includes("cass")) {
+      return;
+    }
+    if (lc[i].includes("dass")) {
+      return;
+    }
+    if (lc[i].includes("eass")) {
+      return;
+    }
+    if (lc[i].includes("fass")) {
+      return;
+    }
+    if (lc[i].includes("gass")) {
+      return;
+    }
+    if (lc[i].includes("hass")) {
+      return;
+    }
+    if (lc[i].includes("iass")) {
+      return;
+    }
+    if (lc[i].includes("jass")) {
+      return;
+    }
+    if (lc[i].includes("kass")) {
+      return;
+    }
+    if (lc[i].includes("lass")) {
+      return;
+    }
     if (lc[i].includes("mass")) {
+      return;
+    }
+    if (lc[i].includes("nass")) {
+      return;
+    }
+    if (lc[i].includes("oass")) {
+      return;
+    }
+    if (lc[i].includes("pass")) {
+      return;
+    }
+    if (lc[i].includes("qass")) {
       return;
     }
     if (lc[i].includes("rass")) {
@@ -112,16 +160,22 @@ function censor(lowerCase, message) {
     if (lc[i].includes("tass")) {
       return;
     }
-    if (lc[i].includes("bass")) {
+    if (lc[i].includes("uass")) {
+      return;
+    }
+    if (lc[i].includes("vass")) {
+      return;
+    }
+    if (lc[i].includes("wass")) {
+      return;
+    }
+    if (lc[i].includes("xass")) {
       return;
     }
     if (lc[i].includes("yass")) {
       return;
     }
-    if (lc[i].includes("pass")) {
-      return;
-    }
-    if (lc[i].includes("lass")) {
+    if (lc[i].includes("zass")) {
       return;
     }
     if (lc[i].includes("asses")) {
