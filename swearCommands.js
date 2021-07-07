@@ -58,8 +58,23 @@ function censor(lowerCase, message) {
     if (lc[i].includes("pussies")) {
       lc[i] = "*kitty cats*";
     }
+    if (lc[i].includes("bullshit")) {
+      lc[i] = "*male cow poop*";
+    }
+    if (lc[i].includes("horseshit")) {
+      lc[i] = "*horse poop*";
+    }
+    if (lc[i].includes("shitty")) {
+      lc[i] = "*poopy*";
+    }
+    if (lc[i].includes("shit")) {
+      lc[i] = "*poop*";
+    }
     if (lc[i].includes("asshole")) {
       lc[i] = "*bootyhole*";
+    }
+    if (lc[i].includes("assholes")) {
+      lc[i] = "*bootyholes*";
     }
     if (lc[i].includes("jackass")) {
       lc[i] = "*burro*";
@@ -67,16 +82,22 @@ function censor(lowerCase, message) {
     if (lc[i].includes("dumbass")) {
       lc[i] = "*dumb burro*";
     }
-    if (lc[i].includes("assholes")) {
-      lc[i] = "*bootyholes*";
+    if (lc[i].includes("assa")) {
+      return;
     }
-    if (lc[i].includes("class")) {
+    if (lc[i].includes("asse")) {
       return;
     }
     if (lc[i].includes("assi")) {
       return;
     }
+    if (lc[i].includes("asso")) {
+      return;
+    }
     if (lc[i].includes("assu")) {
+      return;
+    }
+    if (lc[i].includes("assy")) {
       return;
     }
     if (lc[i].includes("mass")) {
@@ -108,18 +129,6 @@ function censor(lowerCase, message) {
     }
     if (lc[i].includes("ass")) {
       lc[i] = "*booty*";
-    }
-    if (lc[i].includes("bullshit")) {
-      lc[i] = "*male cow poop*";
-    }
-    if (lc[i].includes("horseshit")) {
-      lc[i] = "*horse poop*";
-    }
-    if (lc[i].includes("shitty")) {
-      lc[i] = "*poopy*";
-    }
-    if (lc[i].includes("shit")) {
-      lc[i] = "*poop*";
     }
   }
   let newStr = lc.join(" ");
