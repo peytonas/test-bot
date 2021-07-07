@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const guild = bot.guilds.cache.map((guild) => guild.id);
+const guild = Discord.Guild(bot, data);
 fs = require("fs");
 
 const prefix = process.env.PREFIX;
