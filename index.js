@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
-fs = require("fs");
-
 const bot = new Discord.Client();
+// const guild = bot.guilds;
+fs = require("fs");
 
 const prefix = process.env.PREFIX;
 const token = process.env.BOT_TOKEN;
@@ -17,6 +17,7 @@ const triggerCommands = require("./triggerCommands");
 const memeCommands = require("./memeCommands");
 const swearCommands = require("./swearCommands");
 const videoCommands = require("./videoCommands");
+const counterCommands = require("./counterCommands");
 
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
@@ -25,6 +26,7 @@ bot.on("ready", async () => {
 bot.on("message", async (message) => {
   var lowerCase = message.content.toLowerCase();
   // logger.write(message.content)
+  if (counterCommands.checkCmd(lowerCase, message, bot)) return;
   if (diceCommands.checkCmd(lowerCase, message)) return;
   if (inspoCommands.checkCmd(lowerCase, message)) return;
   if (coreCommands.checkCmd(lowerCase, message)) return;
