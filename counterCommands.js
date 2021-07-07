@@ -1,5 +1,5 @@
 const prefix = process.env.PREFIX;
-const request = require("request");
+const guild = new Discord.Guild(bot, data);
 
 // function startInterval(message, members) {
 //   setInterval(checkStatus(message, members), 10000);
@@ -12,11 +12,11 @@ const request = require("request");
 // }
 
 module.exports = {
-  checkCmd: function (lowerCase, message, guild) {
+  checkCmd: function (lowerCase, message) {
     found = false;
     if (lowerCase.includes(prefix + "status")) {
       found = true;
-      message.channel.send(guild.memberCount);
+      message.channel.send("Server Count:", guild.memberCount);
       // startInterval(message, members);
     }
     return found;

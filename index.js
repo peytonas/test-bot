@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const guild = Discord.Guild(bot, data);
 fs = require("fs");
 
 const prefix = process.env.PREFIX;
@@ -25,7 +24,7 @@ bot.on("ready", async () => {
 
 bot.on("message", async (message) => {
   var lowerCase = message.content.toLowerCase();
-  if (counterCommands.checkCmd(lowerCase, message, guild)) return;
+  if (counterCommands.checkCmd(lowerCase, message)) return;
   if (diceCommands.checkCmd(lowerCase, message)) return;
   if (inspoCommands.checkCmd(lowerCase, message)) return;
   if (coreCommands.checkCmd(lowerCase, message)) return;
