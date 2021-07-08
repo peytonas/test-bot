@@ -41,7 +41,9 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      console.log(bot.guilds.cache.collection.id);
+      const guild = bot.guilds.cache.get("692153312149241857");
+      console.log(guild);
+      console.log(guild.array());
       message.channel.send(
         `Commands:
       !abrupt/!sudden | !angry/!mad
