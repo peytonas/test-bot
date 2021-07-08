@@ -41,7 +41,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      console.log(bot.guilds.cache);
+      console.log(bot.guilds.cache.collection(1).id);
       message.channel.send(
         `Commands:
       !abrupt/!sudden | !angry/!mad
