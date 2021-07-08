@@ -42,7 +42,7 @@ bot.on("message", async (message) => {
       return;
     } else {
       const guild = bot.guilds.cache.get("692153312149241857");
-      client.members.fetch().then((fetchedMembers) => {
+      bot.members.fetch().then((fetchedMembers) => {
         const totalOnline = fetchedMembers.filter(
           (member) => member.presence.status === "online"
         );
