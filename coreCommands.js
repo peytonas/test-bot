@@ -235,11 +235,6 @@ module.exports = {
       sendWhat(message);
     }
 
-    if (lowerCase.includes(prefix + "irony")) {
-      found = true;
-      sendIrony(message);
-    }
-
     if (lowerCase.includes(prefix + "ironic")) {
       found = true;
       sendIrony(message);

@@ -62,11 +62,11 @@ bot.on("message", async (message) => {
       !flipflop | !goodnight
       !grind | !grrm
       !hot | !idky
-      !iron | !irony/!ironic
-      !jammin | !jt
-      !kinky | !markov
-      !no | !nani/!what
-      !noods | !paradise
+      !ironic | !jammin
+      !jt | !kinky
+      !markov | !no
+      !nani/!what | !noods
+      !outlaw | !paradise
       !pork | !porkin
       !random | !rp1
       !rt | !ryuk

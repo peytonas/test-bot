@@ -124,7 +124,7 @@ module.exports = {
       found = true;
       sendBanana(message);
     }
-    if (lowerCase.includes(prefix + "iron")) {
+    if (lowerCase.includes(prefix + "outlaw")) {
       found = true;
       sendIron(message);
     }
