@@ -42,13 +42,21 @@ bot.on("message", async (message) => {
       return;
     } else {
       const guild = bot.guilds.cache.get("692153312149241857");
+      client.members.fetch().then((fetchedMembers) => {
+        const totalOnline = fetchedMembers.filter(
+          (member) => member.presence.status === "online"
+        );
+        console.log(
+          "Members:",
+          totalOnline.size
+          // bot.users.cache.find((user) => user.username === "UnbrandedLemon")
+        );
+      });
+
       console.log("Guild Data:", guild);
       console.log("Name:", guild.name);
       console.log("Count:", guild.memberCount);
-      console.log(
-        "Members:",
-        bot.users.cache.find((user) => user.username === "UnbrandedLemon")
-      );
+
       message.channel.send(
         `Commands:
       !abrupt/!sudden | !angry/!mad
