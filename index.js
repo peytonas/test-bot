@@ -18,6 +18,10 @@ const swearCommands = require("./swearCommands");
 const videoCommands = require("./videoCommands");
 // const counterCommands = require("./counterCommands");
 
+const lemon = bot.users.cache.find(
+  (user) => user.username === "UnbrandedLemon"
+);
+
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
@@ -41,18 +45,22 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
+      bot.members.fetch().then((fetchedMembers) => {
+        const totalOnline = fetchedMembers.filter(
+          (member) => member.presence.status === "online"
+        );
+        // Now you have a collection with all online member objects in the totalOnline variable
+        console.log(
+          `There are currently ${totalOnline.size} members online in this guild!`
+        );
+      });
+
       const guild = bot.guilds.cache.get("692153312149241857");
-      const lemon = bot.users.cache.find(
-        (user) => user.username === "UnbrandedLemon"
-      );
+
       console.log("Guild Data:", guild);
       console.log("Name:", guild.name);
       console.log("Count:", guild.memberCount);
       console.log("Members:", lemon);
-      console.log(
-        "Members:",
-        bot.users.cache.find((user) => user.userPresenceData === "online")
-      );
       message.channel.send(
         `Commands:
       !abrupt/!sudden | !angry/!mad
