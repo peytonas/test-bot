@@ -45,7 +45,7 @@ bot.on("message", async (message) => {
     if (message.author.bot) {
       return;
     } else {
-      bot.members.fetch().then((fetchedMembers) => {
+      bot.users.fetch().then((fetchedMembers) => {
         const totalOnline = fetchedMembers.filter(
           (member) => member.presence.status === "online"
         );
