@@ -45,7 +45,7 @@ bot.on("message", async (message) => {
       console.log("Guild Data:", guild);
       console.log("Name:", guild.name);
       console.log("Count:", guild.memberCount);
-      console.log("Members:", guild.guildMemberManager.cache);
+      console.log("Members:", bot.guildMemberManager.cache);
       message.channel.send(
         `Commands:
       !abrupt/!sudden | !angry/!mad
