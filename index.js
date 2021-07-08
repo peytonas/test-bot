@@ -47,7 +47,7 @@ bot.on("message", async (message) => {
       console.log("Count:", guild.memberCount);
       console.log(
         "Members:",
-        bot.users.cache.find((user) => user.username === "UnbrandedLemon#4302")
+        bot.users.cache.find((user) => user.username === "UnbrandedLemon")
       );
       message.channel.send(
         `Commands:
