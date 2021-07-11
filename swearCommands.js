@@ -67,14 +67,20 @@ function censor(lowerCase, message) {
     if (lc[i].includes("shitty")) {
       lc[i] = "*poopy*";
     }
+    if (lc[i].includes("shitposting")) {
+      lc[i] = "*poopy post*";
+    }
+    if (lc[i].includes("shitpost")) {
+      lc[i] = "*poopy post*";
+    }
     if (lc[i].includes("shit")) {
       lc[i] = "*poop*";
     }
-    if (lc[i].includes("asshole")) {
-      lc[i] = "*bootyhole*";
-    }
     if (lc[i].includes("assholes")) {
       lc[i] = "*bootyholes*";
+    }
+    if (lc[i].includes("asshole")) {
+      lc[i] = "*bootyhole*";
     }
     if (lc[i].includes("jackass")) {
       lc[i] = "*burro*";
@@ -84,6 +90,9 @@ function censor(lowerCase, message) {
     }
     if (lc[i].includes("assa")) {
       return;
+    }
+    if (lc[i].includes("asses")) {
+      lc[i] = "*booties*";
     }
     if (lc[i].includes("asse")) {
       return;
@@ -177,9 +186,6 @@ function censor(lowerCase, message) {
     }
     if (lc[i].includes("zass")) {
       return;
-    }
-    if (lc[i].includes("asses")) {
-      lc[i] = "*booties*";
     }
     if (lc[i].includes("ass")) {
       lc[i] = "*booty*";
