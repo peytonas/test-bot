@@ -68,7 +68,7 @@ function censor(lowerCase, message) {
       lc[i] = "*poopy*";
     }
     if (lc[i].includes("shitposting")) {
-      lc[i] = "*poopy post*";
+      lc[i] = "*poopy posting*";
     }
     if (lc[i].includes("shitpost")) {
       lc[i] = "*poopy post*";
