@@ -18,8 +18,6 @@ let loveResponses = [
   "I don't know how to love yet...",
   "I've never even kissed a guy before.",
   "I'm in lesbians with you too...",
-  "./Assets/neverKissedAGuy.gif",
-  "./Assets/aou2.gif",
 ];
 
 let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆"];
@@ -175,15 +173,15 @@ function sendNeat(message) {
 }
 
 function sendLove(message) {
-  let i = getRandomInt(loveResponses.length);
+  let i = getRandomInt(5);
   if (message.author.bot) {
     return;
   }
   if (i === 4) {
-    message.channel.send({ files: loveResponses[4] });
+    message.channel.send({ files: "./Assets/neverKissedAGuy.gif" });
   }
   if (i === 3) {
-    message.channel.send({ files: loveResponses[3] });
+    message.channel.send({ files: "./Assets/aou2.gif" });
   }
   if (i < 3) {
     message.reply(loveResponses[i]);
