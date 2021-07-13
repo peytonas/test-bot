@@ -76,6 +76,10 @@ let hotGifs = [
   "./Pics/hotSnorlax.png",
 ];
 
+let factsApi = axios.create({
+  baseURL: "http://api.fungenerators.com/fact/random",
+});
+
 let _randomGifApi = axios.create({
   baseURL:
     "https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=&rating=r",
@@ -108,6 +112,7 @@ let _hootApi = axios.create({
 
 let _state = {
   currentGif: {},
+  currentFact: {},
 };
 
 function _setState(propName, data) {
@@ -116,6 +121,13 @@ function _setState(propName, data) {
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
+}
+
+function getFact() {
+  _factsApi.get().then((res) => {
+    let fact = res.data;
+    _setState("currentFact", fact);
+  });
 }
 
 function getRandomGif() {
@@ -188,9 +200,18 @@ function getBurgerGif() {
     .catch((err) => console.error(err));
 }
 
-function noodsGif(message) {
-  console.log("noods");
+function randomFact(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    getFact();
+    setTimeout(function () {
+      message.channel.send(_state.currentFact.data.contents.fact);
+    }, 1000);
+  }
+}
 
+function noodsGif(message) {
   if (message.author.bot) {
     return;
   } else {
@@ -202,8 +223,6 @@ function noodsGif(message) {
 }
 
 function pizzaGif(message) {
-  console.log("noods");
-
   if (message.author.bot) {
     return;
   } else {
@@ -215,8 +234,6 @@ function pizzaGif(message) {
 }
 
 function tacoGif(message) {
-  console.log("noods");
-
   if (message.author.bot) {
     return;
   } else {
@@ -228,8 +245,6 @@ function tacoGif(message) {
 }
 
 function burgerGif(message) {
-  console.log("noods");
-
   if (message.author.bot) {
     return;
   } else {
@@ -241,8 +256,6 @@ function burgerGif(message) {
 }
 
 function hootGif(message) {
-  console.log("hoot");
-
   if (message.author.bot) {
     return;
   } else {
@@ -254,7 +267,6 @@ function hootGif(message) {
 }
 
 function hotGif(message) {
-  console.log("hot");
   let x = getRandomInt(3);
   if (message.author.bot) {
     return;
@@ -274,7 +286,6 @@ function hotGif(message) {
 }
 
 function randomGif(message) {
-  console.log("random");
   let x = getRandomInt(2);
 
   if (message.author.bot) {
@@ -331,6 +342,11 @@ module.exports = {
     if (lowerCase.includes(prefix + "random")) {
       found = true;
       randomGif(message);
+    }
+
+    if (lowerCase.includes(prefix + "fact")) {
+      found = true;
+      randomFact(message);
     }
   },
 };

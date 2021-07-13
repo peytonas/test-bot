@@ -75,8 +75,7 @@ bot.on("message", async (message) => {
       !summer | !tacos
       !tea | !terror
       !toocool | !tragedy
-      !wrong | !zemo/!smile
-      `
+      !wrong | !zemo/!smile`
       );
     }
   }
