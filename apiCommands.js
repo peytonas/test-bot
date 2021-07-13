@@ -76,7 +76,7 @@ let hotGifs = [
   "./Pics/hotSnorlax.png",
 ];
 
-let factsApi = axios.create({
+let _factsApi = axios.create({
   baseURL: "http://api.fungenerators.com/fact/random",
 });
 
