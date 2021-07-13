@@ -56,21 +56,23 @@ bot.on("message", async (message) => {
       !abrupt/!sudden | !angry/!mad
       !awkward/!awk | !banana
       !beans | !blog
-      !bored | !burn
-      !classy | !cooks
-      !dos | !fail
-      !flipflop | !goodnight
-      !grind | !grrm
-      !hot | !idky
-      !ironic | !jammin
-      !jt | !kinky
-      !markov | !no
-      !nani/!what | !noods
-      !outlaw | !paradise
+      !bored | !burgers
+      !burn | !classy
+      !cooks | !dos
+      !fail | !flipflop
+      !goodnight | !grind
+      !grrm | !hot
+      !idky | !ironic
+      !jammin | !jt
+      !kinky | !markov
+      !no | !nani/!what
+      !noods | !outlaw
+      !paradise | !pizza
       !pork | !porkin
       !random | !rp1
       !rt | !ryuk
       !sleep | !smarf
+      !summer | !tacos
       !tea | !terror
       !toocool | !tragedy
       !wrong | !zemo/!smile

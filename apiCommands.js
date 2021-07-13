@@ -90,6 +90,18 @@ let _noodsApi = axios.create({
   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=noodles&rating=r`,
 });
 
+let _pizzaApi = axios.create({
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=pizza&rating=r`,
+});
+
+let _tacoApi = axios.create({
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=tacos&rating=r`,
+});
+
+let _burgerApi = axios.create({
+  baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=burger&rating=r`,
+});
+
 let _hootApi = axios.create({
   baseURL: `https://api.giphy.com/v1/gifs/random?api_key=LeMW5S9F7C5VAIirqbA4nWJTV0TQBART&tag=hoot&rating=r`,
 });
@@ -138,6 +150,36 @@ function getHotGif() {
 
 function getNoodsGif() {
   _noodsApi
+    .get()
+    .then((res) => {
+      let giphy = res.data;
+      _setState("currentGif", giphy);
+    })
+    .catch((err) => console.error(err));
+}
+
+function getPizzaGif() {
+  _pizzaApi
+    .get()
+    .then((res) => {
+      let giphy = res.data;
+      _setState("currentGif", giphy);
+    })
+    .catch((err) => console.error(err));
+}
+
+function getTacosGif() {
+  _tacoApi
+    .get()
+    .then((res) => {
+      let giphy = res.data;
+      _setState("currentGif", giphy);
+    })
+    .catch((err) => console.error(err));
+}
+
+function getBurgersGif() {
+  _burgerApi
     .get()
     .then((res) => {
       let giphy = res.data;
@@ -223,6 +265,21 @@ module.exports = {
     }
 
     if (lowerCase.includes(prefix + "noods")) {
+      found = true;
+      noodsGif(message);
+    }
+
+    if (lowerCase.includes(prefix + "pizza")) {
+      found = true;
+      noodsGif(message);
+    }
+
+    if (lowerCase.includes(prefix + "tacos")) {
+      found = true;
+      noodsGif(message);
+    }
+
+    if (lowerCase.includes(prefix + "burgers")) {
       found = true;
       noodsGif(message);
     }
