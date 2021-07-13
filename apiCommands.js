@@ -168,7 +168,7 @@ function getPizzaGif() {
     .catch((err) => console.error(err));
 }
 
-function getTacosGif() {
+function getTacoGif() {
   _tacoApi
     .get()
     .then((res) => {
@@ -178,7 +178,7 @@ function getTacosGif() {
     .catch((err) => console.error(err));
 }
 
-function getBurgersGif() {
+function getBurgerGif() {
   _burgerApi
     .get()
     .then((res) => {
@@ -195,6 +195,45 @@ function noodsGif(message) {
     return;
   } else {
     getNoodsGif();
+    setTimeout(function () {
+      message.channel.send(_state.currentGif.data.bitly_url);
+    }, 1000);
+  }
+}
+
+function pizzaGif(message) {
+  console.log("noods");
+
+  if (message.author.bot) {
+    return;
+  } else {
+    getPizzaGif();
+    setTimeout(function () {
+      message.channel.send(_state.currentGif.data.bitly_url);
+    }, 1000);
+  }
+}
+
+function tacoGif(message) {
+  console.log("noods");
+
+  if (message.author.bot) {
+    return;
+  } else {
+    getTacoGif();
+    setTimeout(function () {
+      message.channel.send(_state.currentGif.data.bitly_url);
+    }, 1000);
+  }
+}
+
+function burgerGif(message) {
+  console.log("noods");
+
+  if (message.author.bot) {
+    return;
+  } else {
+    getBurgerGif();
     setTimeout(function () {
       message.channel.send(_state.currentGif.data.bitly_url);
     }, 1000);
@@ -271,17 +310,17 @@ module.exports = {
 
     if (lowerCase.includes(prefix + "pizza")) {
       found = true;
-      noodsGif(message);
+      pizzaGif(message);
     }
 
     if (lowerCase.includes(prefix + "tacos")) {
       found = true;
-      noodsGif(message);
+      tacoGif(message);
     }
 
     if (lowerCase.includes(prefix + "burgers")) {
       found = true;
-      noodsGif(message);
+      burgerGif(message);
     }
 
     if (lowerCase.includes(prefix + "hoot")) {
