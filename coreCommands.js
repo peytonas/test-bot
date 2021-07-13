@@ -268,6 +268,10 @@ module.exports = {
       sendWheezy(message);
     }
 
+    if (lowerCase.includes(prefix + "noods")) {
+      return;
+    }
+
     if (lowerCase.includes(prefix + "no")) {
       found = true;
       sendPreference(message);
