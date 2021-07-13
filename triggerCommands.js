@@ -18,6 +18,7 @@ let loveResponses = [
   "I don't know how to love yet...",
   "I've never even kissed a guy before.",
   "I'm in lesbians with you too...",
+  "./Assets/neverKissedAGuy.gif",
   "./Assets/aou2.gif",
 ];
 
@@ -174,13 +175,14 @@ function sendNeat(message) {
 }
 
 function sendLove(message) {
-  let i = getRandomInt(4);
+  let i = getRandomInt(loveResponses.length);
   if (message.author.bot) {
     return;
-  } else if (i === 3) {
+  }
+  if (i === 4) {
     message.channel.send({ files: ["./Assets/aou2.gif"] });
   }
-  if (i < 3) {
+  if (i < 4) {
     message.reply(loveResponses[i]);
   }
   if (i === 2) {
