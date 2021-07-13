@@ -126,6 +126,7 @@ function getRandomInt(max) {
 function getFact() {
   _factsApi.get().then((res) => {
     let fact = res.data;
+    console.log(res.data);
     _setState("currentFact", fact);
   });
 }
