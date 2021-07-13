@@ -178,10 +178,10 @@ function sendLove(message) {
     return;
   }
   if (i === 4) {
-    message.channel.send({ files: "./Assets/neverKissedAGuy.gif" });
+    message.channel.send({ files: ["./Assets/neverKissedAGuy.gif"] });
   }
   if (i === 3) {
-    message.channel.send({ files: "./Assets/aou2.gif" });
+    message.channel.send({ files: ["./Assets/aou2.gif"] });
   }
   if (i < 3) {
     message.reply(loveResponses[i]);
