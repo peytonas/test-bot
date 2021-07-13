@@ -180,9 +180,12 @@ function sendLove(message) {
     return;
   }
   if (i === 4) {
-    message.channel.send({ files: ["./Assets/aou2.gif"] });
+    message.channel.send({ files: loveResponses[4] });
   }
-  if (i < 4) {
+  if (i === 3) {
+    message.channel.send({ files: loveResponses[3] });
+  }
+  if (i < 3) {
     message.reply(loveResponses[i]);
   }
   if (i === 2) {
