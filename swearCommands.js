@@ -37,6 +37,9 @@ function censor(lowerCase, message) {
     if (lc[i].includes("fuck")) {
       lc[i] = "*fudgesicle*";
     }
+    if (lc[i].includes("godfather")) {
+      lc[i] = "*golly papa*";
+    }
     if (lc[i].includes("god")) {
       lc[i] = "*golly*";
     }
