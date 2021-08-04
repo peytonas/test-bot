@@ -94,7 +94,7 @@ function censor(lowerCase, message) {
     if (lc[i].includes("assa")) {
       return;
     }
-    if (lc[i].includes("asses")) {
+    if (lc[i].includes("asses") && lc[i].length == 5) {
       lc[i] = "*booties*";
     }
     if (lc[i].includes("asse")) {
