@@ -27,7 +27,7 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async (message) => {
-  const interval = setInterval(hunt(message), 5000);
+  // const interval = setInterval(hunt(message), 5000);
   var lowerCase = message.content.toLowerCase();
   // if (counterCommands.checkCmd(lowerCase, message)) return;
   if (diceCommands.checkCmd(lowerCase, message)) return;
@@ -86,11 +86,9 @@ bot.on("message", async (message) => {
   }
   if (lowerCase.includes(prefix + "starthunt")) {
     message.channel.send("Good luck!");
-    interval;
   }
   if (lowerCase.includes(prefix + "endhunt")) {
     message.channel.send("That's enough for now!");
-    clearInterval(interval);
   }
 });
 
