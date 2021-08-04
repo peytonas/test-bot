@@ -180,7 +180,7 @@ function pokemonHunt(message, lowerCase) {
   }
 }
 
-function huntMessage() {
+function huntMessage(message) {
   message.channel.send("Here lil pokemon...");
 }
 
