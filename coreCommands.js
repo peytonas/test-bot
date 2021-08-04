@@ -176,10 +176,12 @@ function pokemonHunt(message, lowerCase) {
       interval = false;
       message.channel.send("That's enough for now!");
     }
-    interval == true
-      ? setInterval(message.channel.send("Here lil pokemon..."), 5000)
-      : null;
+    interval == true ? setInterval(huntMessage(message), 10000) : null;
   }
+}
+
+function huntMessage() {
+  message.channel.send("Here lil pokemon...");
 }
 
 // function endHunt(message) {
