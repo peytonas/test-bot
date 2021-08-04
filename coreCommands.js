@@ -165,6 +165,28 @@ function sendSummer(message) {
   }
 }
 
+function pokemonHunt(message, lowerCase) {
+  var interval = setInterval(message.channel.send("Here lil pokemon..."), 5000);
+  if (message.author.bot) {
+    return;
+  } else {
+    if (lowerCase.includes(prefix + "starthunt")) {
+      interval;
+    } else if (lowerCase.includes(prefix + "endhunt")) {
+      clearInterval(interval);
+      message.channel.send("That's enough for now!");
+    }
+  }
+}
+
+// function endHunt(message) {
+//   if (message.author.bot) {
+//     return;
+//   } else {
+//     message.channel.send("That's enough for now!");
+//   }
+// }
+
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
@@ -281,5 +303,18 @@ module.exports = {
       found = true;
       sendSummer(message);
     }
+
+    if (
+      lowerCase.includes(prefix + "starthunt") ||
+      lowerCase.includes(prefix + "endhunt")
+    ) {
+      found = true;
+      pokemonHunt(message, lowerCase);
+    }
+
+    // if (lowerCase.includes(prefix + "endhunt")) {
+    //   found = true;
+    //   endHunt(message);
+    // }
   },
 };
