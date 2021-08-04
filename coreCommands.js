@@ -182,8 +182,8 @@ function pokemonHunt(message, lowerCase) {
 }
 
 function hunt(message, check) {
-  var interval = setInterval(intervalMessage(message), 5000);
-  check == true ? interval : clearInterval(interval);
+  setInterval(intervalMessage(message), 5000);
+  // check == true ? interval : clearInterval(interval);
 }
 
 function intervalMessage(message) {
