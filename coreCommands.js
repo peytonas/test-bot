@@ -166,16 +166,19 @@ function sendSummer(message) {
 }
 
 function pokemonHunt(message, lowerCase) {
-  var interval = setInterval(message.channel.send("Here lil pokemon..."), 5000);
+  var interval = false;
   if (message.author.bot) {
     return;
   } else {
     if (lowerCase.includes(prefix + "starthunt")) {
-      interval;
+      interval = true;
     } else if (lowerCase.includes(prefix + "endhunt")) {
-      clearInterval(interval);
+      interval = false;
       message.channel.send("That's enough for now!");
     }
+    interval == true
+      ? setInterval(message.channel.send("Here lil pokemon..."), 5000)
+      : null;
   }
 }
 
