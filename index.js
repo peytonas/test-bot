@@ -16,20 +16,13 @@ const triggerCommands = require("./triggerCommands");
 const memeCommands = require("./memeCommands");
 const swearCommands = require("./swearCommands");
 const videoCommands = require("./videoCommands");
-// const counterCommands = require("./counterCommands");
-
-function hunt(message) {
-  message.channel.send("Here lil pokemon...");
-}
 
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
 
 bot.on("message", async (message) => {
-  // const interval = setInterval(hunt(message), 5000);
   var lowerCase = message.content.toLowerCase();
-  // if (counterCommands.checkCmd(lowerCase, message)) return;
   if (diceCommands.checkCmd(lowerCase, message)) return;
   if (inspoCommands.checkCmd(lowerCase, message)) return;
   if (coreCommands.checkCmd(lowerCase, message)) return;
@@ -83,12 +76,6 @@ bot.on("message", async (message) => {
       !wrong | !zemo/!smile`
       );
     }
-  }
-  if (lowerCase.includes(prefix + "starthunt")) {
-    message.channel.send("Good luck!");
-  }
-  if (lowerCase.includes(prefix + "endhunt")) {
-    message.channel.send("That's enough for now!");
   }
 });
 
