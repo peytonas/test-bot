@@ -18,8 +18,6 @@ const swearCommands = require("./swearCommands");
 const videoCommands = require("./videoCommands");
 // const counterCommands = require("./counterCommands");
 
-const interval = setInterval(hunt(message), 5000);
-
 function hunt(message) {
   message.channel.send("Here lil pokemon...");
 }
@@ -29,6 +27,7 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async (message) => {
+  const interval = setInterval(hunt(message), 5000);
   var lowerCase = message.content.toLowerCase();
   // if (counterCommands.checkCmd(lowerCase, message)) return;
   if (diceCommands.checkCmd(lowerCase, message)) return;
