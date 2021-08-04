@@ -166,22 +166,22 @@ function sendSummer(message) {
 }
 
 function pokemonHunt(message, lowerCase) {
-  var interval = false;
+  var interval = null;
   if (message.author.bot) {
     return;
   } else {
     if (lowerCase.includes(prefix + "starthunt")) {
-      interval = true;
+      interval = setInterval(huntMessage(message), 5000);
+      message.channel.send("Good luck!");
     } else if (lowerCase.includes(prefix + "endhunt")) {
-      interval = false;
+      clearInterval(interval);
       message.channel.send("That's enough for now!");
     }
-    interval == true ? huntMessage(message) : null;
   }
 }
 
 function huntMessage(message) {
-  setInterval(message.channel.send("Here lil pokemon..."), 10000);
+  message.channel.send("Here lil pokemon...");
 }
 
 // function endHunt(message) {
