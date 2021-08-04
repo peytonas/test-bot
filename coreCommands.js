@@ -169,28 +169,19 @@ function pokemonHunt(message, lowerCase) {
   var interval = null;
   if (message.author.bot) {
     return;
-  } else {
-    if (lowerCase.includes(prefix + "starthunt")) {
-      interval = setInterval(huntMessage(message), 5000);
-      message.channel.send("Good luck!");
-    } else if (lowerCase.includes(prefix + "endhunt")) {
-      clearInterval(interval);
-      message.channel.send("That's enough for now!");
-    }
+  }
+  if (lowerCase.includes(prefix + "starthunt")) {
+    interval = setInterval(huntMessage(message), 5000);
+    message.channel.send("Good luck!");
+  } else if (lowerCase.includes(prefix + "endhunt")) {
+    clearInterval(interval);
+    message.channel.send("That's enough for now!");
   }
 }
 
 function huntMessage(message) {
   message.channel.send("Here lil pokemon...");
 }
-
-// function endHunt(message) {
-//   if (message.author.bot) {
-//     return;
-//   } else {
-//     message.channel.send("That's enough for now!");
-//   }
-// }
 
 module.exports = {
   checkCmd: function (lowerCase, message) {
