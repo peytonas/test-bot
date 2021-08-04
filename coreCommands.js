@@ -165,22 +165,22 @@ function sendSummer(message) {
   }
 }
 
-function pokemonHunt(message, lowerCase) {
-  if (message.author.bot) {
-    return;
-  }
-  if (lowerCase.includes(prefix + "starthunt")) {
-    message.channel.send("Good luck!");
-    setInterval(hunt(message), 5000);
-  }
-  if (lowerCase.includes(prefix + "endhunt")) {
-    message.channel.send("That's enough for now!");
-  }
-}
+// function pokemonHunt(message, lowerCase) {
+//   if (message.author.bot) {
+//     return;
+//   }
+//   if (lowerCase.includes(prefix + "starthunt")) {
+//     message.channel.send("Good luck!");
+//     setInterval(hunt(message), 5000);
+//   }
+//   if (lowerCase.includes(prefix + "endhunt")) {
+//     message.channel.send("That's enough for now!");
+//   }
+// }
 
-function hunt(message) {
-  message.channel.send("Here lil pokemon...");
-}
+// function hunt(message) {
+//   message.channel.send("Here lil pokemon...");
+// }
 
 module.exports = {
   checkCmd: function (lowerCase, message) {
@@ -299,12 +299,12 @@ module.exports = {
       sendSummer(message);
     }
 
-    if (
-      lowerCase.includes(prefix + "starthunt") ||
-      lowerCase.includes(prefix + "endhunt")
-    ) {
-      found = true;
-      pokemonHunt(message, lowerCase);
-    }
+    // if (
+    //   lowerCase.includes(prefix + "starthunt") ||
+    //   lowerCase.includes(prefix + "endhunt")
+    // ) {
+    //   found = true;
+    //   pokemonHunt(message, lowerCase);
+    // }
   },
 };

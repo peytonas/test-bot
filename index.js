@@ -18,6 +18,12 @@ const swearCommands = require("./swearCommands");
 const videoCommands = require("./videoCommands");
 // const counterCommands = require("./counterCommands");
 
+const interval = setInterval(hunt(message), 5000);
+
+function hunt(message) {
+  message.channel.send("Here lil pokemon...");
+}
+
 bot.on("ready", async () => {
   bot.user.setActivity("Brody...", { type: "WATCHING" });
 });
@@ -78,6 +84,14 @@ bot.on("message", async (message) => {
       !wrong | !zemo/!smile`
       );
     }
+  }
+  if (lowerCase.includes(prefix + "starthunt")) {
+    message.channel.send("Good luck!");
+    interval;
+  }
+  if (lowerCase.includes(prefix + "endhunt")) {
+    message.channel.send("That's enough for now!");
+    clearInterval(interval);
   }
 });
 
