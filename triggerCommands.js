@@ -20,6 +20,13 @@ let loveResponses = [
   "I'm in lesbians with you too...",
 ];
 
+let communistResponses = [
+  "Слава Карлу",
+  "долой буржуазию!",
+  "пролетариат поднимется",
+  "Ешьте капиталистических свиней!",
+];
+
 let uncomfortableReactions = ["ಠಠ", "◉_◉", "⚆ _ ⚆"];
 
 function getRandomInt(max) {
@@ -200,6 +207,15 @@ function sendLove(message) {
     setTimeout(function () {
       message.channel.send("I said lesbians...");
     }, 5000);
+  }
+}
+
+function sendCommunism(message) {
+  let i = getRandomInt(communistResponses.length);
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send(communistResponses[i]);
   }
 }
 
