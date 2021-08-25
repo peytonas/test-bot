@@ -210,12 +210,16 @@ function sendLove(message) {
   }
 }
 
-function sendCommunism(message) {
+function sendCommunism(message, lowerCase) {
   let i = getRandomInt(communistResponses.length);
   if (message.author.bot) {
     return;
   } else {
-    message.channel.send(communistResponses[i]);
+    if (lowerCase.includes("eat the rich")) {
+      message.channel.send(communistResponses[3]);
+    } else {
+      message.channel.send(communistResponses[i]);
+    }
   }
 }
 
@@ -497,6 +501,11 @@ module.exports = {
     if (lowerCase.includes("revolution")) {
       found = true;
       sendCommunism(message);
+    }
+
+    if (lowerCase.includes("eat the rich")) {
+      found = true;
+      sendCommunism(message, lowerCase);
     }
   },
 };
