@@ -484,7 +484,7 @@ module.exports = {
       sendEntropy(message);
     }
 
-    if (lowerCase.includes("communism")) {
+    if (lowerCase.includes("communis")) {
       found = true;
       sendCommunism(message);
     }
