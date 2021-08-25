@@ -34,6 +34,16 @@ function sendChalooby(message) {
   }
 }
 
+function sendEntropy(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send(
+      "Inevitably everything will burn and end its entropic state, which is beautiful in its own way."
+    );
+  }
+}
+
 function sendBees(message) {
   if (message.author.bot) {
     return;
@@ -451,6 +461,11 @@ module.exports = {
     if (lowerCase.includes("assimilation")) {
       found = true;
       sendAssimilation(message);
+    }
+
+    if (lowerCase.includes("inevitabl")) {
+      found = true;
+      sendEntropy(message);
     }
   },
 };
