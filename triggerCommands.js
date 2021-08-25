@@ -483,5 +483,20 @@ module.exports = {
       found = true;
       sendEntropy(message);
     }
+
+    if (lowerCase.includes("communism")) {
+      found = true;
+      sendCommunism(message);
+    }
+
+    if (lowerCase.includes("marx")) {
+      found = true;
+      sendCommunism(message);
+    }
+
+    if (lowerCase.includes("revolution")) {
+      found = true;
+      sendCommunism(message);
+    }
   },
 };
