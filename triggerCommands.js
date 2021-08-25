@@ -214,12 +214,11 @@ function sendCommunism(message, lowerCase) {
   let i = getRandomInt(communistResponses.length);
   if (message.author.bot) {
     return;
+  }
+  if (lowerCase.includes("eat the rich")) {
+    message.channel.send(communistResponses[3]);
   } else {
-    if (lowerCase.includes("eat the rich")) {
-      message.channel.send(communistResponses[3]);
-    } else {
-      message.channel.send(communistResponses[i]);
-    }
+    message.channel.send(communistResponses[i]);
   }
 }
 
@@ -490,17 +489,17 @@ module.exports = {
 
     if (lowerCase.includes("communis")) {
       found = true;
-      sendCommunism(message);
+      sendCommunism(message, lowerCase);
     }
 
     if (lowerCase.includes("marx")) {
       found = true;
-      sendCommunism(message);
+      sendCommunism(message, lowerCase);
     }
 
     if (lowerCase.includes("revolution")) {
       found = true;
-      sendCommunism(message);
+      sendCommunism(message, lowerCase);
     }
 
     if (lowerCase.includes("eat the rich")) {
