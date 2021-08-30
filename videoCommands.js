@@ -120,7 +120,7 @@ module.exports = {
       found = true;
       sendBeans(message);
     }
-    if (lowerCase.includes("s" + prefix + "ascend")) {
+    if (lowerCase.includes("s" + prefix + "ascend confirm")) {
       found = true;
       sendBeans(message);
     }
