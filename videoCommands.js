@@ -120,6 +120,10 @@ module.exports = {
       found = true;
       sendBeans(message);
     }
+    if (lowerCase.includes("s" + prefix + "ascend")) {
+      found = true;
+      sendBeans(message);
+    }
     if (lowerCase.includes(prefix + "banana")) {
       found = true;
       sendBanana(message);
@@ -129,6 +133,10 @@ module.exports = {
       sendIron(message);
     }
     if (lowerCase.includes(prefix + "porkin")) {
+      found = true;
+      sendPorkin(message);
+    }
+    if (lowerCase.includes(prefix + "meat")) {
       found = true;
       sendPorkin(message);
     }
