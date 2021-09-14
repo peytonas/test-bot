@@ -193,6 +193,9 @@ function censor(lowerCase, message) {
     if (lc[i].includes("ass")) {
       lc[i] = "*booty*";
     }
+    if (lc[i].includes("thomas")) {
+      lc[i] = "*Tomorrow*";
+    }
   }
   let newStr = lc.join(" ");
   message.channel.send(`Don't you mean "` + newStr + `"?`);
@@ -218,7 +221,8 @@ module.exports = {
       lowerCase.includes("asses") ||
       lowerCase.includes("asshole") ||
       lowerCase.includes("assholes") ||
-      lowerCase.includes("bullshit")
+      lowerCase.includes("bullshit") ||
+      lowerCase.includes("thomas")
     ) {
       censor(lowerCase, message);
       found = true;
