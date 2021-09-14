@@ -165,6 +165,14 @@ function sendSummer(message) {
   }
 }
 
+function sendLemmings(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send({ files: ["./Assets/lemmings.gif"] });
+  }
+}
+
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
@@ -280,6 +288,11 @@ module.exports = {
     if (lowerCase.includes(prefix + "summer")) {
       found = true;
       sendSummer(message);
+    }
+
+    if (lowerCase.includes(prefix + "resist")) {
+      found = true;
+      sendLemmings(message);
     }
   },
 };

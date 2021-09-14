@@ -88,6 +88,14 @@ function sendCooks(message) {
   }
 }
 
+function sendPoorTom(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send("https://www.youtube.com/watch?v=51jvfaqiNio");
+  }
+}
+
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
@@ -147,6 +155,10 @@ module.exports = {
     if (lowerCase.includes(prefix + "cooks")) {
       found = true;
       sendCooks(message);
+    }
+    if (lowerCase.includes(prefix + "poortom")) {
+      found = true;
+      sendPoorTom(message);
     }
     if (lowerCase.includes("well hi")) {
       found = true;

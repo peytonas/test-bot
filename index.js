@@ -66,8 +66,9 @@ bot.on("message", async (message) => {
       !no | !nani/!what
       !noods | !outlaw
       !paradise | !pizza
-      !pork | !porkin
-      !random | !rp1
+      !poortom | !pork
+      !porkin | !random
+      !resist | !rp1
       !rt | !ryuk
       !sleep | !smarf
       !summer | !tacos
