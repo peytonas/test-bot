@@ -87,7 +87,7 @@ function sendMeat(message) {
     return;
   } else {
     let i = getRandomInt(meatGifs.length);
-    message.channel.send(meatGifs[i]);
+    message.channel.send({ files: [meatGifs[i]] });
   }
 }
 
