@@ -1,5 +1,15 @@
 const prefix = process.env.PREFIX;
 
+let meatGifs = [
+  "./MeatGifs/lurtz.gif",
+  "./MeatGifs/meat_vision.gif",
+  "./MeatGifs/slap.gif",
+];
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function sendHai(message) {
   if (message.author.bot) {
     return;
@@ -69,6 +79,15 @@ function sendPorkin(message) {
     return;
   } else {
     message.channel.send("https://www.youtube.com/watch?v=PwQns6vGfj4");
+  }
+}
+
+function sendMeat(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    let i = getRandomInt(meatGifs.length);
+    message.channel.send(meatGifs[i]);
   }
 }
 
@@ -146,7 +165,7 @@ module.exports = {
     }
     if (lowerCase.includes(prefix + "meat")) {
       found = true;
-      sendPorkin(message);
+      sendMeat(message);
     }
     if (lowerCase.includes(prefix + "rp1")) {
       found = true;

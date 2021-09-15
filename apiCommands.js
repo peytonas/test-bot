@@ -244,20 +244,22 @@ function hootGif(message) {
 }
 
 function hotGif(message) {
-  let x = getRandomInt(3);
+  let x = getRandomInt(6);
   if (message.author.bot) {
     return;
   }
 
-  if (x == 0) {
-    let i = getRandomInt(hotGifs.length);
-    message.channel.send({ files: [hotGifs[i]] });
-  } else if (x == 1) {
+  if (x < 4) {
     getHotGif();
     setTimeout(function () {
       message.channel.send(_state.currentGif.data.bitly_url);
     }, 1000);
-  } else if (x == 2) {
+  }
+  if (x == 4) {
+    let i = getRandomInt(hotGifs.length);
+    message.channel.send({ files: [hotGifs[i]] });
+  }
+  if (x == 5) {
     message.reply("bad with the Skechers on.");
   }
 }
