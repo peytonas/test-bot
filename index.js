@@ -54,27 +54,29 @@ bot.on("message", async (message) => {
       !abrupt/!sudden | !angry/!mad
       !awkward/!awk | !banana
       !beans | !blog
-      !bored | !burgers
-      !burn | !classy
-      !cooks | !dos
-      !fail | !flipflop
+      !bored | !bonk
+      !burgers | !burn
+      !classy | !cooks
+      !dos | !fail
+      !flipflop
       !goodnight | !grind
       !grrm | !hot
       !idky | !ironic
       !jammin | !jt
       !kinky | !markov
       !no | !nani/!what
-      !noods | !outlaw
-      !paradise | !pizza
-      !poortom | !pork
-      !porkin | !random
-      !resist | !rp1
-      !rt | !ryuk
-      !sleep | !smarf
-      !summer | !tacos
-      !tea | !terror
-      !toocool | !tragedy
-      !wrong | !zemo/!smile`
+      !noods | !omg
+      !outlaw | !paradise
+      !pizza | !poortom
+      !pork | !porkin
+      !random | !resist
+      !rp1 | !rt
+      !ryuk | !sleep
+      !smarf | !summer
+      !tacos | !tea
+      !terror !toocool
+      !tragedy | !wrong
+      !zemo/!smile`
       );
     }
   }
