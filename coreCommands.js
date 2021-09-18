@@ -173,6 +173,14 @@ function sendLemmings(message) {
   }
 }
 
+function sendBonk(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send({ files: ["./Assets/guillotine-bonk.gif"] });
+  }
+}
+
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
@@ -293,6 +301,11 @@ module.exports = {
     if (lowerCase.includes(prefix + "resist")) {
       found = true;
       sendLemmings(message);
+    }
+
+    if (lowerCase.includes(prefix + "bonk")) {
+      found = true;
+      sendBonk(message);
     }
   },
 };

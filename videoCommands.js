@@ -115,6 +115,14 @@ function sendPoorTom(message) {
   }
 }
 
+function sendOmg(message) {
+  if (message.author.bot) {
+    return;
+  } else {
+    message.channel.send("https://www.youtube.com/watch?v=pRR43HZjC4Y");
+  }
+}
+
 module.exports = {
   checkCmd: function (lowerCase, message) {
     found = false;
@@ -186,6 +194,10 @@ module.exports = {
     if (lowerCase.includes("whale") && lowerCase.includes("hai")) {
       found = true;
       sendHai(message);
+    }
+    if (lowerCase.includes(prefix + "omg")) {
+      found = true;
+      sendOmg(message);
     }
     return found;
   },
